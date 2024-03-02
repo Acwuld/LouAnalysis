@@ -1,0 +1,225 @@
+\chapter{不定积分}
+\section{不定积分}
+\precis{原函数,不定积分,恰当方程}
+\begin{theorem}{}{C51}
+设\(\Omega\)为\(\mathbb{R}^n\)中的区域, \(\boldsymbol{f}:\Omega\rightarrow\mathbb{R}^m\)在\(\Omega\)中可微且微分恒为\(\boldsymbol{0}\), 则\(\boldsymbol{f}\)在\(\Omega\)中恒为常量.
+\end{theorem}
+\begin{quiza}
+\woe 计算\(\int \frac{\sin^2 x}{\cos 2x+1}\dd x\).
+\begin{solution}
+\(\int \frac{\sin^2 x}{\cos 2x+1}\dd x=\frac{1}{2}\int\frac{\sin^2x}{\cos^2x}\dd x=\frac{1}{2}\int\frac{1-\cos^2x}{\cos^2x}\dd x=\frac{1}{2}\left(\tan x-x\right)+C.\)
+\end{solution}
+\woe 对于复数\(\lambda\)以及实数\(x\), 定义\(x^\lambda=\ee^{\lambda\ln x}\). 验证: \(\frac{\dd}{\dd x}x^{\lambda}=\lambda x^{\lambda-1}\).
+\begin{solution}
+\(\frac{\dd}{\dd x}x^\lambda=\frac{\dd}{\dd x}\ee^{\lambda\ln x}=\ee^{\lambda\ln x}\cdot\frac{\lambda}{x}=\lambda x^{\lambda-1}.\)
+\end{solution}
+\woe 设\(a<c<b\), \(f\)在\((a,b)\)内连续, \(F\)在\((a,c)\)与\((c,b)\)内均为\(f\)的原函数, 且\(F\)在\((a,b)\)内连续. 证明: \(F\)是\(f\)在\((a,b)\)上的原函数.
+\begin{proof}
+
+\end{proof}
+\woe 试用有限覆盖定理证明定理\reff{Th:C51}.
+\end{quiza}
+\begin{quizb}
+\woe 考虑去心圆盘\(D=\{(x,y)|0<x^2+y^2<1\}\)以及函数\[P(x,y)=\frac{y}{x^2+y^2},\quad Q(x,y)=-\frac{x}{x^2+y^2}.\]证明在\(D\)内成立\(\frac{\partial P(x,y)}{\partial y}=\frac{\partial Q(x,y)}{\partial x}\), 但不存在在\(D\)内可微的二元函数\(f(x,y)\)使得\[\dd f(x,y)=P(x,y)\dd x+Q(x,y)\dd y,\qquad (x,y)\in D.\]
+\woe 在例子中, 在确定原函数\(F\)在\(\pm 1\)处的相关常数时, 我们只考虑了\(F\)的连续性, 而没有去考虑\(F\)在\(\pm 1\)上的可微性. 是说明这样做是合理的, 并把这种合理性抽象成一个习题.
+\end{quizb}
+\section{变量代换法}
+\precis{第一类变量代换,第二类变量代换,万能代换}
+\begin{quiza}
+\woe 分别用以下变量代换计算\(\int \sqrt{4-x^2}\dd x\):
+\vspace{8pt}\\
+\begin{tabular}{lcl}
+\((1)x=2\sin t\left(t\in\left[\frac{\pi}{2},\frac{3\pi}{2}\right]\right)\).&\qquad\qquad\qquad&\((2)x=2\cos t\left(t\in[0,\pi]\right)\).
+\end{tabular}
+\begin{solution}
+内容...
+\end{solution}
+\woe 计算\(\int\frac{1-2\ln x}{x^3-x\ln x}\dd x\).
+\begin{solution}
+置\(x=1/t\), 则\[\int\frac{1-2\ln x}{x^3-x\ln x}\dd x=-\int\frac{t+2t\ln t}{1+t^2\ln t}\dd t=-\int\frac{\dd\left(1+t^2\ln t\right)}{1+t^2\ln t}=-\ln\left(1+t^2\ln t\right)+C.\]即\(\int\frac{1-2\ln x}{x^3-x\ln x}\dd x=-\ln\left(1-\frac{\ln x}{x^2}\right)+C\).
+\end{solution}
+\woe 计算\(\int\frac{1}{x(x^2+4)^{3/2}}\dd x\).
+\begin{solution}
+置\(x=2\tan x\), 则
+\[\begin{split}
+\int\frac{1}{x(x^2+4)^{3/2}}\dd x&=\int\frac{\sec^2t}{\tan x\left(4\tan^2+4\right)^{3/2}}\dd t=\frac{1}{8}\int\frac{\cos^2t}{\sin t}\dd t\\&=\frac{1}{8}\int\frac{1-\sin ^2t}{\sin t}\dd t=\frac{1}{8}\int\frac{1}{\sin t}\dd t+\frac{1}{8}\cos t+C\\
+&=-\frac{1}{8}\int\frac{\dd (\cos t)}{1-\cos ^2}+\frac{1}{8}\cos t+C\\
+&=-\frac{1}{16}\ln\left|\frac{1+\cos t}{1-\cos t}\right|+\frac{1}{8}\cos t+C.
+\end{split}\]即\(\int\frac{1}{x(x^2+4)^{3/2}}\dd x=-\frac{1}{16}\ln\left|\frac{\sqrt{4+x^2}+2}{\sqrt{4+x^2}-2}\right|+\frac{1}{4\sqrt{4+x^2}}+C.\)
+\end{solution}
+\woe 计算\(\int\frac{\ee^x-1}{x\ee^x+1}\mathrm{d}x\).
+\begin{solution}
+\(\int\frac{\ee^x(x+1)-(x\ee^x+1)}{x\ee^x+1}\dd x=\int\frac{\dd(x\ee^x+1)}{x\ee^x+1}-x+C=\ln(x\ee^x+1)-x+C.\)
+\end{solution}
+\woe 设\(f\)是区间\([a,b]\)上的实连续函数, \(\varphi\)在区间\([\alpha,\beta]\)上连续, 在\((\alpha,\beta)\)内可导且导数恒正, \(\varphi(\alpha)=a,\varphi(\beta)=b.\) 记\(\psi\)为\(\varphi\)的反函数. 证明, 若在\((\alpha,\beta)\)上成立\[\int f\left(\varphi(t)\right)\varphi'(t)\dd t=G(t)+C,\]则\(G(\alpha^+)\)与\(G(\beta^-)\)存在. 进一步, 令\(G(\alpha)=G(\alpha^+),G(\beta)=G(\beta^-)\), 则在\([a,b]\)上有\[\int f(x)\dd x=G(\psi(x))+C.\]
+\end{quiza}
+\begin{quizb}
+\woe 试给出\(\frac{1}{2+\cos x+\sin x}\)的一个原函数.
+\begin{solution}
+置\(t=\tan\frac{x}{2}\), 则\(\cos x=\frac{1-t^2}{1+t^2},\sin x=\frac{2t}{1+t^2},\dd x=\frac{2}{1+t^2}\dd t\), 于是\[\begin{split}
+\int\frac{2}{2+\cos x+\sin x}\dd x&=\int \frac{2}{t^2+2t+3}\dd t=\sqrt{2}\arctan\left(\frac{t+1}{\sqrt{2}}\right)+C\\
+&=\sqrt{2}\arctan\left(\frac{1+\tan(x/2)}{\sqrt{2}}\right)+C.\qedhere
+\end{split}\]
+\end{solution}
+\end{quizb}
+\section{分部积分法}
+\begin{quiza}
+\woe 计算以下不定积分:\vspace{8pt}\\
+\begin{tabular}{lcl}
+\((1)\int x^3\ln^2x\dd x\);&\qquad\qquad\qquad&\((2)\int x^4\ee^x\dd x\);\vspace{0.3cm}\\
+\((3)\int x\arctan x\dd x\);&&\((4)\int x^2\arcsin x\dd x\);\vspace{0.3cm}\\
+\((5)\int x^2\arcsin^2x\dd x\);&&\((6)\int x^3\arcsin^2x\dd x\);\vspace{0.3cm}\\
+\((7)\int x^2\left(2\sec^2x-3\sec^4x\right)\dd x\);&&\((8)\int x^2\ee^{3x}\cos 4x\dd x\).\vspace{0.3cm}\\
+\end{tabular}
+\begin{solution}
+前四个的计算量较小, \[\begin{split}
+\int x^3\ln^2x\dd x&=\int\ln^2x\dd\left(\frac{1}{4}x^4\right)=\frac{x^4\ln^2x}{4}-\frac{1}{2}\int x^3\ln x\dd x=\frac{x^4\ln^2x}{4}-\frac{1}{2}\int\ln x\dd\left(\frac{1}{4}x^4\right)\\&=\frac{x^4\ln^2x}{4}-\frac{x^4\ln x}{8}+\int\frac{x^3}{8}\dd x=\frac{x^4\ln^2x}{4}-\frac{x^4\ln x}{8}+\frac{x^4}{32}+C.\end{split}\]
+
+容易验证这样一个事实\[\begin{split}
+\int u\dd \left(v^{(n)}\right)&=uv^{(n)}-\int u'\dd\left(v^{(n-1)}\right)=uv^{(n)}-u'v^{(n-1)}+\int u''\dd\left(v^{(n-2)}\right)\\&=\cdots=uv^{(n)}-u'v^{(n-1)}+u''v^{(n-2)}+\cdots+(-1)^ku^{(k)}v^{(n-k)}+\cdots,
+\end{split}\]对于(2), 由于\[\left(x^4\right)'=4x^3,\quad\left(x^4\right)''=12x^2,\quad\left(x^4\right)^{3}=24x,\quad\left(x^4\right)^{(4)}=24,\quad\left(x^4\right)^{(5)}=0,\]易见\[\int x^4\ee^x\dd x=\left(x^4-4x^3+12x^2-24x+24\right)\ee^x+C.\]
+
+容易得到
+\[\begin{split}
+\int x\arctan x\dd x&=\frac{x^2\arctan x}{2}-\frac{x-\arctan x}{2}+C,\\
+\int x^2\arcsin x\dd x&=\frac{x^2\arcsin x}{3}-\frac{\left(\sqrt{1-x^2}\right)^3}{9}+\frac{\sqrt{1-x^2}}{3}+C.
+\end{split}\]
+
+后四个的计算量稍大,但是细心是不会出错的. \[\int x^2\arcsin^2 x\dd x=\int\arcsin^2x\dd\left(\frac{x^3}{3}\right)=\frac{x^3\arcsin^2x}{3}-\frac{2}{3}\int\arcsin x\cdot\frac{x^3}{\sqrt{1-x^2}}\dd x,\]一个可行的方法是寻找一阶微分形式\(\frac{x^3}{\sqrt{1-x^2}}\dd x\)的原函数, 于是置\(x=\sin t\), 从而\[\begin{split}
+\int\frac{x^3}{\sqrt{1-x^2}}\dd x=\int\sin^3t\dd t=\int\left(\cos^2-1\right)\dd\left(\cos t\right)=\frac{\cos^3t}{3}-\cos t+C.
+\end{split}\]即有\[\begin{split}
+&\int\arcsin x\cdot\frac{x^3}{\sqrt{1-x^2}}\dd x=\int\arcsin x\dd\left(\frac{\left(\sqrt{1-x^2}\right)^3}{3}-\sqrt{1-x^2}\right)\\=&\left(\frac{\left(\sqrt{1-x^2}\right)^3}{3}-\sqrt{1-x^2}\right)\arcsin x-\int\left(\frac{1-x^2}{3}-1\right)\dd x\\&=\left(\frac{\left(\sqrt{1-x^2}\right)^3}{3}-\sqrt{1-x^2}\right)\arcsin x+\frac{2x}{3}+\frac{x^3}{9}+C.
+\end{split}\]代回即得\[\int x^2\arcsin^2 x\dd x=\frac{x^3\arcsin^2x}{3}-\frac{2}{3}\left(\frac{\left(\sqrt{1-x^2}\right)^3}{3}-\sqrt{1-x^2}\right)\arcsin x-\frac{4x}{9}-\frac{2x^3}{27}+C.\](6)与此十分相似:
+\[\begin{split}
+\int x^3\arcsin^2x\dd x=&\frac{x^4\arcsin^2x}{4}-\frac{3\arcsin^2x}{16}+\frac{3x\sqrt{1-x^2}\arcsin x}{16}+\\&\frac{x^3\sqrt{1-x^2}\arcsin x}{2}+\frac{3x}{16}-\frac{3x^2}{32}-\frac{x^4}{8}+C.\qedhere
+\end{split}\]
+\end{solution}
+\woe 试用不同的方法推到(5.3.3)--(5.3.6)式子.
+\woe 给出积分\(\int\left(1+x^2\right)^{3/2}\dd x,\int\left(1+x^2\right)^{-3/2}\dd x\)与积分\(\int\frac{1}{\sqrt{1+x^2}}\dd x\)的联系.
+\woe 给出积分\(\int\left(x^2-1\right)^{3/2}\dd x,\int\left(x^2-1\right)^{-3/2}\dd x\)与积分\(\int\frac{1}{\sqrt{x^2-1}}\dd x\)的联系.
+\woe 计算\(\int\left(\ee^{x}\left(\ln x+\frac{1}{x}\right)+\ln x+1\right)\mathrm{d}x.\)
+\begin{solution}
+\(\int\left(\ee^{x}\left(\ln x+\frac{1}{x}\right)+\ln x+1\right)\mathrm{d}x=\ee^{x}\ln x+x\ln x+C.\)
+\end{solution}
+\woe 设连续可微函数\(y=y(x)\)由方程\(\ee^{y}+y+x=1\)确定.
+\begin{quizs}
+\item 计算\(\frac{\dd^2y}{\dd x^2}\).
+\item 计算\(\int y(x)\dd x\).
+\item 任取\(x_0\in\mathbb{R}\), 定义\(x_{n+1}=y(x_n)(n\geqslant 0)\). 证明: \(\{x_n\}\)收敛并求其极限.
+\end{quizs}
+\begin{solution}
+(1)原式左右两侧对\(x\)求导得\[\ee^yy'+y'+1=0,\]即得\(y'=-\frac{1}{1+\ee^y}\), 继续对上式求导得到\[\ee^y(y')^2+\ee^yy''+y''=0,\] 带入\(y'\)得到\(\frac{\dd^2y}{\dd x^2}=\frac{-\ee^y}{(1+\ee^y)^3}\).
+
+(2)由\(\frac{\dd y}{\dd x}=-\frac{1}{1+\ee^y}\)得到\(\dd x=-(\ee^y+1)\dd y\)代入\(\int y(x)\dd x\)得到\[\int y(x)\dd x=-\int y(\ee^y+1)\dd y=\ee^y-y\ee^y-\frac{1}{2}y^2+C.\]
+
+(3)由\(\ee^y+y+x=1\)知\(\ee^y+y=1-x\), 易见若\(x>0\), 则\(y(x)<0\); 若\(x<0\), 则\(y(x)>0\). 并且易见\(y(0)=0\). 若\(x_n>0(n\geqslant 0)\), 则\(x_{n+1}=y(x_n)<0\), 于是\[|x_{n+1}|-|x_{n}|=-y(x_n)-x_n=-y(x_n)-1+y(x_n)+\ee^{y(x_n)}=\ee^{y(x_n)}-1<0,\]
+反之若\(x_n<0\)同理可得\(|x_{n+1}|<|x_n|\). 这意味着如果\(x_0\)取定, 那么无论如何, \(x_n\)都将落在\(\left[-|x_0|,|x_0|\right]\)内, 注意到这时\[\left|\frac{\dd y}{\dd x}\right|=\frac{1}{1+\ee^y}\leqslant\frac{1}{1+\ee^{-|x_0|}}<1,\]于是由Lagrange中值定理与压缩映射原理即得结论, 即\(\lim_{n\rightarrow+\infty}x_n=0\).
+\end{solution}
+\end{quiza}
+\begin{quizb}
+\woe 考虑熟知的那些函数的两两组合, 试计算其乘积的不定积分.
+\woe 设\(m,n\)为整数, 讨论不同情形下, 什么方法是计算不定积分\(\int\sin^m x\cos^nx\dd x\)是最简单的.
+\end{quizb}
+\section{有理函数不定积分}
+\precis{有理函数,最简分式}
+\begin{quiza}
+\woe 计算\(\int\frac{1}{3+\cos x}\dd x\).
+\begin{solution}
+设\(t=\tan\frac{x}{2}\), 则有\[\int\frac{1}{3+\cos x}\dd x=\int\frac{1}{2+t^2}\dd t=\frac{\sqrt{2}}{2}\arctan\frac{t}{\sqrt{2}}+C=\frac{\sqrt{2}}{2}\arctan\frac{\tan\frac{x}{2}}{\sqrt{2}}+C.\qedhere\]
+\end{solution}
+\woe 设\(Q(x,y)\)为\(x,y\)的有理函数, \(ad-bc\ne 0,m\geqslant 2\), 试验证变量代换\(t=\sqrt[m]{\frac{ax+b}{cx+d}}\)将积分\(\int Q(x,\sqrt[m]{\frac{ax+b}{cx+d}})\dd x\)转化为有理积分. 试利用这一变量代换计算以下积分.
+\begin{quizs}
+\item \(\int\frac{1}{x}\sqrt{\frac{x+2}{x-1}}\dd x\);
+\item \(\int\frac{1}{x+1}\sqrt[3]{\frac{x-2}{x+2}}\dd x\);
+\item \(\int\sqrt{x^2-3x+2}\dd x\);\quad\textcolor{red}{\(\left(\int\sqrt{x^2-3x+2}\dd x=\int\sqrt{(x-1)(x-2)}\dd x=\int (x-2)\sqrt{\frac{x-1}{x-2}}\dd x.\right)\)}
+\item \(\int\sqrt{4-3x-x^2}\dd x\).
+\end{quizs}
+\begin{solution}
+由题设
+\[\int Q(x,\sqrt[m]{\frac{ax+b}{cx+d}})\dd x\xlongequal{t=\sqrt[m]{\left( ax+b \right) /\left( cx+d \right)}}\int Q(\frac{b-dt^m}{ct^m-a},t)\cdot\frac{(ad-cb)mt^{m-1}}{(ct^m-a)^2}\dd t.\]
+
+(1)利用上述变换, 有\[\begin{split}
+&\int\frac{1}{x}\sqrt{\frac{x+2}{x-1}}\dd x=\int\frac{6t^2}{(1-t^2)(2+t^2)}\dd t=\int\left(\frac{1}{1-t}+\frac{1}{1+t}-\frac{4}{2+t^2}\right)\dd t\\=&\ln\left|\frac{1+t}{1-t}\right|+2\sqrt{2}\arctan\left(\frac{t}{\sqrt{2}}\right)+C.\\=&\ln\left|\frac{1+\sqrt{\frac{x+2}{x-1}}}{1-\sqrt{\frac{x+2}{x-1}}}\right|+2\sqrt{2}\arctan\sqrt{\frac{x+2}{2x-2}}+C.
+\end{split}\]
+\end{solution}
+\woe 设\(Q(x,y)\)为\(x,y\)的有理函数, \(a>0\), 试讨论变量代换\(t=\sqrt{ax^2+bx+c}+\sqrt{a}x\)与\(t=\sqrt{ax^2+bx+c}-\sqrt{a}x\)在将积分\(\int Q(x,\sqrt{ax^2+bx+c})\dd x\)转化为有理函数积分时的适用性. 进一步, 试利用上述变换计算第2题的(1), (3).
+\begin{solution}
+	
+\end{solution}
+\woe 设\((Q(x,y))\)为\(x,y\)的有理函数, \(c>0,b^2-4ac\ne 0\). 试讨论变量代换\(t=\frac{\sqrt{ax^2+bx+c}+\sqrt{c}}{x}\)与\(t=\frac{\sqrt{ax^2+bx+c}-\sqrt{c}}{x}\)再将积分\(\int Q(x,\sqrt{ax^2+bx+c})\dd x\)转化为有理函数积分时的适用性. 进一步, 试利用上述变换计算第2题的(3), (4).
+\begin{solution}
+	
+\end{solution}
+\woe 求\(A,B\)使得\[3\cos x+4\sin x=A(2\cos x+\sin x)+B(2\cos x+\sin x)'.\]由此计算积分\(\int\frac{3\cos x+4\sin x}{2\cos x+\sin x}\dd x.\)
+\begin{solution}
+易见\(A=2,B=-1\). 由\[\begin{split}
+I_1&:=\int\frac{2\cos x+\sin x}{2\cos x+\sin x}\dd x=x+C,\\
+I_2&:=\int\frac{(2\cos x+\sin x)'}{2\cos x+\sin x}\dd x=\int\frac{\dd\left(2\cos x+\sin x\right)}{2\cos x+\sin x}=\ln\left|2\cos x+\sin x\right|+C
+\end{split}\]由线性性有\[\int\frac{3\cos x+4\sin x}{2\cos x+\sin x}\dd x=AI_1+BI_2=2x-\ln\left|2\cos x+\sin x\right|+C.\qedhere\]
+\end{solution}
+\end{quiza}
+\begin{quizb}
+\woe 设\(Q,Q_1,Q_2\)为有理函数, 对于使得\(Q(x),Q_1(x),Q_2(x)\)都有意义的实数\(x\), 成立\(Q_1(x)+Q_2(x)=Q(x)\). 证明: 对于使得\(Q(z),Q_1(z),Q_2(z)\)都有意义的复数\(z\), 成立\(Q_1(z)+Q_2(z)=Q(z)\).
+\begin{proof}
+
+\end{proof}
+\woe 设\(Q,Q_1,Q_2\)为有理函数, 对于使得\(Q(x),Q_1(x),Q_2(x)\)都有意义的实数\(x\), 成立\(Q_1(x)Q_2(x)=Q(x)\). 证明: 对于使得\(Q(z),Q_1(z),Q_2(z)\)都有意义的复数\(z\), 成立\(Q_1(z)Q_2(z)=Q(z)\).
+\begin{proof}
+
+\end{proof}
+\woe 讨论在复平面\(\mathbb{C}\)的什么子区域内, 可以连续地定义\(w=\ln z\)使得\(\ee^w=z\), 进一步,
+\begin{quizs}
+\item 考察对于复数\(z_0\), 等式\(\frac{\dd x}{x+z_0}=\ln (x+z_0)+C\)的合理性.
+\item 考察在不同区域内, 一阶微分形式\(\frac{\dd x+\mathrm{i}\dd y}{x+\mathrm{i}y}\)的原函数的存在性.
+\item 设\(n\geqslant 2\), 考察在不同区域内, 一阶微分形式\(\frac{\dd x+\mathrm{i}\dd y}{(x+\mathrm{i}y)^n}\)的原函数的存在性.
+\end{quizs}
+\end{quizb}
+\section{求解简单的微分方程}
+\precis{常微分方程,特解,通解,分离变量法,初值问题,解的最大存在区间,一阶线性方程,常数变异法,积分因子法,全微分方程,齐次方程,Bernoulli方程}
+\begin{quiza}
+\woe 求解下列方程:
+\begin{quizs}
+\item \(x(1+x^2)y'=(1-x^2)y.\)
+\begin{solution}
+分离变量有\(\frac{\dd y}{y}=\frac{(1-x^2)}{x(1+x^2)}\dd x\), 得\(y=\frac{Cx}{1+x^2}.\)
+\end{solution}
+\item \(y(x^2-1)y'=x(1-y^2).\)
+\begin{solution}
+即\(\frac{y}{1-y^2}\dd y=\frac{x}{x^2-1}\dd x\), 得\(y^2=1-C(x^2-1).\)
+\end{solution}
+\item \(y'-\frac{y}{x+2}=\frac{1}{(x+2)^2}.\)
+\begin{solution}
+对应得齐次方程为\(y'=\frac{y}{x+2}\), 即得\(y=c(x+2)\), 使用常数变易法, 令\(c=c(x)\), 代入原方程, 得\[c'(x)\cdot(x+2)=\frac{1}{(x+2)^2},\]得到\(c=-\frac{1}{2(x+2)^2}+C\), 代入\(y\)得到\(y=C(x+2)-\frac{1}{2(x+2)}.\)
+\end{solution}
+\item \(\frac{\dd y}{\dd x}=\frac{y}{x+y^3}\).
+\begin{solution}
+原方程即为\(\frac{\dd x}{\dd y}=\frac{x+y^3}{y}\), 对应齐次方程\(\frac{\dd x}{\dd y}=\frac{x}{y}\), 得到\(x=cy\), 使用常数变易法, 令\(c=c(y)\)代入前述方程得到\(c(y)=\frac{1}{2}y^2+C\), 从而\(x=\frac{1}{2}y^3+Cy\).
+\end{solution}
+\item \(\frac{\dd y}{\dd x}+\frac{y}{x}-y^2\ln x=0.\)
+\begin{solution}
+这正是Bernoulli方程, 令\(z=-y^{-1}\), 原方程变为\[\frac{\dd z}{\dd x}-\frac{z}{x}-\ln x=0,\]对于\(\frac{\dd z}{\dd x}-\frac{z}{x}=0\), 有\(z=cx\), 使用常数变易法, 令\(c=c(x)\)代入前述方程得到\(c'(x)=\frac{\ln x}{x}\), 即\(c=\frac{\ln^2x}{2}+C\), 代回得到原方程得解为\[\frac{1}{y}=Cx-\frac{1}{2}x\ln^2x.\qedhere\]
+\end{solution}
+\end{quizs}
+\woe 试给出方程\(y'=y^{2/3}\)在\(\mathbb{R}\)上的所有解.
+\begin{solution}
+当\(y\ne 0\)时, 分离变量得到\(y^{-2/3}y'=1\), 两边积分得到\(3y^{1/3}=x+C\), 因此\(y=\left(\frac{x+C}{3}\right)^3\). 易见此为该方程在\(\mathbb{R}\)上的通解. 特解有\(y \equiv 0\)不在这之中.
+\end{solution}
+\end{quiza}
+
+\begin{quizb}
+\woe 若\(P,Q\)是满足\[P(tx,ty)=t^{\alpha}P(x,y),\qquad Q(tx,ty)=t^{\alpha}Q(x,y).\qquad\forall t>0,\alpha\in\mathbb{R}.\]的可微函数, 证明\(\frac{1}{xP(x,y)+yQ(x,y)}\)是方程\(P(x,y)\dd x+Q(x,y)\dd y=0\)的一个积分因子.
+\begin{proof}
+设\(y=ux\), 则\(\dd y=x\dd u+u\dd x\), 于是\begin{gather*}
+P(x,y)=P(x,ux)=x^{\alpha}P(1,u),\\
+Q(x,y)=Q(x,ux)=x^{\alpha}Q(1,u),
+\end{gather*}方程\(P\dd x+Q\dd y=0\)两边乘\(\mu:=\frac{1}{xP+yQ}\)得到\[\frac{P}{xP+yQ}\dd x+\frac{Q}{xP+yQ}\dd y=0,\]即\(\frac{P(x,ux)+uQ(x,ux)}{xP(x,ux)+yQ(x,ux)}\dd x+\frac{xQ(x,ux)}{xP(x,ux)+yQ(x,ux)}\dd u=0\), 即\[\frac{1}{x}\dd x+\frac{Q(1,u)}{P(1,u)+uQ(1,u)}\dd u=0,\]这是一个恰当方程, 这就证明了\(\mu\)是题设方程的一个积分因子.
+\end{proof}
+\woe 求解方程\((x^3y-y^5)\dd x+(-x^4+x^2y^3)\dd y=0.\)
+\begin{solution}
+令\(y=tx\), 则\(\dd y=t\dd x+x\dd t\), 原方程化为
+\begin{equation}\label{c5fc}\tag{\(\clubsuit\)}
+\left(t^4-t^5\right)\dd x+\left(t^3x-1\right)\dd t=0,
+\end{equation}
+记上述方程的积分因子为\(\mu(t)\), 则有\[\frac{\partial\left(\mu(t)\left(t^4-t^5\right)\right)}{\partial t}=\mu'(t)(t^4-t^5)+\mu(t)(4t^3-5t^4)=\frac{\partial\left(\mu (t)\left(t^3x-1\right)\right)}{\partial x}=\mu(t)t^3,\]即\[\mu'(t)(t-t^2)+\mu(t)(3-5t)=0,\]容易解得\(\mu(t)=\frac{1}{t^3(1-t)^2}\). 方程\eqref{c5fc}两侧乘以\(\mu\), 得到恰当方程:\[\frac{t}{1-t}\dd x+\frac{t^3x-1}{t^3(1-t)^2}\dd t=:P\dd x+Q\dd t=0.\]则存在\(u(x,t)\)使得\[\frac{\partial u}{\partial x}=\frac{t}{1-t},\quad \frac{\partial u}{\partial t}=\frac{t^3x-1}{t^3(1-t)^2},\]对左侧公式积分得到\(u=\frac{tx}{1-t}+\varphi(t)\), 带入右式得到\[\varphi'(t)=-\frac{1}{t^3(1-t)^2},\]设\[\frac{1}{t^3(1-t)^2}=\frac{t}{t^4(1-t)^2}=\left(\frac{At^2+Bt+C}{t^2(1-t)}\right)'+\frac{Dt^2+Et+F}{t^2(1-t)},\]求得\footnote{这里方程个数将少于未知数个数.}\(A=0,B=\frac{3}{2},C=-\frac{1}{2},D=E=0,F=3\), 即\[\int\frac{1}{t^3(1-t)^2}\dd t=\frac{3t-1}{2t^2(1-t)}+3\int\frac{1}{t^2(1-t)}\dd t,\]容易得到\[\int\frac{1}{t^2(1-t)}\dd t=\int\left(\frac{1}{t}+\frac{1}{t^2}+\frac{1}{1-t}\right)\dd t=\ln|t|-\frac{1}{t}-\ln|1-t|+C,\]即\(\varphi(t)=\frac{1-3t}{2t^2(1-t)}+\frac{3}{t}-3\ln\left|\frac{t}{1-t}\right|+C\), 带回\(y=tx\)与\(u(x,t)\), 得到原方程的解为\[\frac{xy}{x-y}+\frac{(x-3y)x^2}{2y^2(x-y)}+\frac{3x}{y}-3\ln\left|\frac{x}{x-y}\right|=C.\qedhere\]
+\end{solution}
+\end{quizb}

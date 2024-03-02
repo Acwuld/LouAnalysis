@@ -1,0 +1,101 @@
+\begin{titlepage}
+\maketitle %首页
+\end{titlepage}
+\restoregeometry
+\begin{center}
+\Large 感悟
+\end{center}
+\noindent \Large 今
+\normalsize
+天是2023年5月20日，一个特别而又普通的日子：为什么说特别，因为我是单身，为什么普通？还是这个原因。这一天我读完了这套数学分析的第一遍，并将部分习题抄录至此，但大概有百分之七十的习题并没有弄懂，你可能觉得是时间仓促导致，但事实并非如此：笔者从22年8月开始阅读，至今已十月有余。我听闻难事可让人一夜白头，然这十月后我的头发依旧乌黑(只是掉了几根)，这样比起来楼红卫十分温柔，或者还有一个原因：我还没努力到白头的程度。
+
+我每天都乐此不疲的发现让我头疼的题目，并不是我喜欢头疼，若非迫不得已，我宁愿躺在床上睡大觉。但我每天都很苦恼，这让我几乎无法入眠：大佬做题犹如作画，随便一笔我都必须揣摩良久，最后只能承认自己的愚蠢，这是十分值得伤心的事，我也有理由尽情悲伤。但我尽量幽默一点，因为学习与生活永远不可能让我一直保持笑脸，但幽默总能。
+
+这本书极不适合初学者，当然你如果天赋异禀，那本书能让你飞黄腾达。笔者大一大二学过一点数学分析等之类的课程，看这套书就像牙齿掉光的老太太吃五仁月饼，不过值得一提的是，许多都是一股脑吞下的，以至于事后问我这什么味道：干巴巴，没什么味儿。
+
+我几乎要放弃的时候非常感谢各位群友的帮助，是大家让我间歇性放弃找女朋友的念头而是改为买一只宠物蜈蚣，相信很快就会和大家见面的！另外，明天开始就要开始要第二遍了。届时会完善这些习题。
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{0}
+\setcounter{chapter}{-1}
+\newcounter{mistake}
+\renewcommand{\themistake}{\arabic{mistake}}
+\newcommand{\mist}[1]{\par\textcolor{red}{\refstepcounter{mistake}\textbf{\themistake.} \textbf{Page #1 }}\hspace{0.5em}}
+\chapter{闲谈}
+\section{勘误}
+
+\mist{21} 第4题(3)中对于\(R(x)\)的系数为有理数时结论才可被证明, 当\(R(x)\)中包含无理系数时结论不一定成立.
+\mist{27} (F)(O)(C)错印为 (F)(D)(C).
+\mist{281} 最后一行\(g\)应为\(f\).
+\mist{196} \(f^{(n)}(x)\)后\(-1\)的幂次应为\(n\)而非\(n-1\).
+\mist{299} 第二个行列式第一行第六列的元素应为24而非0.
+\mist{315} 第七题. 
+\mist{23}定理8.2.7中大括号.
+\section{符号说明}
+\begin{longtable}{ll}
+\hline
+\(\bbn\)&自然数集\\\hline
+\(\bbz,\bbz_+\)&整数集,正整数集\\\hline
+\(\bbq,\bbq_+\)&有理数域, 正有理数集\\\hline
+\(\bbr,\bbr_+\)&实数域, 正实数集\\\hline
+\(\bbr^n\)&\(n\)维欧氏空间\\\hline
+\(\bbc\)&复数域\\\hline
+\(\bbc^n\)&\(n\)维复空间\\\hline
+\(S^{n-1}\)&\(\bbr^n\)中的单位球面, 即\(\{\boldsymbol{x}\in\bbr^n\big||x|=1\}\)\\\hline
+\(\mathbb{S}^n\)&\(n\)阶实对称矩阵全体\\\hline
+\(B_r(\boldsymbol{x})\)&半径为\(r\)中心在\(\boldsymbol{x}\in\bbr^n\)中的开球\\\hline
+\(\mathring{B}_r(\boldsymbol{x})\)&半径为\(r\)中心在\(\boldsymbol{x}\in\bbr^n\)中的去心开球\\\hline
+\(Q_{\delta}(\boldsymbol{x})\)&边长为\(2\delta\)中心在\(\boldsymbol{x}\in\bbr^n\), 且各边平行于坐标轴的开正方体\\\hline
+\(\boldsymbol{A}^\top,\boldsymbol{x}^\top\)&矩阵\(\boldsymbol{A}\), 向量\(\boldsymbol{x}\)的转置\\\hline
+\(\boldsymbol{x}\cdot\boldsymbol{y}\)&\(\bbr^n\)中向量\(\boldsymbol{x}\)与\(\boldsymbol{y}\)的数量积, 也常常用\(\inp{x,y},\boldsymbol{x\top y}\)表示\\\hline
+\(\inp{x,y}\)&内积空间中两个元素\(x,y\)的内积\\\hline
+\(\left\|\boldsymbol{x}\right\|_p\)&\(\bbr^n\)中的向量\(\boldsymbol{x}=(x_1,x_2,\cdots,x_n)^\top\)的\(p-\)范数\(\left(\sum_{k=1}^{n}|x_k|^p\right)^p\)\phantom{\huge\(\int\)}\\\hline
+\(\left\|\boldsymbol{A}\right\|_p\)&方阵\(\boldsymbol{A}\bbr^{n\times n}\)的诱导范数\(\left\|\boldsymbol{A}\right\|_p=\max_{\left\|\boldsymbol{x}\right\|=1}\left\|\boldsymbol{Ax}\right\|_p\)\\\hline
+\(|\boldsymbol{x}|\)&\(\bbr^n\)中向量\(\boldsymbol{x}\)通常的范数, 即\(\left\|\boldsymbol{x}\right\|_2\)\\\hline
+\(\left\|\boldsymbol{A}\right\|\)&方阵\(\boldsymbol{A}\bbr^{n\times n}\)通常的诱导范数\(\left\|\boldsymbol{A}\right\|_2\)\\\hline
+\(|E|\)&\(\bbr^n\)中集合\(E\)的Lebesgue测度(或Jordan测度)---长度, 面积, 体积\\\hline
+\(|E|^*,|E|_*\)&\(\bbr^n\)中集合\(E\)的Jordan外测度, 内测度\\\hline
+\(m^*E,m_*E\)&\(\bbr^n\)中集合\(E\)的Lebesgue外测度, 内测度\\\hline
+\(a^+.a_-\)&实数\(a\)的正部\(\left(|a|+a\right)/2\)与负部\(\left(|a|-a\right)/2\)\\\hline
+\(a\vee b,a\wedge b\)&实数\(a,b\)的最大值和最小值\\\hline
+\(\Re z,\Im z\)&复数\(z=a+b\ii\)的实部\(a\)和虚部\(b\), 其中\(a,b\)为实数\\\hline
+\(\chi_E\)&集合\(E\)的特征函数, 既在\(E\)上取值为\(1\), 在其余点取值为\(0\)\\\hline
+\(\exists\)&存在\\\hline
+\(\forall\)&对于任意\\\hline
+\(\gg,\ll\)&大大大于,大大小于\\\hline
+\(\mathrm{a.e.}\)&几乎处处\\\hline
+\(\mathrm{s.t.}\)&满足或使得\\\hline
+\(\varnothing\)&空集\\\hline
+\(\in,\ni,\notin\)&\(a\in E\)与\(E\ni a\)均表示\(a\)是\(E\)的元素, \(a\notin E\)表\(a\)不是\(E\)中的元素\\\hline
+\(\subseteq,\supseteq\)&\(E\subseteq F\)与\(F\supseteq E\)均表示\(E\)包含于集合\(F\), 即\(F\)包含\(E\)\\\hline
+\(E\{\varphi\in F\}\)&表示集合\(\{x\in E\big|\varphi(x)\in F\}\). 在\(E\)明确的情况下, 简记为\(\{\varphi\in F\}\)\\\hline
+\(f(D)\)&当\(f\)是映射, \(D\)是集合时, 表示\(D\)的像集\(\{f(x)\big|x\in D\}\)\\\hline
+\(\cap\)&集合的交. \(A\cap B\)表示同时属于\(A\)和\(B\)的所有元素组成的集合\\\hline
+\(\cup\)&集合的并. \(A\cup B\)表示属于\(A\)或属于\(B\)的所有元素组成的集合\\\hline
+\(\backslash\)&集合的差. \(A\backslash B\)表示属于\(A\)但不属于\(B\)的所有元素组成的集合\\\hline
+\(\mathscr{C}\)&集合的补. \(\mathscr{C}E\)表示在全集\(X\)明确的情况下, \(E\)的补集\(X\backslash E\)\\\hline
+\(E^{\circ}\)&集合\(E\)的内部, 即\(E\)的全体内点\\\hline
+\(E‘\)&集合\(E\)的导集, 即\(E\)的极限点(聚点)的全体\\\hline
+\(\overline{E}\)&集合\(E\)的闭包\\\hline
+\(\partial E\)&集合\(E\)的边界\\\hline
+\(\subset\subset\)&集合的紧包含关系, \(E\subset\subset F\)当且仅当\(\overline{E}\)是\(F\)的紧子集\\\hline
+\(\alpha E+\beta F\)&线性空间中, 集合的伸缩, 代数和与代数差等, 表示集合\(\{\alpha x+\beta y\big|x\in E,y\in F\}\)\\\hline
+\(\sum,\prod\)&连加号, 连乘号\\\hline
+\([x],{x}\)&实数\(x\)的正数部分(即不大于\(x\)的最大整数)与小数部分(即\(x-[x]\))\\\hline
+\(\varlimsup,\varliminf\)&上极限, 下极限\\\hline
+\(\upint,\lowint\)&上积分符号, 下积分符号\phantom{\Large\(\int\)}\\\hline
+\(C_n^k\)&在\(n\)个元素中选取\(k\)个的组合数\\\hline
+\(C^k(\Omega)\)&在\(\Omega\)上有\(k\)阶连续(偏)导数的函数全体\\\hline
+\(C_c^k(\Omega)\)&在\(\Omega\)上有紧支集且有\(k\)阶连续(偏)导数的函数全体\\\hline
+\(C^{k,\alpha}(\Omega)\)&在\(\Omega\)上\(k\)阶(偏)导数满足\(\alpha\)次H\''{o}lder条件的函数全体\\\hline
+\(\mathscr{S} \)&速降函数全体\\\hline
+\(\hat{f}\check{f}\)&函数\(f\)的Fourier变换, Fourier逆变换\\\hline
+\(f*g\)&函数\(f\)与\(g\)的卷积\\\hline
+\end{longtable}
+
+
+
+
+
