@@ -114,29 +114,24 @@
 				\vspace*{\fill}
 				\begin{center}
 					\normalfont
-					{\Huge\bfseries 数学分析}
+					{\Huge\bfseries \href{https://github.com/Acwuld/LouAnalysis}{数学分析}}
 					\\
 					\bigskip
 					{\Large \kaishu 答案}
 					\\
 					\bigskip
 					\bigskip
-					{\Large\itshape Lorente }
+					{\Large\itshape 马乐 }
 					\\
 					\vspace{1.3cm}
 				\end{center}
 				
-					\begin{center}
-						\begin{tcolorbox}[text width=6cm,colback=red!5!white,colframe=red!75!black]
+					
+						
 						\begin{center}
-							\LARGE\fangsong 娱乐版
+							\large 更新中, 项目已开源至\href{https://github.com/Acwuld/LouAnalysis}{Github}. 点击标题即可获取\LaTeX 源码
 						\end{center}
 						
-						\end{tcolorbox}
-						
-					\end{center}
-			
-				
 				\vspace{1cm}
 \usetikzlibrary {datavisualization.formats.functions}
 \begin{figure}[h]
