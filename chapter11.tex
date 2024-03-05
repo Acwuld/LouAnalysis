@@ -269,9 +269,42 @@ x^2+y^2+z^2=1,\\x+y+z=0.
 \section{调和函数与解析函数}
 \precis{调和函数,平均值公式,最值原理,Poisson公式,复可导与复解析的等价性,Cauchy定理,最大模原理,Liouville定理,共轭函数,利用解析函数计算}
 \begin{quiza}
-\woe 利用解析函数的性质证明: \(\int_{0}^{+\infty}\frac{\ee^{-x}-\cos x}{x}\dd x\).
+\woe 利用解析函数的性质证明: \(\int_{0}^{+\infty}\frac{\ee^{-x}-\cos x}{x}\dd x=0\).
 \begin{proof}
+考虑积分\(\int_{\Gamma_R}\frac{\ee^{-z}-\ee^{\ii z}}{z}\dd z\), 其中\(\Gamma_R\)是如下图所示的路径:
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+\draw[-latex,thick] (-1,0)--(6,0);
+\draw[-latex,thick] (0,-1)--(0,6);
+\draw[thick,color=red] (0.8,0) arc (0:45:0.8);
+\draw[thick,->,color=red] (0,0.8) arc (90:45:0.8);
+\draw[thick,->,color=red] (5,0) arc (0:45:5);
+\draw[thick,color=red] (0,5) arc (90:45:5);
+\draw[->,thick,color=red] (0.8,0)--(2.5,0);
+\draw[thick,color=red] (2,0)--(5,0);
+\draw[thick,color=red] (0,0.8)--(0,2.5);
+\draw[<-,thick,color=red] (0,2.5)--(0,5);
 
+\node at (-0.3,-0.3) {$O$};
+\node at (6,-0.3) {$x$};
+\node at (-0.3,6) {$y$};
+\node at (3.5,4) {$R$};
+\node at (0.8,0.7) {$r$};
+\node at (0.8,-0.3) {$A$};
+\node at (5,-0.3) {$B$};
+\node at (-0.3,5) {$C$};
+\node at (-0.3,0.8) {$D$};
+\node at (4.5,5) {$\Gamma_R$};
+\end{tikzpicture}
+\caption{}
+\end{figure}
+由于\(f(z)=\frac{\ee^{-z}-\ee^{\ii z}}{z}\)在\(\Gamma_R\)所围区域内解析, 从而\[\int_{\Gamma_R}\frac{\ee^{-z}-\ee^{\ii z}}{z}\dd z=0.\]又\[\int_{\Gamma_R}f(z)\dd z=\int_{AB}f(z)\dd z+\int_{\overset{\LARGE{\frown}}{BC}}f(z)\dd z+\int_{CD}f(z)\dd z\dd z+\int_{\overset{\LARGE{\frown}}{DA}}f(z)\dd z,\]
+注意到\[\begin{split}
+\int_{AB}f(z)\dd z+\int_{CD}f(z)\dd z &=\int_{r}^{R}\frac{\ee^{-x}-\ee^{\ii x}}{x}\dd x+\int_{R}^{r}\frac{\ee^{-\ii y}-\ee^{-y}}{y}\dd y\\&=2\int_{r}^{R}\frac{\ee^{-x}-\cos x}{x}\dd x,
+\end{split}\]
+
+下面我们说明\(\int_{\overset{\LARGE{\frown}}{BC}}f(z)\dd z=\int_{\overset{\LARGE{\frown}}{DA}}f(z)\dd z=0\),
 \end{proof}
 \woe 设\(1\leqslant p<+\infty\), \(\varphi\)为\(\mathbb{R}^n\)上的调和函数, \(\varphi\in L^p(\mathbb{R}^n)\). 证明\(\varphi\equiv 0\).
 \begin{proof}
