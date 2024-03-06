@@ -11,6 +11,31 @@
 \everymath{\displaystyle}
 \RequirePackage{framed}
 
+\RequirePackage{extarrows,pgfplots,longtable,multicol,graphicx,amssymb}
+%\hypersetup{bookmarks=true,bookmarksopen=false}
+
+
+
+\ctexset {chapter = {pagestyle = fancy}}
+\setlength{\headheight}{15pt}
+\newenvironment{solution}{\begin{proof}[\bf 解]\renewcommand{\qedsymbol}{$\blacksquare$}}{\end{proof}}
+\linespread{1.6}
+\usetikzlibrary{decorations.markings}
+
+\RequirePackage{bookmark}
+\bookmarksetup{
+open,
+numbered,
+addtohook={%
+\ifnum\bookmarkget{level}=0 % chapter
+\bookmarksetup{bold}%
+\fi
+\ifnum\bookmarkget{level}=-1 % part
+\bookmarksetup{color=ocre,bold}%
+\fi
+}
+}
+
 
 \setCJKmainfont{LXGW WenKai}[ItalicFont=KaiTi,BoldFont=方正黑体简体]
 %AaWWF
