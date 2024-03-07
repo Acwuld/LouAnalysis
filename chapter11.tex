@@ -304,9 +304,7 @@ x^2+y^2+z^2=1,\\x+y+z=0.
 &\int_{AB}f(z)\dd z+\int_{CD}f(z)\dd z =\int_{r}^{R}\frac{\ee^{\ii x}}{x}\dd x+\int_{R}^{r}\frac{\ee^{-y}}{y}\dd y\\=&\int_{r}^{R}\frac{-\ee^{-x}+\ee^{\ii x}}{x}\dd x=-\int_{r}^{R}\frac{\ee^{-x}-\cos x}{x}\dd x+\ii\int_{r}^{R}\frac{\sin x}{x}\dd x,
 \end{split}\]
 
-下面我们说明\(\int_{\Gamma_r}f(z)\dd z=-\frac{\pi\ii }{2}\), 由于\(\lim_{r\rightarrow 0}zf(z)=1\), 则\(r\)充分小时, 有\[\left|z f(z)-1\right|<\frac{2}{\pi}\varepsilon,\]又\[\left|\int_{\Gamma_r}f(z)\dd z-\ii\frac{\pi}{2}\right|=\left|\int_{\Gamma_r}\frac{zf(z)-1}{z}\dd z\right|<\varepsilon,\]从而结论得证. 又由Jordan引理可知\[\lim_{R\rightarrow+\infty}\frac{\ee^{\ii z}}{z}\dd z=0,\]结合上述结论可知\(\int_{0}^{+\infty}\frac{\ee^{-x}-\cos x}{x}\dd x=0\).
-
-%\(g(z)=\frac{\ee^{-z-\ii z}-1}{z}\), 下面我们证明\[\lim_{R\rightarrow+\infty}\int_{\Gamma_R}g(z)\ee^{\ii z}\dd z =\lim_{R\rightarrow+\infty}\int_{\Gamma_R}f(z)\dd z=0.\]由于\(\lim_{R\rightarrow+\infty}g(z)=0\)
+下面我们说明\(\int_{\Gamma_r}f(z)\dd z=-\frac{\pi\ii }{2}\), 由于\(\lim_{r\rightarrow 0}zf(z)=1\), 则\(r\)充分小时, 有\[\left|z f(z)-1\right|<\frac{2}{\pi}\varepsilon,\]又\[\left|\int_{\Gamma_r}f(z)\dd z-\ii\frac{\pi}{2}\right|=\left|\int_{\Gamma_r}\frac{zf(z)-1}{z}\dd z\right|<\varepsilon,\]从而结论得证. 又由Jordan引理可知\[\lim_{R\rightarrow+\infty}\int_{\Gamma_R}\frac{\ee^{\ii z}}{z}\dd z=0,\]结合上述结论可知\(\int_{0}^{+\infty}\frac{\ee^{-x}-\cos x}{x}\dd x=0\).
 \end{proof}
 \woe 设\(1\leqslant p<+\infty\), \(\varphi\)为\(\mathbb{R}^n\)上的调和函数, \(\varphi\in L^p(\mathbb{R}^n)\). 证明\(\varphi\equiv 0\).
 \begin{proof}
