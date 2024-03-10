@@ -79,9 +79,11 @@
 \begin{proof}
 由于\[x^k-x_1^k=(x-x_1)\left(x^{k-1}+x_1x^{k-2}+\cdots+x_1^{k-2}x+x_1^{k-1}\right).\]则对\(P(x)\)中的每项应用上述事实便得到了结论.
 \end{proof}
-\woe 设\(a_0,a_1,\cdots,a_n\)为复常数, \(a_n\ne 0\).证明：多项式\[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\]至多有\(n\)个复零点(含重数).
+\woe 设\(a_0,a_1,\cdots,a_n\)为复常数, \(a_n\ne 0\).证明：多项式\[p(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots+a_1z+a_0\]至多有\(n\)个复零点(含重数).
 \begin{proof}
-这正是代数基本定理, 这个定理的第一个严格证明是1799年由Gauss证明的, 后来他又给出了4个证明, Jordan, Weyl等人也给过这个定理的证明. 它的一般表述是: 次数大于零的复数域上的多项式至少有一复数根.
+这正是代数基本定理, 这个定理的第一个严格证明是1799年由Gauss证明的, 后来他又给出了4个证明, Jordan, Weyl等人也给过这个定理的证明. 它的一般表述是: 次数大于零的复数域上的多项式至少有一复数根. 简单起见, 我们使用复变函数中的Liouville定理进行证明, Liouville定理是说: 有界整函数必是常数.
+
+由于\(p(z)\)在\(z\)平面上解析, 若\(p(z)\)在\(z\)平面无零点, 则\(\frac{1}{p(z)}\)在\(z\)平面上也解析, 下面证明后者有界, 从而由Liouville定理推出矛盾. 事实上, 由于\[\lim_{z\rightarrow\infty}p(z)=\lim_{z\rightarrow\infty}z^n\left(a_n+\frac{a_{n-1}}{z}+\cdots+\frac{a_0}{z^n}\right)=\infty,\quad\lim_{z\rightarrow\infty}\frac{1}{p(z)}=0,\]故存在充分大的正数\(R\)使得\(|z|>R\)时, \(\left|\frac{1}{p(z)}\right|<1\). 因\(\frac{1}{p(z)}\)在闭圆\(|z|\leqslant R\)上连续, 故而有界, 从而\(\frac{1}{p(z)}\)在\(z\)平面上有界, 由Liouville定理知\(\frac{1}{p(z)}\)为常数, 这不可能.
 \end{proof}
 \woe 证明 Vi\`{e}te (韦达) 定理：设\(a_n\ne 0,x_1,x_2,\cdots,x_n\)为\[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\]的\(n\)个复零点(含重根), 则对于\(1\leqslant k\leqslant n\), 成立 \[\sum_{1\leqslant m_1<m_2<\cdots<m_k\leqslant n}\,\prod_{j=1}^{k}x_{m_j}=(-1)^k \frac{a_{n-k}}{a_n}.\]
 \begin{proof}
@@ -123,6 +125,13 @@ x_0-1<\frac{q}{p}<x_0+1,\text{并且}\,\frac{q}{p}\notin\{x_1,x_2,\cdots,x_m\},\
 \end{gather*}根据Lagrange中值定理, 存在\(\xi\)位于\(\frac{q}{p}\)与\(x_0\)之间, 使得\(\frac{f}{x_0}-f\left(\frac{q}{p}\right)=f'(\xi)\left(x_0-\frac{q}{p}\right)\), 又根据\(M,K\)的定义, 得到\[\left|x_0-\frac{q}{p}\right|=\frac{|f(x_0)-f(q/p)|}{|f'(\xi)|}\geqslant\frac{1}{MP^n}>\frac{K}{p^n}\geqslant\left|x_0-\frac{q}{p}\right| ,\]矛盾, 从而结论得证.
 \end{proof}
 \woe 证明一个复数是代数数当且仅当它的实部和虚部都是代数数.
+\begin{proof}
+设\(x=a+b\ii\), 下证\(x\)是代数数当且仅当\(a\)和\(b\)都是代数数.
+
+必要性.  
+
+充分性.
+\end{proof}
 \end{quizb}
 \section{第一次数学危机}
 \precis{第一次数学危机,可公度量,比例论}
