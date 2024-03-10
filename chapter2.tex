@@ -197,7 +197,7 @@ z_n:=t_{n1}(x_1-a)+t_{n2}(x_2-a)+\cdots+t_{nn}(x_n-a)=y_n-aT_n,\]由前面的结
 \begin{theorem}{}{C23}
     设\(\{\boldsymbol{A}_k\}\)是\(\mathbb{S}^n\)中的Loewner偏序下的单调有界列, 则\(\{\boldsymbol{A}_k\}\)收敛.
     \tcbline*
-    记\(\mathbb{S}^n\)为\(n\)阶实对称矩阵全体, 在其中引入\textbf{Loewner(勒夫纳)偏序}: 对于\(\boldsymbol{A,B}\in\mathbb{S}^n\), 定义\(\boldsymbol{A}\leqslant\boldsymbol{B}\)为: \(\boldsymbol{B-A}\)为半正定矩阵, 即对任何\(\boldsymbol{x}\in \mathbb{R}\), 成立\[\boldsymbol{x}^T\boldsymbol{Ax}\leqslant\boldsymbol{x}^T\boldsymbol{Bx}.\]
+    记\(\mathbb{S}^n\)为\(n\)阶实对称矩阵全体, 在其中引入\textbf{Loewner(勒夫纳)偏序}: 对于\(\boldsymbol{A,B}\in\mathbb{S}^n\), 定义\(\boldsymbol{A}\leqslant\boldsymbol{B}\)为: \(\boldsymbol{B-A}\)为半正定矩阵, 即对任何\(\boldsymbol{x}\in \mathbb{R}\), 成立\[\boldsymbol{x}^\top\boldsymbol{Ax}\leqslant\boldsymbol{x}^\top\boldsymbol{Bx}.\]
 \end{theorem}
 \begin{quiza}
 \woe 设\(x_0\in(0,2),\,x_{n+1}=x_n(2-x_n)(n\geqslant 0)\). 证明: \(\lim_{n\rightarrow\infty}x_n=1\).\\ 由此, 对于\(c>0\), 任取\(y_0>0\)满足\(cy_0<1\), 令\(y_{n+1}=y_{n}(2-cy_n)(n\geqslant 0)\), 则\(\lim_{n\rightarrow\infty}y_n=\frac{1}{c}\).\\这一事实让我们有可能利用乘法来计算倒数的近似值.
@@ -285,7 +285,7 @@ X_1=\frac{c}{2}+\frac{X_2^2}{2},\quad X_2=\frac{c}{2}+\frac{X_1^2}{2},
 \end{proof}
 \woe 证明: \(\mathbb{R}\)中既开又闭的集只有空集和\(\mathbb{R}\).
 \begin{proof}
-	
+参考下一题.	
 \end{proof}
 \woe 证明: \(\mathbb{R}^n\)中既开又闭的集只有空集和\(\mathbb{R}^n\).
 \begin{proof}
@@ -349,6 +349,9 @@ f(x)&\leqslant\sqrt{(x+1)\sqrt{(x+2)\sqrt{(x+3)\sqrt{(x+4)\cdots}}}}\\
 结合第\(\boldsymbol{5}\)题的证明可以得到如下结果:\[\sqrt{1+a\sqrt{1+(a+1)\sqrt{1+(a+2)\sqrt{1+\cdots}}}}=a+1,\qquad a\geqslant 1.\qedhere\]
 \end{solution}
 \woe 证明命题\reff{Th:C23}: 设\(\{\boldsymbol{A}_k\}\)是\(\mathbb{S}^n\)中Loewner偏序意义下的单调有界列, 则\(\{\boldsymbol{A}_k\}\)收敛.
+\begin{proof}
+
+\end{proof}
 \woe 在Loewner偏序意义下, 设\(E\)是\(\mathbb{S}^n\)中的非空上有界集, 证明或否定: \(E\)一定有最小上界.
 \woe 设\(x_0>0,\,x_{n+1}=\sqrt{2+x_n}(n\geqslant 0)\). 问: \(\lim_{n\rightarrow+\infty}4^n(2-x_n)\)是否存在? 该极限存在时, 能否得到极限的值?
 \begin{solution}

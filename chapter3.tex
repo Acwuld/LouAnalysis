@@ -107,9 +107,10 @@
 \end{proof}
 \woe 设\(\lim_{x\rightarrow 0}f(x)=0,\lim_{x\rightarrow 0}\frac{f(2x)-f(x)}{x}=0\). 证明\(\lim_{x\rightarrow 0}\frac{f(x)}{x}=0.\)
 \begin{proof}
-依题设, 对于任给的\(\varepsilon>0\), 存在\(\delta>0\), 使得当\(0<|x|<\delta\)时,\[\left|\frac{f(x)-f(\frac{x}{2})}{x}\right|<\varepsilon.\]于是(用\(x/2^{k-1}\)代\(x\))\[\left|\frac{f\left(\dfrac{x}{2^{k-1}}\right)-f\left(\dfrac{x}{2^k}\right)}{\frac{x}{2^{k-1}}}\right|<\varepsilon\qquad (k=1,\cdots,n+1).\]
+依题设, 对于任给的\(\varepsilon>0\), 存在\(\delta>0\), 使得当\(0<|x|<\delta\)时,\[\left|\frac{f(x)-f(x/2)}{x}\right|<\varepsilon.\]于是(用\(x/2^{k-1}\)代\(x\))\[\left|\frac{f\left(x/2^{k-1}\right)-f\left(x/2^k\right)}{x/2^{k-1}}\right|<\varepsilon\qquad (k=1,\cdots,n+1).\]
 
-因为\[f(x)-f\left(\frac{x}{2^{n+1}}\right)=\sum_{k=1}^{n+1}\left(f\left(\frac{x}{2^{k-1}}\right)-f\left(\frac{x}{2^k}\right)\right).\]所以\[\left|\frac{f(x)-f\left(\frac{x}{2^{n+1}}\right)}{x}\right|\leqslant\sum_{k=1}^{n+1}\left|\frac{f\left(\frac{x}{2^{k-1}}\right)-f\left(\frac{x}{2^k}\right)}{x}\right|=\sum_{k=1}^{n+1}\frac{1}{2^k}\left|\frac{f\left(\frac{x}{2^{k-1}}\right)-f\left(\frac{x}{2^k}\right)}{\frac{x}{2^k}}\right|.\]应用最初结果, 得到\[\left|\frac{f(x)-f\left(\frac{x}{2^{n+1}}\right)}{x}\right|<\sum_{k=1}^{n+1}\frac{1}{2^k}\cdot 2\varepsilon<2\varepsilon.\]在此式中令\(n\rightarrow 0\), 注意\(\lim_{x\rightarrow 0}f(x)=0\), 即得\[\left|\frac{f(x)}{x}\right|\leqslant 2\varepsilon.\]于是\(\lim_{x\rightarrow 0}\frac{f(x)}{x}=0.\)
+因为\[f(x)-f\left(\frac{x}{2^{n+1}}\right)=\sum_{k=1}^{n+1}\left(f\left(\frac{x}{2^{k-1}}\right)-f\left(\frac{x}{2^k}\right)\right).\]
+所以\[\left|\frac{f(x)-f\left(x/2^{n+1}\right)}{x}\right|\leqslant\sum_{k=1}^{n+1}\left|\frac{f\left(x/2^{k-1}\right)-f\left(x/2^k\right)}{x}\right|=\sum_{k=1}^{n+1}\frac{1}{2^k}\left|\frac{f\left(x/2^{k-1}\right)-f\left(x/2^k\right)}{x/2^k}\right|.\]应用最初结果, 得到\[\left|\frac{f(x)-f\left(x/2^{n+1}\right)}{x}\right|<\sum_{k=1}^{n+1}\frac{1}{2^k}\cdot 2\varepsilon=\left(1-\frac{1}{2^{n+1}}\right)\cdot2\varepsilon<2\varepsilon.\]在此式中令\(n\rightarrow +\infty\), 注意\(\lim_{x\rightarrow 0}f(x)=0\), 即得\[\left|\frac{f(x)}{x}\right|\leqslant 2\varepsilon.\]于是\(\lim_{x\rightarrow 0}\frac{f(x)}{x}=0.\)
 \end{proof}
 \woe  设实数列\(\{x_n\}\)满足\[x_n^3+\left(n^{1/n}+2+\frac{1}{n}\right)x_n^2+\left(\frac{1}{n}+2n^{1/n}+n^{(1-n)/n}+1\right)x_n+n^{1/n}+n^{(1-n)/n}+\frac{1}{n^2}=0.\]证明: \(\{x_n\}\)极限存在, 并求其极限.
 \begin{proof}
@@ -226,7 +227,7 @@
 \end{tabular}
 \end{table}
 \begin{solution}
-	\textbf{情形 1. }
+	\textbf{情形 1. }此时\(\prod_{n=1}^{\infty}(1+a_n)\)收敛.
 	
 	\textbf{情形 2. }
 	
