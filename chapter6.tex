@@ -75,7 +75,7 @@ F(x)=&f(x)-\left(\frac{f(1)-f(-1)-2f'(0)}{2}\right)x^3+\left(f(0)-\frac{f(-1)+f(
 \section{L'H\^{o}pital法则}
 \precis{L'H\^{o}pital法则及其推广,极限计算的化简---“去核”和"去皮"}
 \begin{quiza}
-\woe 设\(x_0\in(0,\pi),x_{n+1}=\sin x_n(x\geqslant 0).\) 计算\(\lim_{n\rightarrow+\infty}\sqrt{n}\sin x_n\).
+\woe 设\(x_0\in(0,\pi),x_{n+1}=\sin x_n(n\geqslant 0).\) 计算\(\lim_{n\rightarrow+\infty}\sqrt{n}\sin x_n\).
 \begin{solution}
 易见\(\{x_n\}\)大于零单调递减有下界, 取极限得\(\lim_{n\rightarrow\infty}x_n=0\), 而\[\begin{split}
 \lim_{n\rightarrow\infty}\frac{1}{n\sin^2 x_n}&\xlongequal{\text{Stolz}}\lim_{n\rightarrow\infty}\frac{\sin^2x_n-\sin^2x_{n+1}}{\sin^2x_n\sin^2x_{n+1}}=\lim_{n\rightarrow\infty}\frac{x_{n+1}^2-\sin^2x_{n+1}}{x_{n+1}^2\sin^2x_{n+1}}\\&=\lim_{x\rightarrow 0}\frac{(x-\sin x)(x+\sin x)}{x^2\sin^2x}=\lim_{x\rightarrow 0}\frac{1/6\cdot x^3\cdot 2x}{x^4}=\frac{1}{3}.
