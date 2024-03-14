@@ -221,7 +221,8 @@ z_n:=t_{n1}(x_1-a)+t_{n2}(x_2-a)+\cdots+t_{nn}(x_n-a)=y_n-aT_n,\]由前面的结
 \end{proof}
 \woe 设\(a_0,b_0>0\), \( a_{n+1}=\frac{a_n+b_n}{2},\,b_{n+1}=\frac{2a_nb_n}{a_n+b_n}\). 证明: \(\{a_n\}\)和\(\{b_n\}\)均收敛且极限相同.
 \begin{proof}
-对\(a, b>0\), 由算数几何平均不等式有\(\frac{a+b}{2}\geqslant\sqrt{ab}\), 于是有\[\sqrt{ab}-\frac{2ab}{a+b}=\frac{\sqrt{ab}\left(a+b-2\sqrt{ab}\right)}{a+b}\geqslant 0.\]从而有\(\frac{a_n+b_n}{2}\geqslant \sqrt{a_nb_n}\geqslant\frac{2a_nb_n}{a_n+b_n}\), 即\(a_{n+1}\geqslant b_{n+1}(n=0,1,\cdots)\), 易见\(\{a_{n+1}\}\)单调递减, \(\{b_{n+1}\}\)单调递增, 有\([b_{n+1},a_{n+1}]\subset [b_{n},a_{n}]\) 又\[a_{n+1}-b_{n+1}=\frac{a_n-b_n}{2(a_n+b_n)}\cdot(a_n-b_n)<\frac{1}{2}(a_n-b_n)<\cdots<\frac{1}{2^{n-1}}(a_1-b_1)\rightarrow 0,\quad n\rightarrow\infty,\]依Cauchy-Cantor闭区间套定理原命题得证.
+对\(a, b>0\), 由算数几何平均不等式有\(\frac{a+b}{2}\geqslant\sqrt{ab}\), 于是有\[\sqrt{ab}-\frac{2ab}{a+b}=\frac{\sqrt{ab}\left(a+b-2\sqrt{ab}\right)}{a+b}\geqslant 0.\]从而有\(\frac{a_n+b_n}{2}\geqslant \sqrt{a_nb_n}\geqslant\frac{2a_nb_n}{a_n+b_n}\), 即\(a_{n+1}\geqslant b_{n+1}(n=0,1,\cdots)\), 由于\[a_{n+1}=\frac{a_n+b_n}{2}\Rightarrow\frac{a_{n+1}}{a_n}=\frac{1+b_n/a_n}{2}\leqslant 1,\]
+从而\(\{a_{n+1}\}\)单调递减, 同理可证\(\{b_{n+1}\}\)单调递增, 有\([b_{n+1},a_{n+1}]\subset [b_{n},a_{n}]\) 又\[a_{n+1}-b_{n+1}=\frac{a_n-b_n}{2(a_n+b_n)}\cdot(a_n-b_n)<\frac{1}{2}(a_n-b_n)<\cdots<\frac{1}{2^{n-1}}(a_1-b_1)\rightarrow 0,\quad n\rightarrow\infty,\]依Cauchy-Cantor闭区间套定理原命题得证.
 \end{proof}
 \woe 对于\(n\geqslant 1\), 考虑\[a_n=1+\frac{1}{2}+\cdots+\frac{1}{n}-\ln n,\quad b_n=1+\frac{1}{2}+\cdots+\frac{1}{n}-\ln(n+1).\]
 证明: \(\{a_n\}\)和\(\{b_n\}\)均收敛, 且收敛到同一极限, 该极限称为\textbf{Euler(欧拉)}常数.
@@ -265,7 +266,15 @@ X_1=\frac{c}{2}+\frac{X_2^2}{2},\quad X_2=\frac{c}{2}+\frac{X_1^2}{2},
       \item 若\(E,F\)为非空闭集, 且\(E\)有界, 证明存在\(\boldsymbol{x}_0\in E,\boldsymbol{y}_0\in F\)使得\(|\boldsymbol{x}_0-\boldsymbol{y}_0|=d(E,F)\).
       \item 举例说明存在不相交的非空闭集\(E,F\in \mathbb{R}^n\)使得\(d(E,F)=0\).
 \end{quizs}
+\begin{proof}
+(1)
+
+(2)取\(E=\{(x,0)\big| x\in\bbr\},F=\{(x,\ee^x)\big|x\in\bbr\}\), 则\(E,F\)都是闭集且\(d(E,F)=0\).
+\end{proof}
 \woe 设\(\mathbb{R}^n\)中有界非空闭集\(\{E_k\}\)满足\(E_{k+1}\subseteq E_{k}(k\geqslant 1)\). 证明: \(\bigcap_{n=1}^\infty E_n\)为非空闭集.
+\begin{proof}
+
+\end{proof}
 \woestar 梳理/证明以下结果, 并尝试对这些结论有一个直观的理解:
 \begin{quizcs}
 \item 收敛数列的子列收敛到同一极限.
@@ -273,11 +282,21 @@ X_1=\frac{c}{2}+\frac{X_2^2}{2},\quad X_2=\frac{c}{2}+\frac{X_1^2}{2},
 \item 如果有界数列的收敛子列均收敛到同一个极限, 则该数列收敛.
 \item 有界数列\(\{a_n\}\)不收敛到\(A\)当且仅当存在一个收敛到\(B\ne A\)的子列.
 \item \(\bar{x}\)为\(E\)的聚点当且仅当存在\(E\)中两两不同的点列\(x_n\)使得\(x_n\rightarrow \bar{x}\).
-\item \(\bar{x}\)为\(E\)的聚点当且仅当存在\(x_n\in E \{\bar{x}\}\)使得\(x_n\rightarrow \bar{x}\)
+\item \(\bar{x}\)为\(E\)的聚点当且仅当存在\(x_n\in E\backslash\{\bar{x}\}\)使得\(x_n\rightarrow \bar{x}\)
 \end{quizcs}
-\begin{solution}
+\begin{proof}
+	(1)设\(\{a_n\}\)收敛到\(a\), 则\(\forall\varepsilon>0\), 有\(N_1\)使得\(n>N_1\)时\(|a_n-a|<\varepsilon\),	若其有子列\(\{a_{n_k}\}\)收敛到\(b\ne a\), 则同理存在\(N_2\)使得\(n_k>N_2\)时\(|a_{n_k}-b|<\varepsilon\), 我们不妨取\(\varepsilon<\frac{|b-a|}{2}\), 则\(n>N_1+N_2\)时有\[|b-a|-\varepsilon\leqslant|a-b|-|a_n-a|\leqslant|a_n-a+a-b|<|a_n-b|<\varepsilon,\]矛盾. 直观的理解是收敛数列的子列收敛到同一极限, 否则将导致原数列发散.
 	
-\end{solution}
+	(2)
+	
+	(3)
+	
+	(4)
+	
+	(5)
+	
+	(6)
+\end{proof}
 \woe 设\(E\subseteq \mathbb{R}\). 证明存在至多可列集\(F\subseteq E\)使得\(E\)在\(E\)中稠密.
 \woe 证明: 闭区间\([a,b]\)不能表示为两个不相交的非空闭集的并.
 \begin{proof}
