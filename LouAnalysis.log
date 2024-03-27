@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.6)  27 MAR 2024 14:28
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.6)  27 MAR 2024 14:35
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**LouAnalysis.tex
+(./LouAnalysis.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2024-01-04>
 (./mbook.cls
@@ -1324,7 +1324,7 @@ ge=dflt;"
 \c@tcb@cnt@proposition=\count397
 \c@tcb@cnt@lemma=\count398
 \c@woes=\count399
-) (./main.aux (./Chapters/chapter0.aux) (./Chapters/chapter1.aux)
+) (./LouAnalysis.aux (./Chapters/chapter0.aux) (./Chapters/chapter1.aux)
 (./Chapters/chapter2.aux) (./Chapters/chapter3.aux) (./Chapters/chapter4.aux)
 (./Chapters/chapter5.aux) (./Chapters/chapter6.aux
 
@@ -1333,7 +1333,7 @@ LaTeX Warning: Label `Th:C64' multiply defined.
 ) (./Chapters/chapter7.aux) (./Chapters/chapter8.aux) (./Chapters/chapter9.aux)
 (./Chapters/chapter10.aux) (./Chapters/chapter11.aux) (./Chapters/chapter12.aux
 ))
-\openout1 = `main.aux'.
+\openout1 = `LouAnalysis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -1599,7 +1599,7 @@ File: tikzlibraryspy.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ]
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 18.
- (./main.toc [2
+ (./LouAnalysis.toc [2
 
 ]
 Overfull \hbox (6.40593pt too wide) in paragraph at lines 32--32
@@ -1646,7 +1646,7 @@ ar.ttf(0)/m/n/9.03374 绝 对 收 敛 与 条 件 收 敛\TU/lmr/m/n/9.03374 ,Ab
 
 [5] [6])
 \tf@toc=\write4
-\openout4 = `main.toc'.
+\openout4 = `LouAnalysis.toc'.
 
  [7]
 \c@mistake=\count406
@@ -1997,12 +1997,12 @@ Overfull \hbox (0.64066pt too wide) in paragraph at lines 169--170
 /lmr/m/n/10.53937 (12.2.48)-
  []
 
-[223] [224] [225] [226] [227]) [228] (./main.aux (./Chapters/chapter0.aux)
-(./Chapters/chapter1.aux) (./Chapters/chapter2.aux) (./Chapters/chapter3.aux)
-(./Chapters/chapter4.aux) (./Chapters/chapter5.aux) (./Chapters/chapter6.aux)
-(./Chapters/chapter7.aux) (./Chapters/chapter8.aux) (./Chapters/chapter9.aux)
-(./Chapters/chapter10.aux) (./Chapters/chapter11.aux) (./Chapters/chapter12.aux
-))
+[223] [224] [225] [226] [227]) [228] (./LouAnalysis.aux
+(./Chapters/chapter0.aux) (./Chapters/chapter1.aux) (./Chapters/chapter2.aux)
+(./Chapters/chapter3.aux) (./Chapters/chapter4.aux) (./Chapters/chapter5.aux)
+(./Chapters/chapter6.aux) (./Chapters/chapter7.aux) (./Chapters/chapter8.aux)
+(./Chapters/chapter9.aux) (./Chapters/chapter10.aux) (./Chapters/chapter11.aux)
+(./Chapters/chapter12.aux))
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2022/08/05>
@@ -2017,11 +2017,11 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  52183 strings out of 474822
- 1289747 string characters out of 5763070
+ 1289866 string characters out of 5763070
  2023177 words of memory out of 5000000
  73342 multiletter control sequences out of 15000+600000
  582023 words of font info for 182 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 116i,26n,121p,1459b,3130s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,26n,121p,1466b,3130s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (237 pages).
+Output written on LouAnalysis.pdf (237 pages).
