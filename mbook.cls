@@ -37,8 +37,8 @@ addtohook={%
 }
 
 
-\setCJKmainfont{LXGW WenKai}[ItalicFont=KaiTi,BoldFont=方正黑体简体]
-%AaWWF
+\setCJKmainfont[Path=Fonts/]{LXGWWenKai-Regular.ttf}
+
 \geometry{a4paper,left=2.2cm,right=2.2cm,top=2cm,bottom=2cm}
 \pagecolor{yellow!10!white}
 \newtcbtheorem[number within=section]{theorem}{Theorem}%

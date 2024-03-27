@@ -1,0 +1,377 @@
+\chapter{函数极限与连续}
+\section{函数极限}
+\precis{函数极限,单侧极限,函数极限的基本性质,Heine定理,基本定理的对应结果,重要数列极限对应的结果,关于\(\lim_{x\rightarrow 0}\frac{\sin x}{x}\)}
+\begin{proposition}{}{C31}
+    设实函数\(f,g\)在\((a,+\infty)\)内局部有界, 且\begin{compactenum}[(i)]
+        \item 对于任何\(x>a\), \(g(x+1)>g(x)\);
+        \item \(\lim_{x\rightarrow+\infty}g(x)=+\infty\),
+    \end{compactenum}则\[\varliminf_{x\rightarrow+\infty}\frac{f(x+1)-f(x)}{g(x+1)-g(x)}\leqslant\varliminf_{x\rightarrow+\infty}\frac{f(x)}{g(x)}\leqslant\varlimsup_{x\rightarrow+\infty}\frac{f(x)}{g(x)}\leqslant\varlimsup_{x\rightarrow+\infty}\frac{f(x+1)-f(x)}{g(x+1)-g(x)}\]
+\end{proposition}
+\begin{theorem}{Heine定理}{C33}
+设\(E\subseteq\mathbb{R}^n\), \(\boldsymbol{f}:E\rightarrow\mathbb{R}^m\)为\(E\)上的映射, \(\boldsymbol{x}_0\in E'\), 则 \(\lim_{\substack{\boldsymbol{x}\rightarrow\boldsymbol{x}_0\\\boldsymbol{x}\in E}}\boldsymbol{f}(\boldsymbol{x})=\boldsymbol{A}\)当且仅当对\(E\setminus\{\boldsymbol{x}_0\}\)中任何趋于\(\boldsymbol{x}_0\)的点列\(\{\boldsymbol{x}_k\}\), 成立\(\lim_{k\rightarrow+\infty}\boldsymbol{f}(\boldsymbol{x}_k)=\boldsymbol{A}\).
+\end{theorem}
+\begin{quiza}
+\woestar 设\(E\subseteq\mathbb{R}^n\), \(\boldsymbol{f}:E\rightarrow\mathbb{R}^m,\,\boldsymbol{x}_0\in E'\), 证明: \(\lim_{\substack{\boldsymbol{x}\rightarrow\boldsymbol{x}_0\\\boldsymbol{x}\in E}}\boldsymbol{f}(\boldsymbol{x})\)存在当且仅当对\(E\setminus\{\boldsymbol{x}_0\}\)中任何趋于\(\boldsymbol{x}_0\)的点列\(\{\boldsymbol{x}_k\}\), 极限\(\lim_{k\rightarrow+\infty}\boldsymbol{f}(\boldsymbol{x}_k)\)存在.
+\begin{proof}
+由Heine定理可知必要性成立, 下证充分性. 易见只需证明若对于\(E\setminus\{\boldsymbol{x}_0\}\)中任何趋于\(\boldsymbol{x}_0\)的点列\(\{\boldsymbol{x}_k\}\), 极限\(\lim_{k\rightarrow+\infty}\boldsymbol{f}(\boldsymbol{x}_k)\)存在且相等即可. 假设序列\(\{\boldsymbol{a}_n\}\)与\(\{\boldsymbol{b}_n\}\)均趋于\(\boldsymbol{x}_0\), 但\[\lim_{n\rightarrow+\infty}\boldsymbol{f}(\boldsymbol{a}_n)\ne \lim_{n\rightarrow+\infty}\boldsymbol{f}(\boldsymbol{b}_n),\]构造序列\(\boldsymbol{c}_n:=\{\boldsymbol{a}_1,\boldsymbol{b}_1,\boldsymbol{a}_2,\cdots,\boldsymbol{a}_{(n+1)/2},\boldsymbol{b}_{n/2},\cdots\}\), 易见\(\lim_{k\rightarrow+\infty}\boldsymbol{f}(\boldsymbol{c}_k)\)不存在, 矛盾. 这说明对于任何趋于\(\boldsymbol{x}_0\)的点列\(\{\boldsymbol{x}_n\}\), 若极限\(\lim_{k\rightarrow+\infty}\boldsymbol{f}(\boldsymbol{x}_k)\)存在, 则必相等, 依Heine定理可知充分性成立.
+\end{proof}
+\woe 证明\(\lim_{n\rightarrow\infty}n\sum_{k=1}^{n}\left|\sin\frac{k}{n^3}-\frac{k}{n^3}\right|=0\)并由此计算\(\lim_{n\rightarrow\infty}n\sum_{k=1}^{n}\sin\frac{k}{n^3}\).
+\begin{proof}
+
+\end{proof}
+\woe 证明命题\reff{po:C31}.
+\begin{proof}
+\end{proof}
+\woe 设数列\(\{x_n\},\{y_n\}\)满足\[\begin{cases}
+    x_n^2+y_n^2+2y_n=1+\sin\frac{1}{n}\\
+    x_n+\left(1+\frac{1}{3n}\right)y_n=\frac{1}{\sqrt[n]{n}}
+\end{cases}\]
+证明\(\{x_n\},\{y_n\}\)收敛并求其极限.
+\begin{proof}
+取\(z'_n=(x_n,y_n+1)\)则\[|z'_n|^2=x_n^2+y_n^2+2y_n+1=2+\sin\frac{1}{n}\leqslant 3.\]从而\(\{z'_n\}\)是有界列, 于是\(z_n=(x_n,y_n)\)也有界, 取\(\{z_n\}\)的一收敛子列\(\{z_{n_k}\}\), 其收敛于\(z=(x,y)\)且满足\[\begin{cases}
+    x^2+y^2+2y=1\\
+    x+y=1
+\end{cases}\]解得\(x=1,y=0\).
+\end{proof}
+\woe 设\(\psi,\varphi\)为定义在\((0,+\infty)\)上的周期函数, 满足\(\lim_{x\rightarrow+\infty}\left(\psi(x)-\varphi(x)\right)=0\). 证明\(\varphi(x)\equiv\psi(x)\).
+\begin{proof}
+若\(\exists x_0\in (0,+\infty)\)使得\(\varphi(x_0)\ne\psi(x_0)\), 则\(\lim_{x\rightarrow+\infty}\left(\psi(x)-\varphi(x)\right)\ne 0\)矛盾, 从而\(\varphi\equiv\psi\).
+\end{proof}
+\end{quiza}
+\begin{quizb}
+\woe 证明对于\(x\ne 0\), 成立\(\prod_{n=1}^{\infty}\cos\frac{x}{2^n}=\frac{\sin x}{x}\). 特别地, 有\textbf{Vi\`{e}ta公式}: \(\prod_{n=2}^{\infty}\cos\frac{\pi}{2^n}=\frac{2}{\pi}\).
+\begin{proof}
+令\(J_n=\prod_{k=1}^{n}\cos\frac{x}{2^k}\), 有\[\sin\frac{x}{2^n}\cdot J_n=\frac{\sin x}{2^n},\qquad\text{即}\qquad J_n=\frac{\sin x}{2^n\cdot\sin\dfrac{x}{2^n}}\]令\(n\rightarrow+\infty\)即得结果. 后者过程类似.
+\end{proof}
+\woe 仿照习题3.1 \(\boldsymbol{\mathcal{A}}\)第2题编写一个习题.
+\woe 抽取下列几个极限类型, 写出相关定义(其中\(a,A\)为实数), Cauchy准则和Heine定理.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        自变量变换&极限值&&自变量变化&极限值&&自变量变化&极限值\\\cline{1-2}\cline{4-5}\cline{7-8}
+         \(x\rightarrow a\)&\(A\)&&\(x\rightarrow a^+\)&\(A\)&&\(x\rightarrow a^-\)&\(A\)\\\cline{1-2}\cline{4-5}\cline{7-8}
+         \(x\rightarrow a\)&\(+\infty\)&&\(x\rightarrow a^+\)&\(+\infty\)&&\(x\rightarrow a^-\)&\(+\infty\)\\\cline{1-2}\cline{4-5}\cline{7-8}
+         \(x\rightarrow a\)&\(-\infty\)&&\(x\rightarrow a^+\)&\(-\infty\)&&\(x\rightarrow a^-\)&\(-\infty\)\\\cline{1-2}\cline{4-5}\cline{7-8}
+         \(x\rightarrow a\)&\(\infty\)&&\(x\rightarrow a^+\)&\(\infty\)&&\(x\rightarrow a^-\)&\(\infty\)\\\cline{1-2}\cline{4-5}\cline{7-8}
+         \(x\rightarrow \infty\)&\(A\)&&\(x\rightarrow +\infty\)&\(A\)&&\(x\rightarrow -\infty\)&\(A\)\\\cline{1-2}\cline{4-5}\cline{7-8}
+         \(x\rightarrow \infty\)&\(+\infty\)&&\(x\rightarrow +\infty\)&\(+\infty\)&&\(x\rightarrow -\infty\)&\(+\infty\)\\\cline{1-2}\cline{4-5}\cline{7-8}
+         \(x\rightarrow \infty\)&\(-\infty\)&&\(x\rightarrow +\infty\)&\(-\infty\)&&\(x\rightarrow -\infty\)&\(-\infty\)\\\cline{1-2}\cline{4-5}\cline{7-8}
+         \(x\rightarrow \infty\)&\(\infty\)&&\(x\rightarrow +\infty\)&\(\infty\)&&\(x\rightarrow -\infty\)&\(\infty\)\\\hline
+    \end{tabular}
+\end{table}
+\woe 设\(a_0,a_1,\ell,\alpha\)为正数, \(a_1\ne a_0,\,a_{n+1}=\frac{(\ell+n^\alpha)a_n^2}{\ell a_n+n^\alpha a_{n-1}}(n\geqslant 1)\). 证明:
+\begin{quizcs}
+\item 若\(\alpha<1\), 则\(\{a_n\}\)有正的极限.
+\item 若\(\alpha=1, \ell>1\), 则\(\{a_n\}\)有正的极限.
+\item 若\(\alpha>1\), 则\(\{a_n\}\)发散或极限为零.
+\item 若\(\alpha=\ell=1\), 则\(\{a_n\}\)发散或极限为零.
+\end{quizcs}
+\end{quizb}
+\section{连续函数}
+\precis{连续函数,左连续,右连续,连续函数的四则运算,复合函数的连续性,基本初等函数的连续性,反函数的连续性,紧集上逆映射的连续性,间断点,一些重要的极限,\(\ee^x\)的无穷级数表示}
+\begin{quiza}
+\woe 证明Dirichlet函数\[D(x)=\begin{cases}
+    0,\quad x\text{为有理数},\\
+    1,\quad x\text{为无理数}
+\end{cases}\]在\(\mathbb{R}\)上处处不连续.
+\begin{proof}
+
+\end{proof}
+\woe 考虑\([0,1]\)上的Riemann函数\[R(x)=\begin{cases}
+    1,\quad x=0,\\
+    \frac{1}{q},\quad x=\frac{p}{q}\,\text{(其中\(p,q\)为既约整数)},\\
+    0,\quad x\text{为无理数}.
+\end{cases}\]证明\(R\)在有理点不连续, 在无理点连续.
+\begin{proof}
+对于任意的\(x_0\in[0,1]\)来说, 若任取\(\varepsilon>0\), 则满足不等式\(q<\frac{1}{\varepsilon}\)的正整数\(n\)至多只有有限个, 即在\([0,1]\)中至多只有有限个有理数\(\frac{p}{q}\), 使得\(f\left(\frac{p}{q}\right)=\frac{1}{q}>\varepsilon\). 因而我们可以取\(\delta>0\), 使得\(\mathring{B}_\delta(x_0)\)内不含这样的有理数. 于是, 只要\(0<|x-x_0|<\delta\), 不论\(x\)是否为有理数, 都成立\(|f(x)|<\varepsilon\). 即证明了对于\([0,1]\)中的任意点\(x_0\), 都成立\[f(x_0+0)=f(x-0)=0.\]
+若\(x_0\)为无理数, 则\(f(x_0)=0\), 可见\(f(x)\)在\(x_0\)处连续; 若\(x_0\)是有理数, 则\(f(x_0)\ne 0\), 点\(x_0\)即成为函数\(f(x)\)的可去间断点.
+\end{proof}
+\woe 求\(\lim_{n\rightarrow+\infty}\left(\frac{n!}{n^n}\right)^{1/n}\).
+\begin{solution}
+我们先计算\(\lim_{n\rightarrow+\infty}\left(\frac{n^n}{n!}\right)^{1/n}\), 取对数整理得到\[\ln\frac{n}{\sqrt[n]{n!}}=\frac{n\ln n-\left(\ln 2+\ln 3+\cdots+\ln n\right)}{n}=:\frac{b_n}{n},\]则有\[\lim_{n\rightarrow+\infty}\frac{b_n}{n}=\lim_{n\rightarrow+\infty}\left(b_{n+1}-b_n\right)=\lim_{n\rightarrow+\infty}\ln\left(1+\frac{1}{n}\right)^n=1,\]故\(\lim_{n\rightarrow+\infty}\left(\frac{n!}{n^n}\right)^{1/n}=\ee\).
+\end{solution}
+\woe 设\(S_n=\frac{1}{n^2}\sum_{k=0}^{n}\ln C_n^k\), 求\(\lim_{n\rightarrow+\infty}S_n.\)
+\begin{solution}
+注意到\[\frac{C_{n+1}^1C_{n+1}^2\cdots C_{n+1}^n}{C_n^1C_n^2\cdots C_n^n}=\frac{1}{n!}(n+1)^n,\]于是依Stolz定理\[\lim_{n\rightarrow+\infty }S_n=\lim_{n\rightarrow+\infty}\frac{n\ln(n+1)-\ln(n!)}{\left((n+1)^2-n^2\right)}=\lim_{n\rightarrow+\infty}=\frac{n+1}{2}\ln\left(1+\frac{1}{n+1}\right)=\frac{1}{2}.\qedhere\]
+\end{solution}
+\woe 当\(\alpha\in\mathbb{R}\)为何值时, 极限\(\lim_{n\rightarrow+\infty}\frac{1^\alpha+2^\alpha+\cdots+n^\alpha}{n^{\alpha+1}}\)存在?
+\begin{solution}
+
+\end{solution}
+\woe 设\(a>0,b>0\), 求证: \(\lim_{n\rightarrow+\infty}\left(\frac{\sqrt[n]{a}+\sqrt[n]{b}}{2}\right)^n=\sqrt{ab}\).
+\begin{proof}
+\[\begin{split}
+\lim_{n\rightarrow+\infty}\left(\frac{\sqrt[n]{a}+\sqrt[n]{b}}{2}\right)^n&=\lim_{n\rightarrow+\infty}\exp\left(n\ln\left(\frac{\sqrt[n]{a}-1+\sqrt[n]{b}-1}{2}-1\right)\right)\\&=\lim_{n\rightarrow+\infty}\exp\left(n\left(\frac{\ln a}{2n}+\frac{\ln b}{2n}\right)\right)\\&=\lim_{n\rightarrow+\infty}\exp\left(\ln\sqrt{ab}\right)=\sqrt{ab}.
+\end{split}\]
+\end{proof}
+\woe 设\(\lim_{x\rightarrow 0}f(x)=0,\lim_{x\rightarrow 0}\frac{f(2x)-f(x)}{x}=0\). 证明\(\lim_{x\rightarrow 0}\frac{f(x)}{x}=0.\)
+\begin{proof}
+依题设, 对于任给的\(\varepsilon>0\), 存在\(\delta>0\), 使得当\(0<|x|<\delta\)时,\[\left|\frac{f(x)-f(x/2)}{x}\right|<\varepsilon.\]于是(用\(x/2^{k-1}\)代\(x\))\[\left|\frac{f\left(x/2^{k-1}\right)-f\left(x/2^k\right)}{x/2^{k-1}}\right|<\varepsilon\qquad (k=1,\cdots,n+1).\]
+
+因为\[f(x)-f\left(\frac{x}{2^{n+1}}\right)=\sum_{k=1}^{n+1}\left(f\left(\frac{x}{2^{k-1}}\right)-f\left(\frac{x}{2^k}\right)\right).\]
+所以\[\left|\frac{f(x)-f\left(x/2^{n+1}\right)}{x}\right|\leqslant\sum_{k=1}^{n+1}\left|\frac{f\left(x/2^{k-1}\right)-f\left(x/2^k\right)}{x}\right|=\sum_{k=1}^{n+1}\frac{1}{2^k}\left|\frac{f\left(x/2^{k-1}\right)-f\left(x/2^k\right)}{x/2^k}\right|.\]应用最初结果, 得到\[\left|\frac{f(x)-f\left(x/2^{n+1}\right)}{x}\right|<\sum_{k=1}^{n+1}\frac{1}{2^k}\cdot 2\varepsilon=\left(1-\frac{1}{2^{n+1}}\right)\cdot2\varepsilon<2\varepsilon.\]在此式中令\(n\rightarrow +\infty\), 注意\(\lim_{x\rightarrow 0}f(x)=0\), 即得\[\left|\frac{f(x)}{x}\right|\leqslant 2\varepsilon.\]于是\(\lim_{x\rightarrow 0}\frac{f(x)}{x}=0.\)
+\end{proof}
+\woe  设实数列\(\{x_n\}\)满足\[x_n^3+\left(n^{1/n}+2+\frac{1}{n}\right)x_n^2+\left(\frac{1}{n}+2n^{1/n}+n^{(1-n)/n}+1\right)x_n+n^{1/n}+n^{(1-n)/n}+\frac{1}{n^2}=0.\]证明: \(\{x_n\}\)极限存在, 并求其极限.
+\begin{proof}
+注意到\[\begin{split}
+&x_n^3+\left(n^{1/n}+2+\frac{1}{n}\right)x_n^2+\left(\frac{1}{n}+2n^{1/n}+n^{(1-n)/n}+1\right)x_n+n^{1/n}+n^{(1-n)/n}\\&=(x_n+1)(x_n+n^{1/n})(x_n+1+\frac{1}{n}),
+\end{split}\]当\(n\geqslant 3\)时有\(1<1+\frac{1}{n}+n^{1/n}\), 因为\[\lim_{n\rightarrow\infty}(x_n+1)(x_n+n^{1/n})(x_n+1+\frac{1}{n})=-\lim_{n\rightarrow\infty}\frac{1}{n^2}=0,\]考虑到函数的单调性以及三个零点的极限均为\(-1\), 所以\(\lim_{n\rightarrow\infty}x_n=-1.\)
+\end{proof}
+\woe 称\(\mathbb{R}\)上函数\(f\)满足局部Lipschitz条件, 如果对于任何\(x\in\mathbb{R}\), 存在\(\delta>0\)以及\(M>0\)使得\[|f(y)-f(z)|\leqslant M|y-z|,\qquad\forall y,z\in(x-\delta,x+\delta).\]证明: \(f\)在\(\mathbb{R}\)上满足局部Lipschitz条件等价于对任何\(A>0\), 存在\(M_A>0\)使得\[|f(x)-f(y)|\leqslant M_A|x-y|,\qquad \forall x,y\in[-A,A].\]
+\woe 设\(f\)为\(\mathbb{R}\)上函数. 对任何\(x\in\mathbb{R}\), 存在\(\delta>0\)以及\(M>0\)使得\[|f(y)-f(x)|\leqslant M|y-x|,\qquad\forall y\in (x-\delta,x+\delta).\]问: \(f\)是否一定满足局部Lipschitz条件?
+\woe 设\(f\)是\([a,b]\)上的单调连续函数, \(\{a_n\}\)是\([a,b]\)中的点列.
+\begin{quizs}
+    \item 若\(f\)单增, 则\(\varlimsup_{n\rightarrow\infty}f(a_n)=f\left(\varlimsup_{n\rightarrow\infty}a_n\right)\), \(\varliminf_{n\rightarrow\infty}f(a_n)=f\left(\varliminf_{n\rightarrow\infty}a_n\right)\).
+    \item 若\(f\)单减,则\(\varlimsup_{n\rightarrow\infty}f(a_n)=f\left(\varliminf_{n\rightarrow\infty}a_n\right)\), \(\varliminf_{n\rightarrow\infty}f(a_n)=f(\varlimsup_{n\rightarrow\infty}a_n)\).
+\end{quizs}
+\begin{proof}
+	(1)
+	
+	(2)
+\end{proof}
+\end{quiza}
+\begin{quizb}
+\woe 将习题3.2 \(\boldsymbol{\mathcal{A}}\) 第11题推广到广义实数系情形.
+\begin{solution}
+	
+\end{solution}
+\woe 证明区间\(I\)上的单调函数的间断点均为跳跃间断点, 且间断点的全体至多可列.
+\begin{proof}
+不妨设\(f\)是定义在区间\(I\)上的单调增加函数, 设\(x_0\in(a,b)\subset I\)是\(f\)的间断点, 任取\(x_0\)两侧的点\(x,x'(x<x_0<x')\), 则成立\[f(x)\leqslant f(x_0)\leqslant f(x'),\]令\(x\rightarrow x_0^-,x'\rightarrow x_0^+\), 应用\textbf{单调函数的单侧极限存在定理}, 得到\[f(x_0^-)\leqslant f(x_0)\leqslant f(x_0^+),\]并且其中的两个单侧极限都是有限数. 因此\(x_0\)是第一类间断点, 进一步, \(x_0\)是间断点故上式不可能同时取等号即\(f(x_0^-)<f(x_0^+)\), 从而\(x_0\)是一跳跃间断点.
+
+我们称\(\left(f(x_0^-),f(x_0^+)\right)\)为与间断点\(x_0\)对应的一个跳跃区间. 对\(f\)的每一个间断点都可以得到一个跳跃区间. 下面我们证明, 任何两个不同简短点所对应的跳跃区间不交. 设\(x_1\)为另一间断点且\(x_0<x_1\), 即证明\[\left(f(x_0^-),f(x_0^+)\right)\cap \left(f(x_1^-),f(x_1^+)\right)=\varnothing.\]
+为此在\(x_0\)与\(x_1\)之间插入\(x,x'\)满足\(x_0<x<x'<x_1\), 则有不等式\[f(x)\leqslant f(x'),\]固定\(x'\), 令\(x\rightarrow x_0^+\), 由单调函数的单侧极限存在定理和函数极限的比较定理, 得到\[f(x_0^+)\leqslant f(x'),\]在令\(x'\rightarrow x_1^-\), 又得到\[f(x_0^+)\leqslant f(x_1^-),\]于是有\[f(x_0^-)<f(x_0^+)\leqslant f(x_1^-)\leqslant f(x_1^+),\]即\(\left(f(x_0^-),f(x_0^+)\right)\cap \left(f(x_1^-),f(x_1^+)\right)=\varnothing.\)
+
+这样就得到了与无限多个间断点一一对应的跳跃区间, 且两两不交， 又在每个跳跃区间中取一个有理数, 从而得到一个有理数集, 它与全体跳跃区间一一对应. 由于有理数集\(\bbq\)是可数集, 它的无限子集也是可数集, 因此跳跃区间集合为可数集, 这就证明了单调函数的间断点至多可列.
+\end{proof}
+\woe 设\(\{x_n\}_{k=1}^{\infty}\)为\(\mathbb{R}\)中的点列, 定义\(f(x)=\sum_{x_k<x}\frac{1}{2^k}\). 证明: \(f\)的间断点全体为\(\{x_k\left|k\geqslant 1\right.\}\). 进一步, 若\(\{x_k\}\)在\(\mathbb{R}\)中稠密, 则\(f\)在\(\mathbb{R}\)上严格单增.
+\begin{proof}
+	
+\end{proof}
+\woe 将区间\((0,1)\)内的实数用十进制小数\((0.a_1a_2a_3\cdots a_n\cdots)\)表示, 约定不将\(9\)作为循环节. 定义\[f(0.a_1a_2a_3\cdots a_n\cdots)=0.a_10a_20a_30\cdots a_n0\cdots,\]试问\(f\)在\((0,1)\)内的哪些点连续, 哪些点不连续?
+\begin{solution}
+	
+\end{solution}
+\woe 设正数列\(\{a_n\}\)满足\(\varliminf_{n\rightarrow+\infty}a_n=1,\varlimsup_{n\rightarrow+\infty}a_n=2\)及\(\lim_{n\rightarrow+\infty}\sqrt[n]{\prod_{k=1}^{n}a_k}=1\). 证明: \[\lim_{n\rightarrow+\infty}\frac{1}{n}\sum_{k=1}^{n}a_k=1.\]
+\begin{proof}
+首先, 我们有\[\varliminf_{n\rightarrow+\infty}\frac{1}{n}\sum_{k=1}^{n}a_k\geqslant \varliminf_{n\rightarrow+\infty}\sqrt[n]{\displaystyle\prod_{n=1}^{n}a_k}=1.\]另一方面, 有假设, \(\{a_n\}\)有上界\(M>0\). 任取\(\varepsilon\in(0,1)\), 存在\(N>0\), 使得当\(n\geqslant N\)时, 成立\(a_n\geqslant 1-\varepsilon\)且\(\sqrt[n]{\displaystyle\prod_{n=1}^{n}a_k}\leqslant 1+\varepsilon\).
+
+任取\(\delta>\varepsilon\), 我们来估计\(a_{N+1},a_{N+2},\cdots,a_n\)中大于\(1+\delta\)的数的个数\(m_{n,\delta}\):\[\ln(1+\varepsilon)\geqslant\frac{1}{N}\sum_{k=1}^{N}\ln a_k+\frac{n-N-m_{n,\delta}}{n}\ln(1-\varepsilon)+\frac{m_{n,\delta}}{n}\ln(1+\delta),\]由此可得\[\frac{m_{n,\delta}}{n}\leqslant\frac{\displaystyle\ln(1+\varepsilon)-\ln(1-\varepsilon)-\frac{1}{n}\sum_{k=1}^{n}\ln a_k+\frac{N}{n}\ln(1-\varepsilon)}{\ln(1+\delta)-\ln(1-\varepsilon)}.\]因为\[\frac{1}{n}\sum_{k=1}^{n}a_k\leqslant\frac{1}{n}\sum_{k=1}^{N}a_k+(1+\delta)+\frac{m_{n,\delta}}{n}M,\]所以\[\varlimsup_{n\rightarrow+\infty}\frac{1}{n}\sum_{k=1}^{n}a_k\leqslant 1+\delta+\frac{\ln(1+\varepsilon)-\ln(1-\varepsilon)}{\ln(1+\delta)-\ln(1-\varepsilon)}M,\]令\(\varepsilon\rightarrow 0^+\)得\(\varlimsup_{n\rightarrow+\infty}\frac{1}{n}\sum_{k=1}^{n}a_k\leqslant 1+\delta\). 在令\(\delta\rightarrow 0^+\)得\(\varlimsup_{n\rightarrow+\infty}\frac{1}{n}\sum_{k=1}^{n}a_k\leqslant 1\). 由此结论得证.
+\end{proof}
+\woe 证明: \(\bbr\)上实连续函数全体的势是\(\aleph\).
+\begin{proof}
+我们先来证明这件事情: 若\(f,g\)是定义在\(R\)上的连续函数, 并且对\(x\in\bbq\)有\(f(x)=g(x)\), 则有\(f\equiv g\).
+
+只要对\(\bbr\)中每个无理数\(x\)证明\(f(x)=g(x)\)成立即可. 取有理数序列\(\{r_n\}\), 使\(\lim_{n\rightarrow+\infty}r_n=x\). 例如, 取无理数\(x\)的不足近似值\(r_n=\frac{\left[10^nx\right]}{10^n}\), 则有\[r_n=\frac{\left[10^nx\right]}{10^n}=\frac{10^nx-\theta_{x,n}}{10^n},\]其中\(0\leqslant\theta_{x,n}<1\). 因此\(r_n\rightarrow x(n\rightarrow+\infty)\).
+
+由于\(f(r_n)=g(r_n),n\in\bbn_+,f,g\)在点\(x\)连续, 由此知\[f(x)=\lim_{n\rightarrow+\infty}f(r_n)=\lim_{n\rightarrow+\infty}g(r_n)=g(x).\]
+由此便得结论. 记所有连续函数构成的集合为\(T\). 易见所有常值函数\(f(x)\equiv c\)与\(\bbr\)等势, 由伯恩斯坦定理, 若能
+
+\end{proof}
+\end{quizb}
+\section{连续函数的基本性质}
+\precis{道路,连通集,区域,拓扑学视角下的连续性,相对开集,相对闭集,介值定理,最值定理,连续函数的有界性,一致连续性,\(\mathbb{R}^n\)中范数的等价性,代数基本定理,不动点,压缩映射原理,摄动法,利用极限定义指数函数和对数函数}
+\begin{proposition}{}{C32}
+    \(\mathbb{R}\)中的道路连通集必是空集, 单点集或区间.
+\end{proposition}
+\begin{quiza}
+\woe 设\(f\)为有界区间\((a,b)\)上的连续函数, \(f(a^+),f(b^-)\)都存在且\(f(a^+)<0,f(b^-)>0\). 证明: 存在\(\xi\in (a,b)\)使得\(f(\xi)=0\).
+\begin{proof}
+由函数连续性以及\(f(a^+)<0,f(b^-)>0\), 必存在\(\eta>a\)与\(\mu<b\)使得\(f(\eta)<0\)且\(f(\mu)>0\), 由函数的介值定理即得结论. 另外, 可以闭区间套.
+\end{proof}
+\woe 设\(f\)在\((0,+\infty)\)内连续, 且满足\(f(x^2)=f(x)(\forall x>0)\). 证明: \(f\)在\((0,+\infty)\)内为常数.
+\begin{proof}
+对任意\(x\in(0,+\infty)\), 有\[f(x)=f\left(\sqrt{x}\right)=f\left(x^{1/4}\right)=\cdots=f\left(x^{1/(2n)}\right),\]令\(n\rightarrow\infty\), 即有\(f(x)=f(1)\), 从而\(f(x)\)是常数.
+\end{proof}
+\woe 设\(f\)为区间\((a,+\infty)\)上的连续函数, \(f(a^+)\)存在且为负数, \(f(+\infty)=+\infty\). 证明: 存在\(\xi\in(a,+\infty)\)使得\(f(\xi)=0\).
+\begin{proof}
+由\(f(+\infty)=+\infty\)知, 对于任意大得正数\(A\), 存在\(X\)使\(x\geqslant X\)时\(f(x)\geqslant A\), 即\(f(X)\)为正, 于是\(f(a^+)f(X)<0\), 由零点存在定理可知有\(\xi\in(a,X)\)使得\(f(\xi)=0\).
+\end{proof}
+\woe 设\(f\)是\(\mathbb{R}\)上的连续周期函数. 若\(f\)不为常数, 证明它一定有最小正周期.
+\begin{proof}
+
+\end{proof}
+\woestar 设\(E\subset\mathbb{R}^n\)为非空有界集. 证明: 连续函数\(\boldsymbol{f}:E\rightarrow\mathbb{R}^m\)一致连续的充要条件是对任何\(\boldsymbol{x}_0\in E',\,\lim_{\substack{\boldsymbol{x}\rightarrow\boldsymbol{x_0}\\\boldsymbol{x}\in E}}\boldsymbol{f}(\boldsymbol{x})\)存在. 这等价于\(\boldsymbol{f}\)是\(\overline{E}\)上的一个连续函数在\(E\)上的限制.
+\begin{proof}
+
+\end{proof}
+\woe 证明命题 \reff{po:C32}.
+\begin{proof}
+	
+\end{proof}
+\woe 试用闭区间套定理证明介值定理.
+\begin{proof}
+设\(f(x)\)是\([a,b]\)上的连续函数, \(f(a)<f(b)\), 介值定理表明给定\(\mu\)并且\(f(a)<\mu<f(b)\), 则存在\(\xi\in(a,b)\)使得\(f(\xi)=\mu.\) 设\(F(x)=f(x)-\mu\), 则\(F(a)<0, F(b)>0\). 记\(I_1=[a,b]\). 于是若\(F\left(\frac{a+b}{2}\right)=0\), 则定理证毕. 否则若\(F\left(\frac{a+b}{2}\right)>0\), 则令\(I_2=\left[a,\frac{a+b}{2}\right]\), 否则令\(I_2=\left[\frac{a+b}{2},b\right]\). 记\(a'=\frac{a+b}{2}\), 不妨设\(I_1\)为前者, 继续考察\(F\left(\frac{a+a'}{2}\right)\)的符号, 重复上述步骤得到\(I_3,I_4,\cdots I_n,\cdots\). 设\(I_n\)区间的端点为\(a_n,b_n\), 则或者在有限步得到\(F\left(\frac{a_n+b_n}{2}\right)=0\), 则定理证毕.
+否则由\(I_n\)的构造可以发现\(F(a_n)F(b_n)<0\). 并且\[I_{n+1}\subset I_{n},\quad a_n-b_n\rightarrow 0(n\rightarrow+\infty),\]即\(\{I_n\}\)形成闭区间套. 存在有\(\xi=\lim_{n\rightarrow+\infty}a_n=\lim_{n\rightarrow+\infty}b_n\), 并且\[\lim_{n\rightarrow+\infty}F(a_n)\leqslant 0,\quad\lim_{n\rightarrow+\infty}F(b_n)\geqslant 0,\]从而\(F(\xi)=0\), 即\(f(\xi)=\mu.\)
+\end{proof}
+\woe 证明道路连通集一定是连通集.
+\begin{proof}
+设\(E\subseteq\bbr^n\)是一个道路连通集, 且\(E=A\cup B\), 其中\(A,B\)是两个互不相交的非空集. 在\(A\)中任取一点\(\boldsymbol{p}\), 在\(B\)中任取一点\(\boldsymbol{q}\), 则有一条连续曲线\(\varGamma\subset E\)把\(\boldsymbol{p,q}\)两点连接. 令\[\boldsymbol{\varPhi}(t)=\left(\varphi_1(t),\varphi_2(t),\cdots,\varphi_n(t)\right),\quad (a\leqslant t\leqslant b)\]为\(\varGamma\)的参数方程, 并令\[F=\{t\in[a,b]\big|\boldsymbol{\varPhi}(t)\in A\},\quad G=\{t\in[a,b]\big|\boldsymbol{\varPhi}(t)\in B\}.\]易见\(F\)与\(G\)是互不相交的非空集合, 且\(F\cup F=[a,b]\). 由于区间\([a,b]\)是连通集, \(F'\cap G\)与\(F\cap G'\)这两个集合至少有一个非空. 不妨设\(c\in F\cup G'\), 从\(c\in G'\)可知, 有数列\(\{t_n\}\subset G\)使得\(\lim_{n\rightarrow+\infty}t_n=c\). 由于\(\varphi_1,\varphi_2,\cdots,\varphi_n\)连续, 所以\[\lim_{n\rightarrow+\infty}\boldsymbol{\varPhi}(t_n)=\boldsymbol{\varPhi}(c).\]一方面, 由\(\boldsymbol{\varPhi}(t)\in B(i=1,2,\cdots)\), 可知\(\boldsymbol{\varPhi(c)}\in B'\); 另一方面, 利用\(c\in F\)又知\(\boldsymbol{\varPhi(c)}\in A\). 由此得\(\boldsymbol{\varPhi}(c)\in A\cap B'\), 它不是空集, 所以\(E\)是连通的.
+\end{proof}
+\woe 证明在\(\mathbb{R}\)中的连通集必为空集, 单点集或区间, 即必为道路连通集.
+\begin{proof}
+
+\end{proof}
+\woe 参考开集和闭集的性质, 建立相对开集和相对闭集的性质.
+\woe 设\(E\subseteq\mathbb{R}^n\)为连通集, \(f:E\rightarrow\mathbb{R}\)连续. 若\(\boldsymbol{x}_1,\boldsymbol{x}_2\in E,\,f(\boldsymbol{x}_1)<\boldsymbol{\eta}<\boldsymbol{f}(\boldsymbol{x}_2)\). 证明: 存在\(\boldsymbol{\xi}\in E\)使得\(\boldsymbol{f}(\boldsymbol{\xi})=\boldsymbol{\eta}\).
+\woe 设\(a_n>-1(n\geqslant 1)\). 下表罗列了级数\(\sum_{n=1}^{\infty}a_n\)与\(\sum_{n=1}^{\infty}a_n^2\)收敛的各种情形. 试确定这些情形是否可能发生, 在可能发生的情况下, 讨论此时无穷乘积\(\prod_{n=1}^{\infty}(1+a_n)\)的收敛性. 若无穷乘积在绝对收敛, 条件收敛和发散三种情形中, 有两种以上的情形可能发生, 请举出相应的例子; 同时, 若至少有一种情形不会发生, 给出证明.
+\def\j{绝对收敛}\def\t{条件收敛}\def\f{发散}
+\begin{table}[H]
+    \centering
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    情形&\(\sum_{n=1}^{\infty}a_n\)的收敛性&\(\sum_{n=1}^{\infty}a_n^2\)的收敛性&\(\prod_{n=1}^{\infty}(1+a_n)\)的收敛性\\\hline
+    1&\j&\j&\\\hline 2&\j&\t&\\\hline 3&\j&\f&\\\hline 4&\t&\j&\\\hline 5&\t&\t&\\\hline
+     6&\t&\f&\\\hline 7&\f&\j&\\\hline 8&\f&\t&\\\hline 9&\f&\f&\\\hline
+\end{tabular}
+\end{table}
+\begin{solution}
+	\textbf{情形 1. }此时\(\prod_{n=1}^{\infty}(1+a_n)\)收敛.
+	
+	\textbf{情形 2. }
+	
+	\textbf{情形 3. }
+	
+	\textbf{情形 4. }
+	
+	\textbf{情形 5. }
+	
+	\textbf{情形 6. }
+	
+	\textbf{情形 7. }
+	
+	\textbf{情形 8. }
+	
+	\textbf{情形 9. }
+	
+\end{solution}
+\woe 设\(f\)在\(\left[0,+\infty\right)\)上连续, \(\lim_{n\rightarrow+\infty}f(\sqrt{n})=0\). 证明: \(\lim_{x\rightarrow+\infty}f(x)\)存在的充要条件是\(f\)在\(\left[0,+\infty\right)\)上一致连续.
+\begin{proof}
+	
+\end{proof}
+\end{quiza}
+\begin{quizb}
+\woe 证明区域是道路连通集.
+\begin{proof}
+	设\(D\)是\(\bbr^n\)中的一个非空连通开集. 取点\(\boldsymbol{x}\in D\), 设\(U\left(\boldsymbol{x}\right)\)为\(D\)中所有与\(\boldsymbol{x}\)有\(D\)中连续曲线相连结的点的集合. 容易看到\(U\left(\boldsymbol{x}\right)\)是一个道路连通集. 我们证明\(U\left(\boldsymbol{x}\right)=D\).
+	
+	设\(\boldsymbol{y}\in U\left(\boldsymbol{x}\right)\), 并取\(\delta>0\)使\(O_{\delta}(\boldsymbol{y})\subset D\). \(\forall\boldsymbol{z}\in O_{\delta}(\boldsymbol{y})\)存在\(O_{\delta}(\boldsymbol{y})\)中的直线段连结\(\boldsymbol{z}\)到\(\boldsymbol{y}\), 从而存在\(D\)中的连续曲线连结\(\boldsymbol{z}\)到\(\boldsymbol{x}\), 所以\(O_{\delta}(\boldsymbol{y})\subset U\left(\boldsymbol{x}\right)\). 因而\(U\left(\boldsymbol{x}\right)\)是包含\(\boldsymbol{x}\)的开集. 如\(D\backslash U\left(\boldsymbol{x}\right)\ne\varnothing\), 则\(D\backslash U\left(\boldsymbol{x}\right)=\bigcup U\left(\boldsymbol{y}'\right)\), 其中\(\boldsymbol{y}'\)取遍\(D\backslash U\left(\boldsymbol{x}\right)\)的所有点. 按前面的证明, 每个\(U\left(\boldsymbol{y}'\right)\)都是开集, 因而\(D\backslash U\left(\boldsymbol{x}\right)\)也是开集. \(D\)有开集分解式\(D=U\left(\boldsymbol{x}\right)\cup \left(D-U\left(\boldsymbol{x}\right)\right)\), 与\(D\)是连通开集矛盾. 这就证明了\(D-U\left(\boldsymbol{x}\right)=\varnothing\), 所以\(D=U\left(\boldsymbol{x}\right)\)是道路连通集.
+\end{proof}
+\woe 设\(V\subseteq\mathbb{R}^n\)为开集. 证明它可以表示为至多可列个两两不交的区域的并. 在一维情形, 这些两两不交的区域为两两不交的开区间, 即为\(V\)的构成区间.
+\begin{proof}
+	
+\end{proof}
+\woe 设\(f\)在\((0,+\infty)\)上连续, 且对任何\(a\in (0,+\infty),\lim_{n\rightarrow+\infty}f(na)=0.\) 证明:\[\lim_{x\rightarrow+\infty}f(x)=0.\]
+\begin{proof}
+对于任意\(\varepsilon>0\)与\(a\in(0,+\infty)\)存在\(N(a)\in\bbz_+\)使得\(n>N\)时有\(|f(na)|<\frac{\varepsilon}{2}\). 结合\(f(x)\)的连续性, 可知有\(\delta>0\)使得当\(0<|x-x_0|<\delta\)有\(\left|f(x)-f(x_0)\right|<\frac{\varepsilon}{2},\)由\(a\)的任意性可以取到\(a\)与\(n>N(a)\)使得\(0<|x-na|<\delta\)此时\[\left|f(x)-f(na)\right|<\frac{\varepsilon}{2}\Rightarrow |f(x)|<\varepsilon,\]由此即得结论.
+\end{proof}
+\woe 设\(a>0,\,a^2+4b<0\), 求证: 不存在\(\mathbb{R}\)上具有介值性的函数\(f\left(f(x)\right)=af(x)+bx\).
+\begin{proof}
+若这样的函数存在, 注意到\(x=\frac{f\left(f(x)\right)-af(x)}{b}\). 所以\(x\)由\(f(x)\)唯一确定, 即\(f\)是单射. 由介值性, \(f\)必严格单调, 结合介值性和单调性, 可得\(f\)连续.
+
+由上可得\(x\mapsto f\left(f(x)\right)\)严格增加, 即\(x\mapsto af(x)+bx\)严格增加. 由于\(a>0\), 因此\(b<-\frac{a^4}{4}\leqslant 0\). 而\(f(x)=\frac{af(x)+bx}{a}-\frac{bx}{a}\), 可知\(f\)是严格单曾函数. 特别地,\[af(x)+bx>af(0),\quad\forall x>0.\]因此\(f(+\infty)=+\infty\). 进而当\(x\gg 1\)时, \(f(x)>0\), 所以\[\frac{f\left(f(x)\right)}{f(x)}=a+b\frac{a}{f(x)},\quad \forall x\gg 1.\]记\(L=\varlimsup_{x\rightarrow+\infty}\frac{f(x)}{x}\), 则\(L\in[0,+\infty]\). 注意到\(b<0\), 我们有\[L=\varlimsup_{x\rightarrow+\infty}\frac{f\left(f(x)\right)}{f(x)}=a+b\varliminf_{x\rightarrow+\infty}\frac{x}{f(x)}=a+\frac{b}{L},\]其中对应于\(L\)取\(0\)和\(+\infty\), 规定\(\frac{b}{L}\)分别为\(-\infty\)和\(0\). 则由上式可知\(L\)有限, 且\(L^2-aL-b=0\). 但\(a^2+4b<0\), 上述方程无解, 矛盾. 因此满足题设条件的函数\(f\)不存在.
+\end{proof}
+\woe 设\(\mathbb{R}\)上连续函数列\(\{f_n(x)\}\)对于每一个\(x\in\mathbb{R}\)都是有界的(称为“逐点有界”), 证明: 存在区间\((a,b)\)使得\(\{f_n(x)\}\)在\((a,b)\)上一致有界, 即存在与\(n\)无关的常数\(M>0\)使得\[|f_n(x)|\leqslant M,\qquad \forall n\geqslant 1,x\in (a,b).\]
+\begin{proof}
+	
+\end{proof}
+\woe 设\(\boldsymbol{A},\boldsymbol{B}\)均为\(n\)阶方阵, 且\(\boldsymbol{A+B}\)非奇异, 证明: \(\boldsymbol{A(A+B)^{-1}B=B(A+B)^{-1}A}.\)
+\begin{proof}
+当\(\boldsymbol{A,B}\)都可逆时, \(\boldsymbol{A(A+B)^{-1}B}\)与\(\boldsymbol{B(A+B)^{-1}A}\)也都可逆, 注意到\[\begin{split}
+\left(\boldsymbol{A(A+B)^{-1}B}\right)^{-1}&=\boldsymbol{B^{-1}}\left(\boldsymbol{A+B}\right)\boldsymbol{A^{-1}}=\boldsymbol{A^{-1}}+\boldsymbol{B^{-1}},\\
+\left(\boldsymbol{B(A+B)^{-1}A}\right)^{-1}&=\boldsymbol{A^{-1}}\left(\boldsymbol{A+B}\right)\boldsymbol{B^{-1}}=\boldsymbol{A^{-1}}+\boldsymbol{B^{-1}},\\
+\end{split}\]从而\(\boldsymbol{A,B}\)都可逆时等式成立, 否则\(\boldsymbol{A}(t)=\boldsymbol{A}+t\boldsymbol{E}\)与\(\boldsymbol{B}(t)=\boldsymbol{B}+t\boldsymbol{E}\)可逆, 令\(t\rightarrow 0\)即得结论.
+\end{proof}
+\woe 设\(\boldsymbol{A,B}\)为半正定矩阵, 证明: 存在正定矩阵\(\boldsymbol{S}\)使得\(\boldsymbol{ASB=BSA}.\)\\
+\textbf{提示: }存在正交矩阵\(\boldsymbol{P}\)和\(0\leqslant m\leqslant n\)使得\(\boldsymbol{P(A+B)P^{T}=\left(\begin{matrix}
+        O&O\\O&\varLambda
+\end{matrix}\right)}\), 其中\(\boldsymbol{\varLambda}\)是\(m\)阶正交矩阵. 此时必有\(\boldsymbol{PAP^{T}=\left(\begin{matrix}
+O&O\\O&\tilde{A}
+\end{matrix}\right),PBP^{T}=\left(\begin{matrix}
+O&O\\O&\tilde{B}
+\end{matrix}\right)}\), 其中\(\tilde{A},\tilde{B}\)都是\(m\)阶半正定矩阵.
+\woe 设\(\boldsymbol{A,B}\)是两个\(n\)阶方阵, 满足\(\boldsymbol{AB=BA}\), 证明\(\det\left(\begin{matrix}
+    \boldsymbol{A}&\boldsymbol{-B}\\\boldsymbol{B}&\boldsymbol{A}
+\end{matrix}\right)=\det\left(\boldsymbol{A}^2+\boldsymbol{B}^2\right)\).
+\begin{proof}
+将分块矩阵的第二行乘以\(\ii\)加到第一行上, 再将第一列乘以\(-\ii\)加到第二列上, 可得\[\left(\begin{matrix}
+\boldsymbol{A}&\boldsymbol{B}\\\boldsymbol{B}&\boldsymbol{A}
+\end{matrix}\right)\rightarrow\left(\begin{matrix}
+\boldsymbol{A}+\ii\boldsymbol{B}&\ii\boldsymbol{A}-\boldsymbol{B}\\\boldsymbol{B}&\boldsymbol{A}
+\end{matrix}\right)\rightarrow \left(\begin{matrix}
+\boldsymbol{A}+\ii\boldsymbol{B}&\boldsymbol{O}\\\boldsymbol{B}&\boldsymbol{A}-\ii\boldsymbol{B}
+\end{matrix}\right),\]第三类分块初等变换不改变行列式的值, 因此可得\[\begin{split}&\det\left(\begin{matrix}
+\boldsymbol{A}&\boldsymbol{B}\\\boldsymbol{B}&\boldsymbol{A}
+\end{matrix}\right)=\det\left(\begin{matrix}
+\boldsymbol{A}+\ii\boldsymbol{B}&\boldsymbol{O}\\\boldsymbol{B}&\boldsymbol{A}-\ii\boldsymbol{B}
+\end{matrix}\right)=\det\left(\boldsymbol{A}+\ii\boldsymbol{B}\right)\det\left(\boldsymbol{A}-\ii\boldsymbol{B}\right),\\=&\det\left(\left(\boldsymbol{A}+\ii\boldsymbol{B}\right)\left(\boldsymbol{A}-\ii\boldsymbol{B}\right)\right)=\det\left(\boldsymbol{A}^2+\boldsymbol{B}^2-\ii\left(\boldsymbol{AB}-\boldsymbol{BA}\right)\right)=\det\left(\boldsymbol{A}^2+\boldsymbol{B}^3\right).\qedhere\end{split}\]
+\end{proof}
+\woe 设\(\boldsymbol{A},\boldsymbol{B}\)均为\(n\)阶方阵, 证明\(\det\left(\begin{matrix}
+    \boldsymbol{A}&\boldsymbol{B}\\\boldsymbol{B}&\boldsymbol{A}
+\end{matrix}\right)=\det\left(\boldsymbol{A}+\boldsymbol{B}\right)\det\left(\boldsymbol{A}-\boldsymbol{B}\right)\).
+\begin{proof}
+将分块矩阵的第二行加到第一行上, 再将第二列减去第一列, 可得\[\left(\begin{matrix}
+\boldsymbol{A}&\boldsymbol{B}\\\boldsymbol{B}&\boldsymbol{A}
+\end{matrix}\right)\rightarrow\left(\begin{matrix}
+\boldsymbol{A}+\boldsymbol{B}&\boldsymbol{A}+\boldsymbol{B}\\\boldsymbol{B}&\boldsymbol{A}
+\end{matrix}\right)\rightarrow \left(\begin{matrix}
+\boldsymbol{A}+\boldsymbol{B}&\boldsymbol{O}\\\boldsymbol{B}&\boldsymbol{A}-\boldsymbol{B}
+\end{matrix}\right),\]第三类分块初等变换不改变行列式的值, 因此可得\[\det\left(\begin{matrix}
+    \boldsymbol{A}&\boldsymbol{B}\\\boldsymbol{B}&\boldsymbol{A}
+\end{matrix}\right)=\det\left(\begin{matrix}
+\boldsymbol{A}+\boldsymbol{B}&\boldsymbol{O}\\\boldsymbol{B}&\boldsymbol{A}-\boldsymbol{B}
+\end{matrix}\right)=\det\left(\boldsymbol{A}+\boldsymbol{B}\right)\det\left(\boldsymbol{A}-\boldsymbol{B}\right).\qedhere\]
+\end{proof}
+\woe 设\(\boldsymbol{A,B}\)均为\(n\)阶方阵, \(\boldsymbol{AB}=\boldsymbol{BA}\). 证明:
+\begin{compactenum}[(1)]
+    \item 若\(\boldsymbol{A,B}\)都是正定矩阵, 则\(\boldsymbol{AB}\)也是正定矩阵.
+    \item  若\(\boldsymbol{A,B}\)都是半正定矩阵, 则\(\boldsymbol{AB}\)也是半正定矩阵.
+\end{compactenum}
+\begin{proof}
+(1)由于\(\boldsymbol{A}\)正定, 则有非异阵\(\boldsymbol{C}\)满足\(\boldsymbol{A}=\boldsymbol{C}^\top\boldsymbol{C}\), 这是因为\(\boldsymbol{A}\)正定当且仅当\(\boldsymbol{A}\)合同于\(\boldsymbol{I}_n\), 由于\(\boldsymbol{AB}=\boldsymbol{BA}\)且\(\boldsymbol{A,B}\)都是正定矩阵, 于是\(\left(\boldsymbol{AB}\right)^\top=\boldsymbol{B}^\top\boldsymbol{A}^\top=\boldsymbol{BA}=\boldsymbol{AB}\), 从而\(\boldsymbol{AB}\)是对称的. 另一方面\[\boldsymbol{AB}=\boldsymbol{BA}=\boldsymbol{BC}^\top\boldsymbol{C}=\boldsymbol{C}^{-1}\boldsymbol{CBC}^\top\boldsymbol{C},\]从而\(\boldsymbol{AB}\)与\(\boldsymbol{CBC}^\top\)相似, 后者显然是正定的, 从而\(\boldsymbol{AB}\)正定.
+
+(2)我们先证明, \(n\)阶实对称矩阵\(\boldsymbol{A}\)是半正定矩阵的充分必要条件是对于任意正实数\(t\), \(\boldsymbol{A}+t\boldsymbol{I}_n\)都是正定阵.
+\end{proof}
+\woe 设\(\boldsymbol{A,B,C}\)均为\(n\)阶方阵, \(\boldsymbol{ABC=CBA}\). 证明:
+\begin{compactenum}[(1)]
+    \item 若\(\boldsymbol{A,B,C}\)都是正定矩阵, 则\(\boldsymbol{ABC}\)也是正定矩阵.
+    \item  若\(\boldsymbol{A,C}\)都是半正定矩阵, \(\boldsymbol{B}\)是正定矩阵, 则\(\boldsymbol{ABC}\)是半正定矩阵.
+    \item 若\(\boldsymbol{A,B,C}\)都是半正定矩阵, 则\(\boldsymbol{ABC}\)是半正定矩阵.
+\end{compactenum}
+\begin{proof}
+(1)
+
+(2)
+
+(3)
+\end{proof}
+\woe 编写若干与本节内容相关的习题.
+\end{quizb}
+\section{方向极限与累次极限}
+\precis{曲线,方向极限,沿曲线的极限,累次极限,多重极限}
+\begin{quiza}
+\woe 考虑函数在一点的二重极限和二次极限. 分别以二重极限存在和不存在为前提, 讨论以下各条. 对必然成立或必然不成立的, 给出证明. 对于有时候成立, 有时候不成立的, 给出例子.
+\begin{quizcs}
+\item 两个二次极限存在且相等.
+\item 两个二次极限都存在但不相等.
+\item 一个二次极限存在, 另一个不存在.
+\item 两个二次极限都不存在.
+\end{quizcs}
+\begin{solution}
+首先考虑二重极限存在的情况.
+
+(1)不一定成立. 如考虑\(f(x,y)=y\sin\frac{1}{x}\)在\((x,y)\rightarrow(0,0)\)时的形态, 其二重极限存在, 但二次极限\(\lim_{y\rightarrow 0}\lim_{x\rightarrow 0}f(x,y)\)不存在.
+
+(2)
+\end{solution}
+\woe 试就函数在一点的二重极限和方向极限, 仿第1题讨论相关问题.
+\woe 试就函数在一点的二次极限和方向极限, 仿第1题讨论相关问题.
+\woe 设\(E\subseteq\mathbb{R}^n,\boldsymbol{f}:E\rightarrow\mathbb{R}^m\), 且\(E\)包含\(\boldsymbol{x}_0\)的一个去心邻域. 证明: \(\lim_{\boldsymbol{x}\rightarrow\boldsymbol{x}_0}\boldsymbol{f}(\boldsymbol{x})=\boldsymbol{A}\)当且仅当\[\lim_{t\rightarrow0^+}\sup_{\boldsymbol{\tau}\in S^{n-1}}\left|\boldsymbol{f}(\boldsymbol{x}_0+t\boldsymbol{\tau})-\boldsymbol{A}\right|=0.\]
+\end{quiza}
+\begin{quizb}
+\woe 设有\([a,b]\times[c,d]\)上的函数\(f\), 对固定的\(y\in[c,d],\,f(x,y)\)作为\(x\)的函数在\([a,b]\)上连续, 而\(f(x,y)\)对\(y\)的连续性关于\(x\in [a,b]\)是一致的, 即\(\forall y_0\in[c,d]\),\[\lim_{y\rightarrow y_0}\sup_{x\in [a,b]}\left|f(x,y)-f(x,y_0)\right|=0.\]证明: \(f\)是\(D=[a,b]\times [c,d]\)上的二元连续函数.
+\begin{proof}
+	
+\end{proof}
+\end{quizb}

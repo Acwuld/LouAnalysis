@@ -1,0 +1,290 @@
+\chapter{Fourier级数}
+\section{三角级数,Fourier级数}
+\precis{三角级数,Fourier级数,三角级数的复形式,偶延拓,奇延拓,余弦级数,正弦级数}
+
+\begin{quiza}
+\woe 设\(f\)以\(2\pi\)为周期, 对于\(x\in\left[0,2\pi\right),f(x)=\chi_{[a,b]}(x)\), 其中\(0\leqslant a<b<2\pi\). 试将\(f\)展开成Fourier级数.
+\begin{solution}
+我们有\[\begin{split}
+a_0&=\frac{1}{\pi}\int_{0}^{2\pi}\chi_{[a,b]}(x)\dd x=\frac{b-a}{\pi},\quad a_n=\frac{1}{\pi}\int_{0}^{2\pi}\chi_{[a,b]}(x)\cos nx\dd x=\frac{\sin nb-\sin na}{n\pi},\\b_n&=\frac{1}{\pi}\int_{0}^{2\pi}\chi_{[a,b]}(x)\sin nx\dd x=\frac{\cos na-\cos nb}{n\pi}.
+\end{split}\]因此\[f(x)\sim \frac{b-a}{2\pi}+\sum_{n=1}^{\infty}\left(\frac{\sin nb-\sin na}{n\pi}\cos nx+\frac{\cos na-\cos nb}{n\pi}\sin nx\right).\qedhere\]
+\end{solution}
+\woe 试将\(\left|\cos x\right|\)和\(\left|\sin x\right|\)展开成Fourier级数.
+\begin{solution}
+	对于\(|\cos x|\), 我们有\[\begin{split}
+a_0=\frac{2}{\pi}\int_{0}^{\pi}|\cos x|\dd x=\frac{4}{\pi},\quad a_n=\frac{2}{\pi}\int_{0}^{\pi}|\cos x|\cos 2nx\dd x=\frac{4(-1)^{n+1}}{\pi(2n+1)(2n-1)}.
+\end{split}\]对于\(|\sin x|\), 有\[a_0=\frac{2}{\pi}\int_{0}^{\pi}|\sin x|\dd x=\frac{4}{\pi},\quad a_n=\frac{2}{\pi}\int_{0}^{\pi}|\sin x|\cos 2nx\dd x=-\frac{4}{\pi(2n+1)(2n-1)}.\]于是有\[|\sin x|=\frac{2}{\pi}+\sum_{n=1}^{\infty}\frac{4(-1)^{n+1}\cos nx}{\pi(2n+1)(2n-1)},\quad
+|\cos x|=\frac{2}{\pi}-\sum_{n=1}^{\infty}\frac{4\cos nx}{\pi(2n+1)(2n-1)}.\qedhere\]
+\end{solution}
+？
+\woe 设\(p,q\)为对偶数, \(f\in L^p_{\#}\left(\mathbb{\mathbb{R}}\right), g\in L_{\#}^q\left(\mathbb{R}\right)\). 令\[h(x)=\int_{0}^{2\pi}f(y)g(x-y)\dd y,\quad x\in\mathbb{R}.\]证明: \(h\)以\(2\pi\)为周期. 进一步, 试用\(f,g\)的Fourier系数表示\(h\)的Fourier系数.
+\begin{proof}
+由\[h(x+2\pi)=\int_{0}^{2\pi}f(y)g(x+2\pi-y)\dd y=\int_{0}^{2\pi}f(y)g(x-y)\dd y=h(x),\]从而\(h(x)\)以\(2\pi\)为周期.
+
+我们不妨记\(f\)的Fourier级数展开为\(\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right),\)并且\[a_n=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\cos nx\dd x.\quad b_n=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\sin nx\dd x,\]注意\(f\)的Fourier级数可以表示为\(\sum_{n=-\infty}^{+\infty}c_n\ee^{\ii nx}\), 其中\[c_0=\frac{a_0}{2},\quad c_n=\frac{a_n-b_n\ii}{2},\quad c_{-n}=\frac{a_n+b_n\ii}{2},\quad n\geqslant 1,\]于是有\(c_n=\frac{1}{2\pi}\int_{0}^{2\pi}f(x)\ee^{-\ii nx}\dd x\), 我们以此为基础, 分析\(h\)的Fouroer系数与\(f,g\)的Fourier的关系, 分别记\(g,h\)的Fourier展开为\(\sum_{n=-\infty}^{+\infty}p_n\ee^{\ii nx},\,\sum_{n=-\infty}^{+\infty}q_n\ee^{\ii nx}\), 于是\[\begin{split}
+q_n&=\frac{1}{2\pi}\int_{0}^{2\pi}h(x)\ee^{-\ii nx}\dd x=\frac{1}{2\pi}\int_{0}^{2\pi}\left(\int_{0}^{2\pi}f(y)g(x-y)\dd y\right)\ee^{-\ii nx}\dd x\\&=\frac{1}{2\pi}\int_{0}^{\pi}f(y)\ee^{-\ii ny}\left(\int_{0}^{2\pi}g(x-y)\ee^{-\ii n(x-y)}\dd x\right)\dd y\\&=\frac{1}{2\pi}\int_{0}^{2\pi}f(y)\ee^{-\ii ny}\dd y\cdot\int_{0}^{2\pi}g(x)\ee^{-\ii nx}\dd x=c_n\cdot 2\pi p_n.\qedhere
+\end{split}\]
+\end{proof}
+\woe 设\(f\in L_{\#}^1\left(\mathbb{R}\right),h_1(x)=f(-x),h_2(x)=f(x+x_0)\left(x\in\mathbb{R}\right)\), 其中\(x_0\in\mathbb{R}\). 试用\(f\)的Fourier系数表示\(h_1,h_2\)的Fourier系数.
+\begin{solution}
+设\[f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right),\]通过计算得\[\begin{split}
+h_1(x)&\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx-b_n\sin nx\right),\\
+h_2(x)&\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(\left(a_n\cos nx_0+b_n\sin nx_0\right)\cos nx+\left(b_n\cos nx_0-a_n\sin nx_0\right)\sin nx\right).\qedhere
+\end{split}\]
+\end{solution}
+\woe 设\(f(x)=x^2-x\left(x\in\left[0,\pi\right]\right)\). 试将\(f\)分别展开成以\(2\pi\)为周期的余弦级数与正弦级数.
+\begin{solution}
+对\(f\)偶延拓\(f(x)=\begin{cases}
+x^2-x,\quad x\in[0,\pi],\\
+x^2+x,\quad x\in[-\pi,0)
+\end{cases}\)从而由
+\begin{gather*}
+a_0=\frac{2}{\pi}\int_{0}^{\pi}f(x)\dd x=\frac{2\pi^3-3\pi^2}{3\pi},\\a_n=\frac{2}{\pi}\int_{0}^{\pi}f(x)\cos nx\dd x=\frac{2(2\pi-1)(1+\cos n\pi)}{\pi n^2},\quad n\geqslant 1.
+\end{gather*}
+得\[f(x)\sim\frac{2\pi^3-3\pi^2}{6\pi}+\sum_{n=1}^{\infty}\frac{2(2\pi-1)(1+\cos n\pi)}{\pi n^2}\cos nx.\]同理对\(f\)奇延拓\(f(x)=\begin{cases}
+x^2-x,\, &x\in[0,\pi],\\-(x^2+x),& x\in[-\pi,0)
+\end{cases}\)由\[a_0=0,\,a_n=0,\,b_n=\frac{2}{\pi}\int_{0}^{\pi}f(x)\sin nx=\frac{4\cos n\pi-4-2n^2(\pi^2-\pi)\cos n\pi}{\pi n^3},\quad n\geqslant 1,\]于是\[f(x)\sim\sum_{n=1}^{\infty}\frac{4\cos n\pi-4-2n^2(\pi^2-\pi)\cos n\pi}{\pi n^3}\sin nx.\qedhere\]
+\end{solution}
+\woe 设\(f\)以\(2\pi\)为周期,\[f(x)=-\ln\left(2\sin\frac{x}{2}\right),\quad\forall x\in\left(0,2\pi\right).\]试计算\(f\)的Fourier级数.
+\begin{solution}
+计算得到\[a_0=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\dd x=-\frac{1}{\pi}\left(2\pi\ln 2+2\int_{0}^{\pi}\ln\sin x\dd x\right)=0.\]
+对于\(\int_{0}^{\pi}\ln\sin x\dd x\), 由于\[\lim_{x\rightarrow0^+}\sqrt{x}\ln\sin x=\lim_{x\rightarrow\pi^-}\sqrt{\pi-x}\ln\sin x=0,\]即原积分收敛, 又\[\begin{split}
+I&:=\int_{0}^{\pi}\ln\sin x\dd x=\int_{0}^{\pi/2}2\ln\sin 2x\dd x=\pi\ln 2+2\int_{0}^{\pi/2}\ln\sin x\dd x+2\int_{0}^{\pi/2}\ln\cos x\dd x\\&=\pi\ln 2+2\int_{0}^{\pi}\ln\sin x\dd x=\pi\ln2+2I=-\pi\ln2. 
+\end{split}\]继续计算得到 \[\begin{split}
+a_n&=-\frac{1}{\pi}\int_{0}^{2\pi}\ln\left(2\sin\frac{x}{2}\right)\cos nx\dd x=-\frac{1}{\pi}\int_{0}^{2\pi}\left(\ln 2+\ln\sin\frac{x}{2}\right)\cos nx\dd x\\
+&=-\frac{1}{\pi}\left(\int_{0}^{2\pi}\ln 2\cdot\sin nx\dd x+\int_{0}^{2\pi}\ln\sin\frac{x}{2}\cdot\cos nx\dd x\right)\\
+&=-\frac{2}{\pi}\int_{0}^{\pi}\ln\sin x\cdot\cos 2nx\dd x=-\frac{2}{\pi}\left(\left.\ln \sin x\cdot\frac{\sin 2n x}{2n}\right|_0^\pi-\int_{0}^{\pi}\frac{\sin 2nx\cdot\cos x}{2n\sin x}\dd x\right)\\&=\frac{1}{n\pi}\int_{0}^{\pi}\frac{\sin 2nx\cdot\cos x}{\sin x}\dd x.
+\end{split}\]
+注意到\(\sin 2nx\cdot\cos x=\sin(2n+1)x-\cos 2nx\cdot\sin x\),则\[\int_{0}^{\pi}\frac{\sin(2n+1)x-\cos 2nx\cdot\sin x}{\sin x}\dd x=\int_{0}^{\pi}\frac{\sin(2n+1)x}{\sin x}\dd x,\]注意到\[\frac{\sin(2n+1)t}{\sin t}=1+2\sum_{k=1}^{\infty}\cos(2kt),\]从而\[\frac{1}{n\pi}\int_{0}^{\pi}\frac{\sin 2nx\cdot\cos x}{\sin x}\dd x=\int_{0}^{\pi}\left(1+2\sum_{k=1}^{\infty}\cos 2kt\right)\dd t=\pi.\]故\(a_n=\frac{1}{n}\).
+\[\begin{split}
+b_n&=-\frac{1}{\pi}\int_{0}^{2\pi}\ln\left(2\sin\frac{x}{2}\right)\sin nx\dd x=-\frac{1}{\pi}\int_{0}^{2\pi}\left(\ln 2+\ln\sin\frac{x}{2}\right)\sin nx\dd x\\
+&=-\frac{1}{\pi}\left(\int_{0}^{2\pi}\ln 2\cdot\sin nx\dd x+\int_{0}^{2\pi}\ln\sin\frac{x}{2}\cdot\sin nx\dd x\right)\\&=-\frac{1}{\pi}\int_{0}^{2\pi}\ln\sin\frac{x}{2}\cdot\sin nx\dd x=-\frac{2}{\pi}\int_{0}^{\pi}\ln\sin x\cdot\sin 2nx\dd x\\&=-\frac{2}{\pi}\int_{0}^{\pi}\ln\sin x\cdot\sin2n(\pi-x)\dd x=\frac{2}{\pi}\int_{0}^{\pi}\ln\sin x\cdot\sin 2nx\dd x=0.
+\end{split}\]
+即\(f(x)\sim\sum_{n=1}^{\infty}\frac{\cos nx}{n}.\)
+\end{solution}
+\woe 设\(k\geqslant 1,a_n,b_n\)为\(f\in C_{\#}^k(\mathbb{R})\)的Fourier系数. 证明: \(\lim_{n\rightarrow+\infty}n^ka_n=\lim_{n\rightarrow+\infty}n^kb_n=0.\)
+\begin{proof}
+由推广的Riemann-Lebesgue引理易知\(\lim_{n\rightarrow+\infty}a_n=\lim_{n\rightarrow+\infty}b_n=0\). 这也作为了三角级数成为某一函数Fourier展开的必要条件. 
+
+进一步由题设有\[a_n=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\cos nx\dd x=\left. f(x)\frac{\sin nx}{n}\right|^{2\pi}_{0}-\frac{1}{n\pi}\int_{0}^{2\pi}f'(x)\sin nx\dd x\]若记\(f'(x)\)的Fourier系数为\(a^{(1)}_n,b^{(1)}_n\), 则\(a_n=-\frac{1}{n}b^{(1)}_n\), 同理可得\(b_n=\frac{1}{n}a^{(1)}_n\), 于是得到\[a_n=o\left(\frac{1}{n}\right),\quad b_n=o\left(\frac{1}{n}\right),\]记\(a_n^{(l)},b_n^{(l)}\)为\(f^{(l)}\)的Fourier系数(\(l\leqslant k\)), 于是\[\begin{split}
+a_n=-\frac{1}{n}b_n^{(1)}=-\frac{1}{n}\left(\frac{1}{n}a_n^{(2)}\right)=\cdots=\pm\frac{1}{n^k}b_n^{(k)},&\quad\left(\text{或}\,\pm\frac{1}{n^k}a_n^{(k)}\right)\\b_n=\frac{1}{n}a_n^{(1)}=\frac{1}{n}\left(-\frac{1}{n}a_n^{(2)}\right)=\cdots=\pm\frac{1}{n^k}a_n^{(k)},&\quad\left(\text{或}\,\pm\frac{1}{n^k}b_n^{(k)}\right)\\
+\end{split}\]
+从而\(a_n=o\left(\frac{1}{n^k}\right),\,b_n=o\left(\frac{1}{n^k}\right)\), 即得结论.
+\end{proof}
+\end{quiza}
+\begin{quizb}
+\woe 给定\(m\geqslant 1\).\begin{quizs}
+\item 证明: 当\(n\rightarrow +\infty\)时, \(m\)阶三角多项式列\[T_n(x)=a_{n0}+\sum_{k=1}^{m}\left(a_{nk}\cos kx+b_{nk}\sin kx\right)\]关于\(x\in[0,2\pi]\)一致收敛当且仅当对每个\(k(0\leqslant k\leqslant m)\), \(\{a_{nk}\}\)和\(\{b_{nk}\}\)均收敛.
+\item 设\(\mathcal{T}_m\)表示以\(2\pi\)为周期的\(m\)阶三角多项式全体. 证明: \(\forall\in C_{\#}\left(\mathbb{R}\right)\), 存在\(S\in\mathcal{T}_m\), 使得\[\max_{x\in [0,2\pi]}\left|f(x)-S(x)\right|=\inf_{T(x)\in\mathcal{T}_n}\max_{x\in[0,2\pi]}\left|f(x)-T(x)\right|.\]
+\end{quizs}
+\begin{proof}
+(1)
+
+(2)
+\end{proof}
+\woe 试寻找比习题\(\boldsymbol{\mathcal{A}}\)第7题更一般的条件使得\(f\)的Fourier系数\(a_n,b_n\)满足\[\lim_{n\rightarrow+\infty}n^ka_n=\lim_{n\rightarrow+\infty}n^kb_n=0.\]
+\begin{solution}
+在其证明中, \(f\in C_{\#}^k(\bbr)\)可以退化到\(f^{(k)}(x)\in L(\bbr)\).
+\end{solution}
+\end{quizb}
+
+\section{Fourier级数的收敛性}
+\precis{Dirichlet积分,Dirichlet核,局部性原理,Dini-Lipschitz判别法,Dirichlet引理,Dini-Jordan判别法,逐项可积性,非Fourier级数而逐点收敛的三角级数,一致收敛性,奇异性,Fej\'{e}r积分,Fej\'{e}r核,平方可积函数,Fourier级数的性质,标准正交系,最佳均方逼近,Bessel不等式,Parseval不等式,\(p\)次可积函数,Fourier级数的性质}
+\begin{quiza}
+\woe 设\(f\in C_{\#}^1[0,2\pi]\), 证明: \(\int_{0}^{2\pi}\left|f(x)-\frac{1}{2\pi}\int_{0}^{2\pi}f(t)\dd t\right|^2\dd x\leqslant C\int_{0}^{2\pi}|f'(x)|^2\dd x,\) 且其最佳常数为\(C=1.\)
+\begin{proof}
+设\[f(x)-\frac{1}{2\pi}\int_{0}^{2\pi}f(t)\dd t=\sum_{k=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right),\]于是有\[f'(x)\sim\sum_{k=1}^{\infty}\left(nb_n\cos nx-na_n\sin nx\right),\]依Parseval等式便有\begin{gather*}
+\pi\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right)=\int_{0}^{2\pi}\left|f(x)-\frac{1}{2\pi}\int_{0}^{2\pi}f(t)\dd t\right|^2\dd x.\\
+\pi\sum_{n=1}^{\infty}n^2\left(a_n^2+b_n^2\right)=\int_{0}^{2\pi}\left|f'(t)\right|\dd t.
+\end{gather*}
+则有\[\begin{split}
+&C\int_{0}^{2\pi}|f'(t)|\dd t-\int_{0}^{2\pi}\left|f(x)-\frac{1}{2\pi}\int_{0}^{2\pi}f(t)\dd t\right|^2\dd x\\
+=&\pi\left(\sum_{n=1}^{\infty}(Cn^2-1)(a_n^2+b_n^2)\right)\geqslant 0.\qedhere
+\end{split}\]
+\end{proof}
+\woe 按以下步骤对\(C^1\)平面上的简单闭曲线\(C\), 证明等周不等式\(4\pi S\leqslant L^2\), 其中\(L,S\)分别为\(C\)的周长与所围区域的面积. 依次证明:
+\begin{quizs}
+\item 设\(s\)为弧长参数, 令\(t=\frac{2\pi s}{L}\), \(C\)的参数方程为\(\begin{cases}
+x=x(t),\\y=y(t)
+\end{cases}(t\in [0,2\pi]),\) 则\(L^2=2\pi\int_{0}^{2\pi}\left(|x'(t)|^2+|y'(t)|^2\right)\dd t.\)
+\item \(S=\frac{1}{2}\int_{0}^{2\pi}\left(x(t)y'(t)-x'(t)y(t)\right)\dd t\).
+\item \(4\pi S\leqslant L^2\).
+\end{quizs}
+\begin{proof}
+首先由\(t=\frac{2\pi s}{L}\), 得到\(\frac{\dd s}{\dd t}=\frac{L}{2\pi}\), 从而\[\frac{L^2}{4\pi^2}=\left(\frac{\dd s}{\dd t}\right)=\left|x'(t)\right|^2+\left|y'(t)\right|^2,\]积分得到\(L^2=2\pi\int_{0}^{2\pi}\left(\left|x'(t)\right|^2+\left|y'(t)\right|^2\right)\dd t.\)
+
+由Green公式易见\[\frac{1}{2}\int_{0}^{2\pi}\left(x(t)y'(t)-x'(t)y(t)\right)\dd t=\frac{1}{2}\int_Cx\dd y-y\dd x=\iint_{D}\dd x\dd y=S,\]其中\(D\)表示闭曲线所围区域.
+
+设\begin{gather*}
+x(t)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right),\\
+y(t)\sim\frac{c_0}{2}+\sum_{n=1}^{\infty}\left(c_n\cos nx+d_n\sin nx\right).
+\end{gather*}
+易见上述Fourier一致收敛, 则有\[x'(t)\sim\sum_{n=1}^{\infty}\left(nb_n\cos nx-na_n\sin nx\right),\,\,y'(t)\sim\sum_{n=1}^{\infty}\left(nd_n\cos nx-nc_n\sin nx\right),\]于是依照Parseval等式有\[\frac{L^2}{2\pi^2}=\frac{1}{\pi}\int_{0}^{2\pi}|x'(t)|^2\dd t+\frac{1}{\pi}\int_{0}^{2\pi}|y'(t)|^2\dd t=\sum_{n=1}^{\infty}n^2\left(a_n^2+b_n^2+c_n^2+d_n^2\right),\]容易得到\[\begin{split}
+\frac{2S}{\pi}&=\frac{1}{\pi}\int_{0}^{2\pi}\left(x(t)y'(t)-x'(t)y(t)\right)\dd t\\
+&=\sum_{n=1}^{\infty}n\left(2a_nd_n-2c_nb_n\right)\leqslant\sum_{n=1}^{\infty}n\left(2|a_nd_n|+2|c_nb_n|\right)\\&\leqslant\sum_{n=1}^{\infty}n\left(a_n^2+d_n^2+c_n^2+b_n^2\right),
+\end{split}\]由于\(n^2\geqslant n\), 于是\(4\pi S\leqslant L^2.\)
+\end{proof}
+\woe 设\(f\)在\(\left[0,+\infty\right)\)上单调且\(\lim_{x\rightarrow+\infty}f(x)=0\). 证明\(\lim_{n\rightarrow+\infty}\int_{0}^{+\infty}f(x)\sin nx\dd x=0.\)
+\begin{proof}
+由于\(\left|\int_{0}^{A}\sin nx\dd x\right|=\frac{1-\cos nA}{n}\leqslant 1\)有界, \(f\)单调且\(\lim_{x\rightarrow+\infty}f(x)=0\), 依Dirichlet判别法知\(\int_{0}^{+\infty}f(x)\sin nx\dd x\)收敛, 这意味着\(\exists A\)使得\(\forall\varepsilon>0\)使得\[\left|\int_{A}^{+\infty}f(x)\sin nx\dd x\right|<\varepsilon,\]令\(F(x)=xf(x)\), 则\(F(0^+)=0\), 于是由Dirichlet引理可得\[\lim_{n\rightarrow+\infty}\int_{0}^{A}\frac{F(x)-F(0^+)}{x}\sin nx=0.\]再由\(\varepsilon\)的任意性即得结论.
+\end{proof}
+\woe 设\(n\geqslant 1\), 证明: \(\int_{0}^{\pi/2}x\left(\frac{\sin nx}{\sin x}\right)^4\dd x<\frac{n^2\pi^2}{4}.\)
+\begin{proof}
+\def\r{\frac{\sin nx}{\sin x}}
+只需证\(n\geqslant 2\)的情况, 令\[\int_{0}^{\pi/2}x\left(\r\right)^4\dd x=\int_{0}^{\pi/(2n)}x\left(\r\right)^4\dd x+\int_{\pi/(2n)}^{\pi/2}x\left(\r\right)^4\dd x=:I+J.\]
+对\(I\), 用数学归纳法易知\(\left|\r\right|\leqslant n\), 从而\(I\leqslant\frac{n^2\pi^2}{8}\); 对\(J\), 利用\(|\sin nx|\leqslant 1\)及\(\frac{2}{\pi}t<\sin t\left(0< t< \frac{\pi}{2}\right),\) 可得\(J<\frac{n^2\pi^2}{8}\). 相加即得结论.
+\end{proof}
+\woe 设\(f\in C(\mathbb{R})\)以1为周期, \(f(x)+f\left(x+\frac{1}{2}\right)=f(2x)\). 若存在\(g\in L^1[0,1]\)使得\(f(x)=f(0)+\int_{0}^{x}g(t)\dd t\), 证明: \(f\equiv 0\).
+\begin{proof}
+设\(f\)的Fourier展开式为\[\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k\cos\left(2k\pi x\right)+b_k\sin\left(2k\pi x\right)\right),\]则\(f(x)+f\left(x+\frac{1}{2}\right)\)的Fourier展开为\[\begin{split}
+&a_0+\sum_{k=1}^{\infty}\left(\left(1+(-1)^k\right)a_k\cos(2k\pi x)+\left(1+(-1)^k\right)b_k\sin(2k\pi x)\right)\\=&a_0+\sum_{k=1}^{\infty}\left(2a_{2k}\cos\left(4k\pi x\right)+2b_{2k}\sin\left(4k\pi x\right)\right),
+\end{split}\]而\(f(2x)\)的Fourier展开为\[\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k\cos(4k\pi x)+b_k\sin(4k\pi x)\right).\]比较系数得到\[a_0=0,\quad a_k=2a_{2k},\quad b_k=2b_{2k},\quad k\geqslant 1,\]从而\[a_k=2^na_{2^nk},\quad b_k=2^nb_{2^nk},\quad\forall k\geqslant 1,n\geqslant 1,\]由题设\(f(x)=f(0)+\int_{0}^{x}g(t)\dd t\), 于是\[\lim_{n\rightarrow+\infty}na_n=\lim_{n\rightarrow+\infty}2n\int_{0}^{1}f(x)\cos(2n\pi x)\dd x=-\lim_{n\rightarrow+\infty}\frac{1}{\pi}\int_{0}^{1}g(x)\sin\left(2n\pi x\right)\dd x=0,\]同理\(\lim_{n\rightarrow+\infty}nb_n=0\), 所以\[a_k=\lim_{n\rightarrow+\infty}\frac{1}{k}2^nka_{2^nk}=0,\quad b_k=\lim_{n\rightarrow+\infty}\frac{1}{k}2^nkb_{2^nk}=0,\quad\forall k\geqslant 1,\]这样\(f\)的Fourier系数均为\(0\), 所以\(f\equiv 0\).
+\end{proof}
+\woe 设\(1\leqslant p<+\infty,\,f\in L^p[0,2\pi]\), 证明: \(\lim_{n\rightarrow+\infty}\left\|\sigma_n(f;\cdot)-f(\cdot)\right\|_{L^p[0,2\pi]}=0.\)
+\begin{proof}
+由于\[\left\|\sigma_n(f;x)-f(x)\right\|_{L^p[0,2\pi]}=\int_{0}^{2\pi}\left|\frac{1}{2n\pi}\int_{0}^{2\pi}\left(f(x+t)-f(x)\right)\left(\frac{\sin\left(nt/2\right)}{\sin(t/2)}\right)^2\dd t\right|^p\dd x,\]
+\end{proof}
+\end{quiza}
+\begin{quizb}
+\woe 设\(f\in L^1_{\#}\left(\mathbb{R}\right),g_n\in L^{\infty}_{\#}(\mathbb{R})(n\geqslant 1)\), 满足\[\int_{-\pi}^{\pi}g_n(x)\dd x=1,\quad\int_{-\pi}^{\pi}|g_n(x)|\dd x\leqslant M,\quad\forall n\geqslant 1,\]其中\(M\)为常数. 又对任何\(\delta>0\), 成立\[\lim_{n\rightarrow+\infty}\int_{0}^{\pi}\left(|g_n(x)|+|g_n(-x)|\right)\dd x=0,\quad \sup_{\delta\leqslant|x|\leqslant\pi \atop n\geqslant 1}|g_n(x)|<+\infty.\]证明:
+\begin{quizs}
+\item 若\(f\)在点\(x_0\)连续, 则\(\lim_{n\rightarrow+\infty}\int_{-\pi}^{\pi}f(y)g_n(x_0-y)\dd y=f(x_0)\).
+\item 若\(f\)在\(\mathbb{R}\)上连续, 则\(\lim_{n\rightarrow+\infty}\sup_{x\in\mathbb{R}}\left|\int_{-\pi}^{\pi}f(y)g_n(x-y)\dd y-f(x)\right|=0\).
+\end{quizs}
+\woe 推广上一题的结果.
+\woe 计算\(\int_{0}^{\pi/2}x\ln(\sin x)\ln(\cos x)\dd x.\)
+\begin{proof}
+容易得到\(\int_{0}^{\pi/2}x\ln(\sin x)\ln(\cos x)\dd x=\frac{\pi}{4}\int_{0}^{\pi/2}\ln(\sin x)\ln(\cos x)\dd x\), 利用\[\ln\left(2\sin\frac{x}{2}\right)=-\sum_{n=1}^{\infty}\frac{\cos nx}{n},\quad \forall x\in (0,2\pi).\]
+置\(I=\int_{0}^{\pi/2}x\ln(\sin x)\ln(\cos x)\dd x\)我们有\[\begin{split}
+I&=\frac{\pi}{8}\int_{0}^{\pi/2}\left\lbrace\left[\ln(\sin x)+\ln(\cos x)\right]^2-\ln^2(\sin x)-\ln^2(\cos x) \right\rbrace\dd x\\
+&=\frac{\pi}{8}\int_{0}^{\pi/2}\left[\ln^2\frac{\sin 2x}{2}-2\ln^2(\sin x)\right]\dd x\\
+&=\frac{\pi}{8}\int_{0}^{\pi/2}\left\lbrace\left[2\ln 2+\sum_{n=1}^{\infty}\frac{\cos 4nx}{n}\right]^2-2\left[\ln 2+\sum_{n=1}^{\infty}\frac{\cos(2nx)}{n}\right]^2 \right\rbrace\dd x\\
+&=\frac{\pi}{8}\left(\pi\ln^2 2-\frac{\pi}{4}\sum_{n=1}^{\infty}\frac{1}{n^2}\right)=\frac{\pi^2}{8}\ln^22-\frac{\pi^4}{192}.\qedhere
+\end{split}\]
+\end{proof}
+\woe 试考察函数\(f(x)=\sum_{n=2}^{\infty}\frac{\cos nx}{\ln x}\)在\([-\pi,\pi]\)上的可积性.
+\woe 设\(\alpha\in(0,1)\), 考察函数\(f(x)=\sum_{n=1}^{\infty}\frac{\sin nx}{n^\alpha}\)和\(g(x)=\sum_{n=1}^{\infty}\frac{\cos nx}{n^\alpha}\)当\(x\rightarrow 0^+\)时的阶.
+\woe 设\(f\in C_{\#}[0,2\pi]\)的Fourier级数为\(\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right)\). 问\(\sum_{n=1}^{\infty}\left(b_n\cos nx-a_n\sin nx\right)\)是不是某个\(g\in C_{\#}[0,2\pi]\)的Fourier级数?
+\woe 设\(\{b_n\}\)为单调下降的正数列, 证明: \(\sum_{n=1}^{\infty}b_n\sin nx\)在\([-\pi,\pi]\)上一致收敛的充要条件是\(nb_n\rightarrow 0\).
+\woe 试讨论如何定义方程(12,2,47)的解, 以及在何种条件下, 方程(12.2.47)有唯一解, 而(12.2.48)-(12.2.49)给出了方程的解.
+\woe 对于\(p\in[1,+\infty)\), 证明(12.3.38)式与(12.2.40)式的等价性.
+\woe 证明(12.2.39)与(12.2.41)式等价.
+\end{quizb}
+\section{Fourier变换}
+\precis{Fourier变换,速降函数(Schwarz函数),Fourier变换的导数,导数的Fourier变换,Fourier逆变换,卷积的Fourier变换,乘积的Fourier变换,Plancherel定理,Hausdoff-Young不等式,处处连续无处可微函数,处处连续无处H\"{o}lder连续函数,热传导方程求解,Heisenberg不确定性原理,\(L^1(\mathbb{R}^n)+L^2(\mathbb{R}^n)\)上的Fourier变换,Borwein积分}
+\begin{theorem}{}{C12ff}
+设\(f,g\in\mathscr{S}\), 则\[\begin{split}
+&(f*g)^{\land}(\boldsymbol{x})=\widehat{f}(\boldsymbol{x})\widehat{g}(\boldsymbol{x}),\quad\forall\boldsymbol{x}\in\mathbb{R}^n\\
+&(fg)^{\land}(\boldsymbol{x})=\left(\widehat{f}*\widehat{g}\right)(\boldsymbol{x}),\quad\forall\boldsymbol{x}\in\mathbb{R}^n.
+\end{split}\]
+\end{theorem}
+\begin{theorem}{}{C12fe}
+设设\(f,g\in\mathscr{S}\), 则\[\int_{\mathbb{R}^n}f(\boldsymbol{x})\overline{g(\boldsymbol{x})}\dd\boldsymbol{x}=\int_{\mathbb{R}^n}\widehat{f}(\boldsymbol{x})\overline{\widehat{g}(\boldsymbol{x})}\dd\boldsymbol{x}.\]
+\end{theorem}
+\begin{quiza}
+\woe 设\(L\in L^1(\mathbb{R}^n),g(\boldsymbol{x})=f(r\boldsymbol{x})\), 其中\(r>0\)为给定实数, 试求\(f\)的Fourier变换表示\(g\)的Fourier变换.
+\begin{solution}
+	
+\end{solution}
+\woe 设\(f\in C_c^2(\mathbb{R})\), 证明\(\lim_{x\rightarrow\infty}\left|x^2\widehat{f}(x)\right|=0\). 进而对于任何\(g\in L^{\infty}(\mathbb{R})\), 有\[\lim_{T\rightarrow +\infty}\sum_{n=-\infty}^{+\infty}\frac{1}{T}\widehat{f}\left(\frac{n}{T}\right)g\left(\frac{n}{T}\right)=\int_{\mathbb{R}}\widehat{f}g(x)\dd x.\]
+\begin{proof}
+	
+\end{proof}
+\woe 对于\[f\in X_a=\{f\big|f\text{非负, 偶, }\mathrm{supp}\,f=\left[-\frac{a}{2},\frac{a}{2}\right],\,f\text{在}\left(-\frac{a}{2},\frac{a}{2}\right)\text{内Lipschitz连续}\},\]证明: \(\int_{\mathbb{R}}\widehat{f}(x)\dd x=f(0).\)
+\begin{proof}
+	
+\end{proof}
+\woe 设\(f(x)=\pi\ee^{-2\pi |x|}(x\in\mathbb{R})\). 试求\(f\)的Fourier变换.
+\begin{solution}
+	
+\end{solution}
+\woe 证明: \(g(z)=\int_{-\infty}^{+\infty}\ee^{-\pi y^2}\ee^{2\pi yz}\dd y\)复可导.
+\begin{proof}
+	
+\end{proof}
+\woe 试用积分号下求导的方法计算\[F(x)=\int_{\bbr}\ee^{-\pi y^2}\ee^{-2\pi\mathrm{i}xy}\dd y,\qquad x\in\mathbb{R}.\]
+\begin{solution}
+	首先\(F(0)=\int_{\bbr}\ee^{-\pi y^2}\dd y\), 即\[F(0)=\int_{-\infty}^{+\infty}\ee^{-\pi y^2}\dd y=\frac{1}{\sqrt{\pi}}\int_{-\infty}^{+\infty}\ee^{-t^2}\dd t=1,\]又\[F'(x)=\int_{\bbr}\ee^{-\pi y^2}\ee^{-2\pi\ii xy}(-2\pi\ii y)\dd y=-2\pi\ii\ee^{-\pi x^2}\int_{\bbr}\ee^{-\pi(y+\ii x)^2}y\dd y,\]由\[\begin{split}
+	&\int_{\bbr}\ee^{-\pi(y+\ii x)^2}y\dd y=\int_{\bbr}\ee^{-\pi(y+\ii x)^2}\left(\left(y+\ii x\right)-\ii x\right)\dd y\\=&\frac{1}{2}\int_{\bbr}\ee^{-\pi(y+\ii x)^2}\dd\left(y+\ii x\right)^2-\ii x\int_{\bbr}\ee^{-\pi(y+\ii x)^2}\dd y=-\ii x,
+	\end{split}\]于是\(F'(x)=-2\pi x\ee^{-\pi x^2}\), 可知\(F(x)=\int_{0}^{x}F'(x)\dd x+F(0)=\ee^{-\pi x^2}\).
+\end{solution}
+\end{quiza}
+\begin{quizb}
+\woe 试仿下列等式给出一些类似的等式.
+\tcbline
+对于正数\(a_1,a_2,\cdots,a_n\), 当且仅当\(a_1+a_2+\cdots+a_n\leqslant 1\)时, 成立\[\begin{split}
+&\int_{0}^{+\infty}\frac{\sin x}{x}\cdot\frac{\pi^2\cos a_1x}{\pi^2-4a_1^2x^2}\cdots\frac{\pi^2\cos a_nx}{\pi^2-4a_n^2x^2}\dd x=\frac{\pi}{2},\\
+&\frac{1}{2^n\sin^n(1/2)}\int_{0}^{+\infty}\prod_{k=1}^{n}\left(\frac{\sin\frac{2a_kx+1}{2}}{2a_kx+1}+\frac{\sin\frac{2a_kx-1}{2}}{2a_kx-1}\right)\dd x=\frac{\pi}{2},\\
+&\int_{0}^{+\infty}\frac{\sin x}{x}\frac{\pi^2-2a_1\pi x\sin a_1x}{\pi^2-4a_1^2x^2}\cdots\frac{\pi^2-2a_n\pi x\sin a_nx}{\pi^2-4a_n^2x^2}=\frac{\pi}{2},\\
+&3^n\int_{0}^{+\infty}\frac{\sin x}{x}\frac{\sin a_1x-a_1x\cos a_1x}{a_1^3x^3}\cdots\frac{\sin a_nx-a_nx\cos a_nx}{a_n^3x^3}=\frac{\pi}{2}.\\
+\end{split}\]
+\tcbline
+\begin{solution}
+	
+\end{solution}
+\woe 设\(f\in C^1(\mathbb{R})\), 且\(\int_{\mathbb{R}}\left(f^2(x)+\left(f'(x)\right)^2\right)\dd x=1\). 证明: \(\lim_{x\rightarrow\infty}f(x)=0\), 且\(\left\|f\right\|_{\infty}<\frac{\sqrt{2}}{2}\).
+\begin{proof}
+	
+\end{proof}
+\woe 设\(\alpha\in\mathbb{R}\), 计算含参变量积分\(\int_{0}^{+\infty}\frac{\cos\left(\alpha\pi x\right)}{1+x^2}\dd x,\,\int_{0}^{+\infty}\frac{x\sin\left(\alpha\pi x\right)}{1+x^2}\dd x\).
+\begin{solution}
+	记\(J(\alpha)=\int_{0}^{+\infty}\frac{\cos\left(\alpha\pi x\right)}{1+x^2}\dd x.\) 显然有\(J(\alpha)=J(-\alpha)\), 为此我们不妨设\(\alpha\geqslant 0\). 注意到\(\int_{0}^{+\infty}\ee^{-t(1+x^2)}\dd t=\frac{1}{1+x^2}\), 于是\[\int_{0}^{+\infty}\cos\left(\alpha\pi x\right)\left(\int_{0}^{+\infty}\ee^{-t(1+x^2)}\dd t\right)\dd x=\int_{0}^{+\infty}\ee^{-t}\dd t\int_{0}^{+\infty}\ee^{-tx^2}\cos\left(\alpha\pi x\right)\dd x,\]记\(I(\alpha,t)=\int_{0}^{+\infty}\ee^{-tx^2}\cos\left(\alpha\pi x\right)\dd x\), 如果我们置\(x=\sqrt{\frac{\pi}{t}}p,\alpha=2\sqrt{\frac{t}{\pi}}q\), 则\[I(\alpha,t)=\sqrt{\frac{\pi}{t}}\int_{0}^{+\infty}\ee^{-\pi p^2}\cos\left(2\pi pq\right)\dd p,\]注意到在12.3.A第6题中算得\[\int_{\bbr}\ee^{-\pi y^2}\ee^{-2\pi\ii xy}\dd y=\ee^{-\pi x^2},\]这意味着\(I(\alpha,t)=\frac{1}{2}\sqrt{\frac{\pi}{t}}\ee^{-\pi q^2}=\frac{1}{2}\sqrt{\frac{\pi}{t}}\exp\left(-\frac{\pi^2\alpha^2}{4t}\right)\). 于是\[J(\alpha)=\frac{\sqrt{\pi}}{2}\int_{0}^{+\infty}\exp\left(-t-\frac{\pi^2\alpha^2}{4t}\right)\frac{\dd t}{\sqrt{t}},\]置\(t=u^2\), 得\[J(\alpha)=\sqrt{\pi}\int_{0}^{+\infty}\exp\left(-\left(u^2+\frac{\pi^2\alpha^2}{4u^2}\right)\right)\dd u=\sqrt{\pi}\ee^{-\pi\alpha}\int_{0}^{+\infty}\exp\left(-\left(u-\frac{\pi\alpha}{2u}\right)^2\right)\dd u,\]置\(y=u-\frac{\pi\alpha}{2u}\), 有\(\dd y=\left(1+\frac{\pi\alpha}{2u^2}\right)\dd u\), 并且\(u=0,y=-\infty\) ; \(u=+\infty,y=+\infty\), 于是\[\begin{split}
+		\int_{-\infty}^{+\infty}\ee^{-y^2}\dd y&=\int_{0}^{+\infty}\exp\left(-\left(u-\frac{\pi\alpha}{2u}\right)^2\right)\left(1+\frac{\pi\alpha}{2u^2}\right)\dd u\\&=\int_{0}^{+\infty}\exp\left(-\left(u-\frac{\pi\alpha}{2u}\right)^2\right)\dd u+\frac{\pi\alpha}{2}\int_{0}^{+\infty}\exp\left(-\left(u-\frac{\pi\alpha}{2u}\right)^2\right)\frac{\dd u}{u^2},
+	\end{split}\]
+	对于\(\frac{\pi\alpha}{2}\int_{0}^{+\infty}\exp\left(-\left(u-\frac{\pi\alpha}{2u}\right)^2\right)\frac{\dd u}{u^2}\), 令\(u=-\frac{\pi\alpha}{2w}\), 则\(\dd u=\frac{\pi\alpha}{2}\frac{\dd w}{w^2}\), 于是\[\begin{split}
+		\frac{\pi\alpha}{2}\int_{0}^{+\infty}\exp\left(-\left(u-\frac{\pi\alpha}{2}\right)^2\right)\frac{\dd u}{u^2}&=\frac{\alpha}{2}\int_{-\infty}^{0}\exp\left(-\left(w-\frac{\pi\alpha}{2w}\right)^2\right)\frac{2}{\pi\alpha}\dd w\\&=\int_{-\infty}^{0}\exp\left(-\left(w-\frac{\pi\alpha}{2w}\right)^2\right)\dd w,
+		\end{split}\]即有\(	\int_{-\infty}^{+\infty}\ee^{-y^2}\dd y=\int_{-\infty}^{+\infty}\exp\left(-\left(u-\frac{\pi\alpha}{2u}\right)^2\right)\dd u\), 从而\[\int_{0}^{+\infty}\exp\left(-\left(u-\frac{\pi\alpha}{2u}\right)^2\right)\dd u=\int_{0}^{+\infty}\ee^{-y^2}\dd y=\frac{\sqrt{\pi}}{2},\]
+	即得\(J(\alpha)=\frac{\pi}{2}\ee^{-\pi|\alpha|}\). 对于\(\int_{0}^{+\infty}\frac{x\sin\left(\alpha\pi x\right)}{1+x^2}\dd x\), 注意到\[J'(\alpha)=-\pi\int_{0}^{+\infty}\frac{x\sin(\alpha\pi x)}{1+x^2}\dd x=-\frac{\pi^2}{2}\ee^{-\pi\alpha},\quad \alpha>0,\]类似可得其余结果, 最终\(\int_{0}^{+\infty}\frac{x\sin\left(\alpha\pi x\right)}{1+x^2}\dd x=\mathrm{sgn}(\alpha)\frac{\pi}{2}\ee^{-\pi|\alpha|}\).
+\end{solution}
+\woe 证明: (12.3.27)式给出了方程(12.3.23)的唯一解.
+\begin{proof}
+	
+\end{proof}
+\woe 设\(p\in(1,2)\), 速降函数列\(\{\varphi_k\}\)在\(L^p\left(\mathbb{R}^n\right)\)中强收敛于\(f\). 证明: \(\{\widehat{\varphi}_k\}\)在\(L^{p'}(\mathbb{R}^n)\)中强收敛于\(\widehat{f}\), 其中\(p'\)是\(p\)的对偶数.
+\begin{proof}
+	
+\end{proof}
+\woe 设\(f\in L^1(\mathbb{R}^n)\cap L^2(\mathbb{R}^n)\). 证明: 可取到速降函数列\(\{f_k\}\)同时在\(L^1(\mathbb{R}^n)\)和\(L^2(\mathbb{R}^n)\)中强收敛于\(f\).
+\begin{proof}
+	
+\end{proof}
+\woe 证明: Plancherel定理在\(L^2(\mathbb{R}^n)\)中成立.
+\begin{proof}
+	
+\end{proof}
+\woe 设\(p\in[1,2]\), 证明Hausdorff-Young不等式对于\(f\in L^p\left(\mathbb{R}^n\right)\)成立.
+\begin{proof}
+	
+\end{proof}
+\woe 试推广定理\reff{Th:C12ff} 和\reff{Th:C12fe}.
+\begin{solution}
+	
+\end{solution}
+\end{quizb}
+\section{Fourier级数的唯一性}
+\precis{Cantor引理,Riemann第一定理,Riemann第二定理,Cantor-Lebesgue定理,Du Bois-Reymond-de la Vall\'{e}e-Poussin定理}
+\begin{lemma}{Cantor引理}{anbn}
+设\(\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right)\)在区间\([a,b]\)上收敛, 则\(\lim_{n\rightarrow+\infty}a_n=\lim_{n\rightarrow+\infty}b_n=0\).
+\end{lemma}
+\begin{lemma}{Riemann第二定理}{Riemma}
+设\(\lim_{n\rightarrow+\infty}c_n=0\), 则\[\lim_{h\rightarrow 0}\sum_{n=1}^{\infty}\frac{c_n\sin^2nh}{n^2h}=0.\]
+\end{lemma}
+\begin{lemma}{}{end}
+设\(\sum_{n=1}^{\infty}c_n=A\), 则\[\lim_{h\rightarrow 0}\sum_{n=1}^{\infty}c_n\left(\frac{\sin nh}{nh}\right)^2=A.\]
+\end{lemma}
+\begin{quiza}
+\woe 试利用闭区间套定理证明引理\reff{le:anbn}.
+\begin{proof}
+
+\end{proof}
+\woe 证明引理\reff{le:Riemma}
+\begin{proof}
+
+\end{proof}
+\end{quiza}
+\begin{quizb}
+\woe 推广引理\reff{le:end}.
+\begin{solution}
+
+\end{solution}
+\end{quizb}
