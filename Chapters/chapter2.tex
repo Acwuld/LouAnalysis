@@ -63,7 +63,7 @@
 \begin{proof}
 设\(S_n=\sum_{k=1}^{n}x_k^2\), 显然\(\{S_n\}\)单调递增. 并且\(\frac{1}{x_n}\sim S_n(n\rightarrow+\infty)\), 若\(\lim_{n\rightarrow+\infty}S_n=S\)有限, 则有\(\lim_{n\rightarrow+\infty}x_n=1/S\ne 0\), 这与\(S_n\)收敛矛盾, 从而\[\lim_{n\rightarrow+\infty}S_n=+\infty,\quad\lim_{n\rightarrow+\infty}x_n=0.\]
 结合Stolz定理, 我们有\[\lim_{n\rightarrow\infty}\frac{1}{(3n)x_n^3}=\lim_{n\rightarrow\infty}\frac{S_n^3}{3n}=\lim_{n\rightarrow\infty}\frac{S_n^3-S_{n-1}^3}{3},\]于是我们仅需证明\(\lim_{n\rightarrow\infty}\left(S_n^3-S_{n-1}^3\right)=3\). 注意到\[\begin{split}
-&S_n^3-S_{n-1}^3=(S_n-S_{n-1})\left(S_n^2+S_nS_{n-1}+S_{n-1}^2\right)\\=&x_n^2\left(S_n^2+S_n\left(S_n-x_n^2\right)+\left(S_n-x_n^2\right)^2\right)=3\left(x_nS_n\right)^2-3x_n^4S_n+x_n^6\\=&3\left(x_n\sum_{k=1}^{n}x_k^2\right)^2-3a_n^2\left(a_n\sum_{k=1}^{n}a_k^2\right)+x_n^6\rightarrow3\quad (n\rightarrow +\infty).\qedhere
+&S_n^3-S_{n-1}^3=(S_n-S_{n-1})\left(S_n^2+S_nS_{n-1}+S_{n-1}^2\right)\\=&x_n^2\left(S_n^2+S_n\left(S_n-x_n^2\right)+\left(S_n-x_n^2\right)^2\right)=3\left(x_nS_n\right)^2-3x_n^4S_n+x_n^6\\=&3\left(x_n\sum_{k=1}^{n}x_k^2\right)^2-3x_n^2\left(x_n\sum_{k=1}^{n}x_k^2\right)+x_n^6\rightarrow3\quad (n\rightarrow +\infty).\qedhere
 \end{split}\]
 \end{proof}
 \woe 设\(a\)和\(d\)是给定的正数. 对于\(n=1,2,3,\cdots\), 由等差数列\(a,\,a+d,\,\cdots,a+(n-1)d\) 形成的算数平均数\(A_n\)和几何平均数\(G_n\), 试求\(\lim_{n\rightarrow+\infty}\frac{G_n}{A_n}\).
