@@ -74,7 +74,13 @@ F(x)=&f(x)-\left(\frac{f(1)-f(-1)-2f'(0)}{2}\right)x^3+\left(f(0)-\frac{f(-1)+f(
 \begin{proof}
 我们先证明\(\lim_{x\rightarrow+\infty}f(x)\ne +\infty\). 若\(\lim_{x\rightarrow+\infty}f(x)= +\infty\), 则\(\exists X_1,\forall x>X_1\)有\(f(x)>2\), 也有\(X_2\)使得\(\forall x>X_2\)有\(f(x)>X_1\), 这样就有\[f'(x)>f\left(f(x)\right)>f(X_1)>2,\quad \forall x>X_2,\]因此有\(X_3\)使\(x>X_3-1\)时有\(f(x)>x\)成立, 也即\(f'(x)>f\left(f(x)\right)>f(x)\), 有\(\frac{f'(x)}{f(x)}>1\), 即有\[\int_{X_3}^{x}\frac{f'(x)}{f(x)}\dd x=\ln f(x)-\ln f(X_3)>t-X_3\Rightarrow f(x)>f(X_3)\ee^{x-X_3}>X_3\ee^{x-X_3},\]于是有\[f'(x)>f\left(f(x)\right)>X_3\ee^{f(x)-X_3}\Rightarrow f'(x)\ee^{-f(x)}>X_3\ee^{-X_3},\]由此得出\[\int_{X_3}^{x}f'(x)\ee^{-f(x)}\dd x>\int_{X_3}^{x}X_3\ee^{-X_3}\Rightarrow \ee^{-f(X_3)}-\ee^{-f(x)}>(x-X_3)X_3\ee^{-X_3},\]矛盾, 从而\(\lim_{x\rightarrow+\infty}f(x)\ne +\infty\).
 
-由此可得存在一些\(x\)使得\(f(x)<x\), 下面我们证明, 不可能有\(x_0\)使得\(f(x_0)=x_0\), 从而\(\forall x>0\)都有\(f(x)<x\). 如若这样的\(x_0\)存在,
+由此可得存在一些\(x>0\)使得\(f(x)<x\), 下面我们证明, 不可能有\(x_0>0\)使得\(f(x_0)=x_0\), 从而\(\forall x>0\)都有\(f(x)<x\). 如若这样的\(x_0\)存在, 我们先证明\(\forall x\geqslant x_0\), 有\(f(x)\geqslant x_0\), 事实上这也是不可能的, 因为此时有\[f'(x)>f\left(f(x)\right)\geqslant f(x_0)=x_0>0,\quad\forall x\geqslant x_0,\]这与\(\lim_{x\rightarrow+\infty}f(x)\ne +\infty\)矛盾. 下面我们证明前述结论, 事实上如果存在\(x\geqslant x_0\)而\(f(x)<x_0\), 我们考虑\(T=\inf\{x\geqslant x_0\big| f(x)<x_0\}\), 则由\(f\)的连续性可知\(f(T)=x_0\), 于是\[f'(T)>f\left(f(T)\right)=f(x_0)=x_0>0,\]这意味着存在\(\delta>0\)使得\(x\in(T-\delta,T)\)时有\(f(x)<f(T)=x_0\), 这与\(T\)的定义矛盾.
+
+下面我们证明: 若\(f(x_1)>0\)且\(f(x_2)\geqslant x_1\), 那么\(\forall x>x_2\)都有\(f(x)>x_1\). 特别的, 如果\(x_1\leqslant 0\)且\(f(x_1)> 0\), 那么\(\forall x>x_1\)有\(f(x)>x_1\).
+
+若存在\(x>x_2\)但\(f(x)\leqslant x_1\), 我们考虑\(S=\inf\{x>x_2\big|f(x)\leqslant x_1\}\), 由\(f\)的连续性可知\(f(S)=x_1\), 类似于前面的证明, 我们有\[f'(S)>f\left(f(S)\right)=f(x_1)>0,\]如果\(S>x_2\), 则有\(\delta_1>0\)使得\(x\in(S-\delta_1,S)\)时有\(f(x)<f(S)=x_1\)与\(S\)的定义矛盾, 如果\(S=x_2\), 则有\(\delta_2>0\)使得\(x\in(S,S+\delta_2)\)有\(f(x)>s_1\), 仍矛盾. 而后者只需考虑\(x_1=x_2\).
+
+
 \end{proof}
 
 
