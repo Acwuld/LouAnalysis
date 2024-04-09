@@ -58,87 +58,87 @@
 \contentsline {chapter}{\numberline {第6章\hspace {.3em}}微分中值定理和Taylor展开式}{87}{chapter.6}%
 \contentsline {section}{\numberline {6.1}微分中值定理}{87}{section.6.1}%
 {\small Fermat引理,Rolle中值定理,Lagrange中值定理,Cauahy中值定理,微分Darboux定理,凸集,常微分方程初值问题解的唯一性\par }
-\contentsline {section}{\numberline {6.2}L'H\^{o}pital法则}{90}{section.6.2}%
+\contentsline {section}{\numberline {6.2}L'H\^{o}pital法则}{91}{section.6.2}%
 {\small L'H\^{o}pital法则及其推广,极限计算的化简---“去核”和"去皮"\par }
 \contentsline {section}{\numberline {6.3}凸函数}{95}{section.6.3}%
 {\small 凸(凹)函数,Jensen不等式,割线斜率与凸性,凸性与连续性,中点凸(凹)函数,凸函数与一阶导数,支撑线(面),凸性与二阶导数,Hesse矩阵,对偶数,Young不等式,离散H\''{o}lder不等式,离散Minkowski不等式,幂平均不等式,调和平均\par }
 \contentsline {section}{\numberline {6.4}微分Darboux定理与比较定理}{101}{section.6.4}%
 {\small 微分不等式,常微分方程比较定理,偏微分方程比较定理\par }
-\contentsline {section}{\numberline {6.5}Taylor多项式与插值多项式}{105}{section.6.5}%
+\contentsline {section}{\numberline {6.5}Taylor多项式与插值多项式}{106}{section.6.5}%
 {\small Taylor多项式,带Peano型余项的Taylor公式,Maclaurin展开式,Taylor展开式的唯一性,带Lagrange型余项的Taylor公式,Lagrange型插值多项式,线性方程组解的线性可加性,Runge现象,插值多项式的误差估计,插值多项式,插值函数,函数拟合,广义中值定理\par }
 \contentsline {section}{\numberline {6.6}Taylor展开式的计算及应用}{109}{section.6.6}%
 {\small Taylor展开式计算的直接方法和间接方法,利用Taylor展开式计算反函数的高阶导数,利用Taylor展开式计算隐函数的高阶导数,Landau不等式,Taylor展开式在组合问题上的应用\par }
-\contentsline {chapter}{\numberline {第7章\hspace {.3em}}微分问题}{115}{chapter.7}%
-\contentsline {section}{\numberline {7.1}隐函数存在定理}{115}{section.7.1}%
+\contentsline {chapter}{\numberline {第7章\hspace {.3em}}微分问题}{116}{chapter.7}%
+\contentsline {section}{\numberline {7.1}隐函数存在定理}{116}{section.7.1}%
 {\small 隐函数存在定理,曲面的切平面,法向量\par }
-\contentsline {section}{\numberline {7.2}极值问题}{116}{section.7.2}%
+\contentsline {section}{\numberline {7.2}极值问题}{117}{section.7.2}%
 {\small 强制条件,极值问题,无条件极值,一阶必要条件,二阶必要条件,驻点,二阶必要条件,最小二乘法,线性拟合,条件极值,Lagrange乘子法,矩阵的诱导范数\par }
-\contentsline {section}{\numberline {7.3}常系数线性微分方程}{119}{section.7.3}%
+\contentsline {section}{\numberline {7.3}常系数线性微分方程}{120}{section.7.3}%
 {\small 一阶常系数线性微分方程,矩阵指数函数,高阶常系数线性微分方程,特征方程,算子法\par }
-\contentsline {section}{\numberline {7.4}导数的其他应用}{121}{section.7.4}%
+\contentsline {section}{\numberline {7.4}导数的其他应用}{122}{section.7.4}%
 {\small Newton切线法,平方收敛,平面曲线的曲率和曲率半径,一元实函数的草图,拐点\par }
-\contentsline {chapter}{\numberline {第8章\hspace {.3em}}积分}{124}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Riemann积分}{124}{section.8.1}%
+\contentsline {chapter}{\numberline {第8章\hspace {.3em}}积分}{125}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Riemann积分}{125}{section.8.1}%
 {\small 划分,轴平行矩形及其体积,Riemann积分的定义,Riemann和,Darboux上和,Darboux下和,加细,积分Darboux定理,上积分与下积分,一般有界集上的Riemann积分,Jordan测度,有界集的体积,Jordan可测,Riemann可积的充要条件\par }
-\contentsline {section}{\numberline {8.2}Lebesgue测度与Lebesgue可测函数}{125}{section.8.2}%
+\contentsline {section}{\numberline {8.2}Lebesgue测度与Lebesgue可测函数}{126}{section.8.2}%
 {\small Lebesgue外测度,Lebesgue测度,可测集,Carath\'{e}odory条件,几乎处处,\(\sigma \)代数,上限集,下限集,极限集,Borel集,二进方体,不可测集,Lebesgue可测函数,Borel可测函数,简单函数,Carath\'{e}odory函数,依测度收敛,Egorov定理,Riesz定理,Luzin定理\par }
-\contentsline {section}{\numberline {8.3}Lebesgue积分及其性质}{128}{section.8.3}%
+\contentsline {section}{\numberline {8.3}Lebesgue积分及其性质}{129}{section.8.3}%
 {\small Lebesgue积分,可积函数空间,本性上界,本性下界,绝对可积性,绝对连续性,积分第一中值定理,平行多面体的体积公式,连续型(积分型)H\"{o}lder不等式,权函数,积分型Minkowski不等式,L\'{e}vy单调收敛定理,Fatou引理,Lebesgue控制收敛定理,\(L^p\)空间的完备性\par }
-\contentsline {section}{\numberline {8.4}Newton-Lebibiniz公式}{129}{section.8.4}%
+\contentsline {section}{\numberline {8.4}Newton-Lebibiniz公式}{130}{section.8.4}%
 {\small 微积分基本定理---Newton-Lebibiniz公式,定积分的分布积分,定积分的变量代换,带积分余项的Taylor公式,Wallis公式,Stirling公式\par }
-\contentsline {section}{\numberline {8.5}累次积分}{137}{section.8.5}%
+\contentsline {section}{\numberline {8.5}累次积分}{138}{section.8.5}%
 {\small 累次积分,Fubuni定理,积分型Young不等式及其推广\par }
-\contentsline {section}{\numberline {8.6}重积分变量代换}{142}{section.8.6}%
+\contentsline {section}{\numberline {8.6}重积分变量代换}{143}{section.8.6}%
 {\small 重积分变量代换,Jacobi矩阵(行列式),(广义)极坐标变换,(广义)柱面坐标变换,旋转体的体积,(广义)球面坐标变换,(广义)高维球面坐标变换\par }
-\contentsline {section}{\numberline {8.7}函数的光滑逼近}{145}{section.8.7}%
+\contentsline {section}{\numberline {8.7}函数的光滑逼近}{146}{section.8.7}%
 {\small 函数的光滑逼近,支集,简单函数逼近可积函数,连续函数逼近可积函数,\(C^k\)函数一致逼近连续函数,一致收敛,内闭一致收敛,卷积,Young不等式,磨光算子,Weierstrass逼近定理,连续函数的延拓\par }
-\contentsline {section}{\numberline {8.8}光滑逼近的应用}{147}{section.8.8}%
+\contentsline {section}{\numberline {8.8}光滑逼近的应用}{148}{section.8.8}%
 {\small 分部积分公式的推广,带积分型余项Taylor公式的推广,积分第二中值定理,推广的Riemann-Lebesgue引理,无理数之均匀分布\par }
-\contentsline {section}{\numberline {8.9}附录}{150}{section.8.9}%
+\contentsline {section}{\numberline {8.9}附录}{151}{section.8.9}%
 {\small Lebesgue判据,Lebesgue基本定理,Vitali型覆盖引理,绝对连续函数,对偶问题,线性算子定义域的延拓,Marcinkiewicz插值定理,对数函数的积分定义,曲线的弧长,三角函数的积分定义\par }
-\contentsline {chapter}{\numberline {第9章\hspace {.3em}}函数列与函数项级数}{152}{chapter.9}%
-\contentsline {section}{\numberline {9.1}函数列与函数项级数的一致收敛及其性质}{152}{section.9.1}%
+\contentsline {chapter}{\numberline {第9章\hspace {.3em}}函数列与函数项级数}{153}{chapter.9}%
+\contentsline {section}{\numberline {9.1}函数列与函数项级数的一致收敛及其性质}{153}{section.9.1}%
 {\small 函数列与函数项级数的一致收敛性及其性质,Cauchy准则\par }
-\contentsline {section}{\numberline {9.2}函数项级数一致收敛性的判别法}{156}{section.9.2}%
+\contentsline {section}{\numberline {9.2}函数项级数一致收敛性的判别法}{157}{section.9.2}%
 {\small Weierstrass判别法,Abel判别法,Dirichlet判别法\par }
-\contentsline {section}{\numberline {9.3}幂级数与函数的幂级数展开}{161}{section.9.3}%
+\contentsline {section}{\numberline {9.3}幂级数与函数的幂级数展开}{162}{section.9.3}%
 {\small 幂级数的收敛半径,Abel第一定理,Cauchy-Hadamard公式,幂级数的性质,Abel第二定理,函数的幂级数展开,Taylor级数,Maclaurin级数,直接法,间接法,幂级数在复数域内的性质,非切向极限,实解析函数,复解析函数,复区域上函数的复导数,Cauchy-Riemann条件\par }
-\contentsline {section}{\numberline {9.4}幂级数的应用}{164}{section.9.4}%
+\contentsline {section}{\numberline {9.4}幂级数的应用}{165}{section.9.4}%
 {\small 数项级数的计算,幂级数与三角级数,Abel和,Ces\'{a}ro和,Tauber型定理,母函数,Bernoulli多项式,Bernoulli数,幂级数的抽象应用,Hardy-Littlewood定理\par }
-\contentsline {section}{\numberline {9.5}常微分方程初值问题的存在性}{172}{section.9.5}%
+\contentsline {section}{\numberline {9.5}常微分方程初值问题的存在性}{173}{section.9.5}%
 {\small Picard迭代,等度连续,Arzel\`{a}-Ascoli定理,非Lipschitz条件下解的存在性,积分方程的解,解的延伸\par }
-\contentsline {chapter}{\numberline {第10章\hspace {.3em}}反常积分与含参变量积分}{175}{chapter.10}%
-\contentsline {section}{\numberline {10.1}基于Riemann积分的反常积分}{175}{section.10.1}%
+\contentsline {chapter}{\numberline {第10章\hspace {.3em}}反常积分与含参变量积分}{176}{chapter.10}%
+\contentsline {section}{\numberline {10.1}基于Riemann积分的反常积分}{176}{section.10.1}%
 {\small 瑕积分,无穷积分,反常重积分,非负函数反常积分的收敛性,Cauchy准则,绝对收敛与条件收敛,Abel判别法,Dirichlet判别法,概率积分,Cauchy主值积分,数项级数收敛的Cauchy积分判别法\par }
-\contentsline {section}{\numberline {10.2}含参变量反常积分的一致收敛性及判别法}{182}{section.10.2}%
+\contentsline {section}{\numberline {10.2}含参变量反常积分的一致收敛性及判别法}{183}{section.10.2}%
 {\small 含参变量反常积分的一致收敛性,Cauchy准则,Weierstrass判别法,Abel判别法,Dirichlet判别法\par }
-\contentsline {section}{\numberline {10.3}含参变量积分的性质}{183}{section.10.3}%
+\contentsline {section}{\numberline {10.3}含参变量积分的性质}{184}{section.10.3}%
 {\small 含参变量积分的极限与连续性,含参变量积分的可微性,含参变量积分的积分,积分的计算\par }
-\contentsline {section}{\numberline {10.4}Euler积分}{194}{section.10.4}%
+\contentsline {section}{\numberline {10.4}Euler积分}{195}{section.10.4}%
 {\small \(\Gamma \)函数,\(\Gamma \)函数的递推公式,log-凸,Stirling公式及其改进,Euler公式,Gauss叠乘定理,倍元公式,Bohr-Mollerup定理,余元公式,B函数,B函数与\(\Gamma \)函数的关系,多重对数函数,双\(\Gamma \)函数,利用Euler积分计算\par }
-\contentsline {section}{\numberline {10.5}变分法初步}{202}{section.10.5}%
+\contentsline {section}{\numberline {10.5}变分法初步}{203}{section.10.5}%
 {\small 最优解的必要条件,Euler-Lagrange方程,特殊情形Euler-Lagrange方程的求解,捷线问题,最优解的充要条件,存在性问题简介,Poincar\'{e}不等式,弱收敛,强收敛,Clarkson不等式,凸集分离定理,Mazur定理,Riesz表示定理\par }
-\contentsline {chapter}{\numberline {第11章\hspace {.3em}}曲线积分与曲面积分}{203}{chapter.11}%
-\contentsline {section}{\numberline {11.1}第一型曲线积分}{203}{section.11.1}%
+\contentsline {chapter}{\numberline {第11章\hspace {.3em}}曲线积分与曲面积分}{204}{chapter.11}%
+\contentsline {section}{\numberline {11.1}第一型曲线积分}{204}{section.11.1}%
 {\small 曲线,Peano曲线,简单曲线,简单闭曲线,曲线的弧长,弧长参数,第一型曲线积分\par }
-\contentsline {section}{\numberline {11.2}第一型曲面积分}{203}{section.11.2}%
+\contentsline {section}{\numberline {11.2}第一型曲面积分}{204}{section.11.2}%
 {\small 曲面,同胚,\(k\)维\(C^m\)曲面,Schwarz的例子,集合的面积,分片\(C^m\)曲面,\(\mathbb {R}^n\)中子集的\(k\)维体积(面积),第一型曲面积分,余面积公式,楔积\par }
-\contentsline {section}{\numberline {11.3}第二型曲线积分}{206}{section.11.3}%
+\contentsline {section}{\numberline {11.3}第二型曲线积分}{207}{section.11.3}%
 {\small 第二型曲线积分,第一、二型曲线积分的关系,曲线的方向,Jordan闭曲线定理\par }
-\contentsline {section}{\numberline {11.4}第二型曲面积分}{207}{section.11.4}%
+\contentsline {section}{\numberline {11.4}第二型曲面积分}{208}{section.11.4}%
 {\small 第二型曲面积分,第一、二型曲面积分的关系,通量,曲面的侧\par }
-\contentsline {section}{\numberline {11.5}Green公式,Gauss公式,Stokes公式}{208}{section.11.5}%
+\contentsline {section}{\numberline {11.5}Green公式,Gauss公式,Stokes公式}{209}{section.11.5}%
 {\small 向量场,单连通域,Ostrogradsky-Gauss定理(散度定理),Green公式,Stokes公式,曲线积分和路径无关性,原函数的存在性,循环常数,场论初步,梯度场(保守场),散度场,向量线,环量,旋度,无源场,无旋场,Hamilton算子,Laplace算子,分部积分公式,Green第一、第二公式\par }
-\contentsline {section}{\numberline {11.6}调和函数与解析函数}{212}{section.11.6}%
+\contentsline {section}{\numberline {11.6}调和函数与解析函数}{213}{section.11.6}%
 {\small 调和函数,平均值公式,最值原理,Poisson公式,复可导与复解析的等价性,Cauchy定理,最大模原理,Liouville定理,共轭函数,利用解析函数计算\par }
-\contentsline {section}{\numberline {11.7}附录: \(C^1\)曲面上的Hausdoff测度}{214}{section.11.7}%
+\contentsline {section}{\numberline {11.7}附录: \(C^1\)曲面上的Hausdoff测度}{215}{section.11.7}%
 {\small Binet-Cauchy公式,\(C^1\)曲面的Hausdorff公式\par }
-\contentsline {chapter}{\numberline {第12章\hspace {.3em}}Fourier级数}{216}{chapter.12}%
-\contentsline {section}{\numberline {12.1}三角级数,Fourier级数}{216}{section.12.1}%
+\contentsline {chapter}{\numberline {第12章\hspace {.3em}}Fourier级数}{217}{chapter.12}%
+\contentsline {section}{\numberline {12.1}三角级数,Fourier级数}{217}{section.12.1}%
 {\small 三角级数,Fourier级数,三角级数的复形式,偶延拓,奇延拓,余弦级数,正弦级数\par }
-\contentsline {section}{\numberline {12.2}Fourier级数的收敛性}{220}{section.12.2}%
+\contentsline {section}{\numberline {12.2}Fourier级数的收敛性}{221}{section.12.2}%
 {\small Dirichlet积分,Dirichlet核,局部性原理,Dini-Lipschitz判别法,Dirichlet引理,Dini-Jordan判别法,逐项可积性,非Fourier级数而逐点收敛的三角级数,一致收敛性,奇异性,Fej\'{e}r积分,Fej\'{e}r核,平方可积函数,Fourier级数的性质,标准正交系,最佳均方逼近,Bessel不等式,Parseval不等式,\(p\)次可积函数,Fourier级数的性质\par }
-\contentsline {section}{\numberline {12.3}Fourier变换}{224}{section.12.3}%
+\contentsline {section}{\numberline {12.3}Fourier变换}{225}{section.12.3}%
 {\small Fourier变换,速降函数(Schwarz函数),Fourier变换的导数,导数的Fourier变换,Fourier逆变换,卷积的Fourier变换,乘积的Fourier变换,Plancherel定理,Hausdoff-Young不等式,处处连续无处可微函数,处处连续无处H\"{o}lder连续函数,热传导方程求解,Heisenberg不确定性原理,\(L^1(\mathbb {R}^n)+L^2(\mathbb {R}^n)\)上的Fourier变换,Borwein积分\par }
-\contentsline {section}{\numberline {12.4}Fourier级数的唯一性}{227}{section.12.4}%
+\contentsline {section}{\numberline {12.4}Fourier级数的唯一性}{228}{section.12.4}%
 {\small Cantor引理,Riemann第一定理,Riemann第二定理,Cantor-Lebesgue定理,Du Bois-Reymond-de la Vall\'{e}e-Poussin定理\par }

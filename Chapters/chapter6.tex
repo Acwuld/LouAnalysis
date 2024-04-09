@@ -71,6 +71,13 @@ F(x)=&f(x)-\left(\frac{f(1)-f(-1)-2f'(0)}{2}\right)x^3+\left(f(0)-\frac{f(-1)+f(
 由Lagrange中值定理, 有\[\left|\frac{f(x)-f(0)}{x-0}\right|=|f'(\xi)|<M<1,\quad \xi\text{介于\(0\)与\(x\)之间},\]由此知\(|f(x)-f(0)|<M|x|\). 同理可知后者部分结论也成立.
 \end{proof}
 \woe 设实函数\(f\)是\(\mathbb{R}\)上的连续可导函数, 且\(\forall x\in\mathbb{R}, f'(x)>f\left(f(x)\right)\). 证明: \(\forall x\geqslant 0,f\left(f\left(f(x)\right)\right)\leqslant 0\).
+\begin{proof}
+我们先证明\(\lim_{x\rightarrow+\infty}f(x)\ne +\infty\). 若\(\lim_{x\rightarrow+\infty}f(x)= +\infty\), 则\(\exists X_1,\forall x>X_1\)有\(f(x)>2\), 也有\(X_2\)使得\(\forall x>X_2\)有\(f(x)>X_1\), 这样就有\[f'(x)>f\left(f(x)\right)>f(X_1)>2,\quad \forall x>X_2,\]因此有\(X_3\)使\(x>X_3-1\)时有\(f(x)>x\)成立, 也即\(f'(x)>f\left(f(x)\right)>f(x)\), 有\(\frac{f'(x)}{f(x)}>1\), 即有\[\int_{X_3}^{x}\frac{f'(x)}{f(x)}\dd x=\ln f(x)-\ln f(X_3)>t-X_3\Rightarrow f(x)>f(X_3)\ee^{x-X_3}>X_3\ee^{x-X_3},\]于是有\[f'(x)>f\left(f(x)\right)>X_3\ee^{f(x)-X_3}\Rightarrow f'(x)\ee^{-f(x)}>X_3\ee^{-X_3},\]由此得出\[\int_{X_3}^{x}f'(x)\ee^{-f(x)}\dd x>\int_{X_3}^{x}X_3\ee^{-X_3}\Rightarrow \ee^{-f(X_3)}-\ee^{-f(x)}>(x-X_3)X_3\ee^{-X_3},\]矛盾, 从而\(\lim_{x\rightarrow+\infty}f(x)\ne +\infty\).
+
+由此可得存在一些\(x\)使得\(f(x)<x\), 下面我们证明, 不可能有\(x_0\)使得\(f(x_0)=x_0\), 从而\(\forall x>0\)都有\(f(x)<x\).
+\end{proof}
+
+
 \end{quizb}
 \section{L'H\^{o}pital法则}
 \precis{L'H\^{o}pital法则及其推广,极限计算的化简---“去核”和"去皮"}
