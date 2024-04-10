@@ -184,7 +184,5 @@ data [format=function] {
 	\draw[black] (0,0)--(20,0);
 \end{tikzpicture}
 }
-
-
 \ctexset {chapter={name={第,章},number={\arabic{chapter}},beforeskip={3pt},afterskip={3pt}}}
 \endinput
