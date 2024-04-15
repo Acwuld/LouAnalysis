@@ -388,6 +388,9 @@ yf(y)\geqslant 0,\qquad\forall y\in\mathbb{R}.
 \end{theorem}
 \begin{quiza}
 \woe 设\(f\)是\((a,+\infty)\)中的实函数, \(f(a^+)\)与\(f(+\infty)\)存在且相等. 证明: 若\(f\)有三阶导数, 则存在\(\xi\in(a,+\infty)\)使得\(f'''(\xi)=0\).
+\begin{proof}
+
+\end{proof}
 \woe 设实函数\(f\)是\(\left[a,+\infty\right)\)上有界的可微函数, \(|f'|\)单调. 证明:\(\lim_{x\rightarrow+\infty}xf'(x)=0.\)
 \begin{proof}
 由Darboux定理可知\(|f'|\)的单调性蕴涵\(f'\)的保号性. 不妨设\(f'\)非负, 此时\(f'\)必然单调减少. 否则\(f'\)单调增加, 且有\(x_2>x_1\geqslant a\)使得\(f'(x_2)>f'(x_1)\geqslant 0\). 由中值定理, 当\(x>x_2\)时,\[f(x)-f(x_2)=f'\left(x_2+\theta (x-x_2)\right)(x-x_2)\geqslant f'(x_2)(x-x_2),\]其中\(\theta\in(0,1)\)与\(x\)有关. 从而\(\lim_{x\rightarrow+\infty}f(x)=+\infty\). 这与题设矛盾. 于是\(f'\)非负且单调减少. 由中值定理,\[2\left(f(x)-f\left(\frac{x}{2}\right)\right)=f'\left(\frac{x}{2}+\alpha\frac{x}{2}\right)x\geqslant f'(x)x\geqslant 0,\]其中\(\alpha\in(0,1)\)为与\(x\)有关的一个数. 由于\(f\)有界, 而由\(f'\)非负知\(f\)单调增加, 所以\(\lim_{x\rightarrow+\infty}f(x)\)存在. 于是由夹逼准则得\(\lim_{x\rightarrow+\infty}xf'(x)=0.\)
