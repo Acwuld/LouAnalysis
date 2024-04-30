@@ -241,13 +241,20 @@ x_0-1<\frac{q}{p}<x_0+1,\text{并且}\,\frac{q}{p}\notin\{x_1,x_2,\cdots,x_m\},\
 \woe 设\((X,+,\cdot,\leqslant)\)是一个全序域, \(\alpha\in X\)满足\(\alpha\geqslant 0\)以及对\(X\)中任何的正有理数\(p\)成立\(\alpha<p\). 问是否一定有\(\alpha=0\)?\\ 这里正有理数即形如\(m1^*/n1^*\)的元, 其中\(1^*\)为乘法单位元, \(m,n\)为正整数.
 \woe 证明所有(复)代数数组成的集合是一个域.
 \begin{proof}
-内容...
+我们证明一个更宽泛的命题: 设\(K/F\)是一个域扩张, \(\alpha,\beta\in K\). 若\(\alpha,\beta\)是域\(F\)上的代数元, 则\(\alpha\pm\beta,\alpha\beta.\alpha\beta^{-1}(\beta\ne 0)\)都是\(F\)上的代数元. 从而\(K\)中\(F\)上所有代数元组成的集合是\(K\)的一个子域, 称这个子域是\(F\)在\(K\)中的代数闭包, 记为\(\overline{F}\).
+
+由于\(\alpha\)是域\(F\)上的代数元, 因此\(F(\alpha)/F\)是单代数扩张. 由于\(\beta\)是域\(F\)上的代数元, 从而\(\beta\)也是域\(F(\alpha)\)上的代数元, 因此可以得出\(F(\alpha)(\beta)/F(\alpha)\)是单代数扩张, 从而\(F(\alpha)(\beta)/F(\alpha)\)是有限扩张.
+
+于是\(F(\alpha,\beta)/F(\alpha)\)是有限扩张. 由\(F(\alpha,\beta)\supseteq F(\alpha)\supseteq F\), 则\(F(\alpha,\beta)/F\)是有限扩张, 由于\(\alpha\pm\beta,\alpha\beta.\alpha\beta^{-1}\)都属于\(F(\alpha,\beta)\), 因此\(\alpha\pm\beta,\alpha\beta.\alpha\beta^{-1}\)都是域\(F\)上的代数元.
 \end{proof}
 \woe 设\((X,+,\cdot)\)是一个以实数域\(\mathbb{R}\)为子域的域, 满足如下条件：\begin{compactenum}[(i)]
 \item 存在元\(A\in X\backslash\mathbb{R}\).
 \item 对于\(X\)中的任一元素\(V\), 都存在\(a,b\in \mathbb{R}\), 使得\(V=a+bA\).
 \end{compactenum}
 证明：存在\(B\in X\)使得\(B^2=-1\). 进一步, 对\(X\)中的任一元素\(V\), 都存在\(a,b\in \mathbb{R}\), 使得\(V=a+bB\).\\本题的结论相当于说, 以实数域作为子域的“二元域”一定是复数域.
+\begin{proof}
+
+\end{proof}
 \woe 证明: 不存在以\(\mathbb{R}\)为子域的“三元数”域. 即不存在\(\mathbb{R}^3\)中满足\[(x_1,y_1,z_1)+(x_2,y_2,z_2)=(x_1+x_2,y_1+y_2,z_1+z_2)\]以及\[(x_1,0,0)\cdot (x_2,0,0)=(x_1x_2,0,0)\]的加法\(+\)和乘法\(\cdot\), 使得\((\mathbb{R}^3,+,\cdot)\)成为一个域.
 \end{quizb}
 \section{实数系的构造}
