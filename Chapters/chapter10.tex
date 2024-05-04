@@ -368,7 +368,7 @@ I_n&\leqslant 2\int_{0}^{\pi/2}\frac{(n+1)\pi}{1+n^\alpha\pi^{\alpha}\sin^2x}\dd
 先处理\(\int_{\sqrt{y}}^{+\infty}\frac{1-x^2}{x^4+4x^2+1}\dd x\), 有\[\frac{1-x^2}{x^4+4x^2+1}=\frac{A}{x^2+2-\sqrt{3}}-\frac{B}{x^2+2+\sqrt{3}},\]其中\(A=\frac{\sqrt{3}-1}{2},B=\frac{\sqrt{3}+1}{2}\), 于是有
 \[\begin{aligned}
 	\int_{\sqrt{y}}^{+\infty}{\frac{1-x^2}{x^4+4x^2+1}}\mathrm{dd}x&=\int_{\sqrt{y}}^{+\infty}{\frac{A}{x^2+2-\sqrt{3}}}-\frac{B}{x^2+2+\sqrt{3}}\mathrm{dd}x\\
-	&=\frac{A}{\sqrt{2-\sqrt{3}}}\mathrm{arc}\tan \frac{x}{\sqrt{2-\sqrt{3}}}-\frac{B}{\sqrt{2+\sqrt{3}}}\mathrm{arc}\tan \frac{x}{\sqrt{2+\sqrt{3}}}|_{\sqrt{y}}^{+\infty}\\
+	&=\left.\frac{A}{\sqrt{2-\sqrt{3}}}\mathrm{arc}\tan \frac{x}{\sqrt{2-\sqrt{3}}}-\frac{B}{\sqrt{2+\sqrt{3}}}\mathrm{arc}\tan \frac{x}{\sqrt{2+\sqrt{3}}}\right|_{\sqrt{y}}^{+\infty}\\
 	&=\frac{\sqrt{2}}{2}\left( \mathrm{arc}\tan \left( \sqrt{2-\sqrt{3}}\cdot \sqrt{y} \right) -\mathrm{arc}\tan \left( \sqrt{2+\sqrt{3}}\cdot \sqrt{y} \right) \right) .\\
 \end{aligned}\]
 我们记\(I(\alpha)=\int_{0}^{+\infty}\frac{\arctan\left(\alpha\sqrt{y}\right)}{1+y^2}\dd y(\alpha\geqslant 0)\), 易见其关于参数\(\alpha\)一致收敛,  于是\[\int_{0}^{+\infty}\int_{\sqrt{y}}^{+\infty}\frac{1-x^2}{x^4+4x^2+1}\cdot\frac{1}{1+y^2}\dd x\dd y=\frac{\sqrt{2}}{2}\left(I\left(\sqrt{2-\sqrt{3}}\right)-I\left(\sqrt{2+\sqrt{3}}\right)\right).\]
