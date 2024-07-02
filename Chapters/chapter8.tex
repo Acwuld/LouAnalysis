@@ -295,6 +295,15 @@ f(x),\quad&f(x)\geqslant 1,\\
 \end{split}\]与题设矛盾, 即必有使得\(|f(x)|\geqslant 2^n(n+1)\)的点, 即\(\max_{x\in[0,1]}|f(x)|\geqslant 2^n(n+1)\). 若\(\max_{x\in[0,1]}f(x)=2^n(n+1)\), 则依上式取等的条件必有\(|f(x)|\equiv 2^n(n+1)\), 这与题设矛盾.
 \end{proof}
 \woe 设\(f\in C[0,\pi]\), 且对\(1\leqslant k\leqslant n\)成立\(\int_{0}^{\pi}f(x)\cos kx\dd x=\int_{0}^{\pi}f(x)\sin kx\dd x=0\). 证明: \(f\)在\((0,\pi)\)内至少有\(2n\)个零点.
+\begin{proof}
+假设\(f\)在\((0,\pi)\)上发生变号的零点为\(\alpha_1<\alpha_2<\cdots<a_{2m-1}(1\leqslant m\leqslant n)\), 若为偶数个零点, 则记为\(\alpha_2<\alpha_3<\cdots<a_{2m-1}\), 令\[h(x)=\prod_{i=1}^{2m-1}\sin\frac{x-\alpha_i}{2}=\sum_{k=0}^{2m-1}C_k\sin\frac{kx-\beta_k}{2},\]
+取\(g(x)=h(x)\cos\frac{x-\beta_1}{2}\), 则\(g(x)\)是\(\sin x,\cos x,\cdots,\sin mx,\cos mx\)的线性组合. 
+
+如果\(\beta_1\in[0,\pi]\), 即\(\cos\frac{x-\beta}{2}\)在\((0,\pi)\)上恒大与0, 则由题设可知\[\int_{0}^{\pi}f(x)g(x)\dd x=0,\]但此时\(f(x)g(x)\)恒大于(小于)零. 矛盾, 从而\(m>n\), 这便证明了结论.
+
+如此只需证\(\beta_1\in[0,\pi]\).
+
+\end{proof}
 \woe 设\(f\in C[a,b]\)非负, 且在\(c\in[a,b]\)处取得唯一的最大值\(f(c)>0,\varphi\)在\([a,b]\)上可积, 且在点\(c\)连续, 证明: \[\lim_{n\rightarrow+\infty}\frac{\displaystyle\int_{a}^{b}f^n(x)\varphi(x)\dd x}{\displaystyle\int_{a}^{b}f^n(x)\dd x}=\varphi(c).\]
 \begin{proof}
 由于\(\varphi\)在\(c\)点连续, 则\(\forall \varepsilon>0\)使得\(|x-c|<\delta\)时, \(|\varphi(x)-\varphi(c)|<\varepsilon\), 并且\(\delta\)也满足\(|x-c|\geqslant\delta\)时有\(0\leqslant f(x)<f(c)-\varepsilon\). 即\(f(c)\)与\(|\varphi|\)的最大值为\(M\)与\(m\). 又存在\(\eta\)使得\(|x-c|\leqslant\eta\)时, \(|f(x)-f(c)|<\frac{\varepsilon}{2}\), 记\(E\)为区间\([a,b]\)去除\([c-\delta,c+\delta]\)的部分. 于是有\[\begin{split}
