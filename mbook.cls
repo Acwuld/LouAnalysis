@@ -18,7 +18,9 @@
 
 \ctexset {chapter = {pagestyle = fancy}}
 \setlength{\headheight}{15pt}
-\newenvironment{solution}{\begin{proof}[\bf 解]\renewcommand{\qedsymbol}{$\blacksquare$}}{\end{proof}}
+
+\newenvironment{solution}{\begin{proof}[\kaishu 解]\renewcommand{\qedsymbol}{$\blacksquare$}}{\end{proof}}
+\renewcommand{\proofname}{\noindent\kaishu 证明}
 \linespread{1.6}
 \usetikzlibrary{decorations.markings}
 
@@ -146,7 +148,7 @@ addtohook={%
 					\\
 					\bigskip
 					\bigskip
-					{\Large\itshape 马乐}
+					{\Large Le}
 					\\
 					\vspace{1.3cm}
 				\end{center}

@@ -13,6 +13,14 @@
 \end{quiza}
 \begin{quizb}
 \woe 证明：\(\lim_{n\rightarrow +\infty}a_n=0\)的充要条件是存在单调下降且无正下确界的正数列\(\{w_n\}\)使得\(\forall n\geqslant 1\)成立\(\left|a_n\right|\leqslant w_n\).
+\begin{proof}
+若存在单调下降且无正下确界的正数列\(\{w_n\}\)使得\(\forall n\geqslant 1\)成立\(\left|a_n\right|\leqslant w_n\), 则易见\(\lim_{n\rightarrow+\infty}w_n=0\), 从而\(\lim_{n\rightarrow +\infty}a_n=0\). 反过来, 我们这样构造\(w_n\): 记\[\begin{split}
+w_n&=\max\{|a_1|,|a_2|,\cdots,|a_n|,\cdots\}=|a_{k_1}|,\,\, 1\leqslant n\leqslant k_1,\\
+w_n&=\max\{|a_{k_1+1}|,|a_{k_1+2},\cdots\}=|a_{k_2}|,\,\, k_1< n\leqslant k_2,\\
+w_n&=\max\{|a_{k_2+1}|,|a_{k_2+2},\cdots\}=|a_{k_3}|,\,\, k_2< n\leqslant k_3,\\
+&\cdots\cdots
+\end{split}\]可得\(\{w_n\}\)符合题设. 从而结论得证.
+\end{proof}
 \woe 设\(0\leqslant p\leqslant k-1\), 求\( \lim_{n\rightarrow +\infty}\frac{C_{kn}^{p}+C_{kn}^{p+k}+\cdots+C_{kn}^{p+(n-1)k}}{2^{kn}}\).
 \begin{solution}
 假设有这样一套装置, 用\(kn\)个开关共同控制\(k\)个灯泡: 开关或开或闭, 灯泡按\(0,1,\cdots,k-1\)的编号来编号. 对于编号为\(p(p=0,1,\cdots,k-1)\)的灯泡来说, 当且仅当闭合开关总数模\(k\)余\(p\)时亮起. 这编号\(p\)的灯泡亮起的概率即为\(\frac{\displaystyle\sum_{i=0}^{n-1}C_{kn}^{p+ik}}{2^{kn}}\).
