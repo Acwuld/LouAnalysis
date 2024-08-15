@@ -345,9 +345,9 @@ content...
 \item 当\(n\)为奇数时, \(f_n(x)\)有且仅有一个实根.
 \end{quizs}
 \begin{proof}
-由\(\ee^x\)的Taylor展开知\[\ee^x=f_n(x)+R_n(x),\quad R_n(x)=\frac{\ee^{\theta x}}{(n+1)!},\quad 0<\theta<1.\]
+由\(\ee^x\)的Taylor展开知\[\ee^x=f_n(x)+R_n(x),\quad R_n(x)=\frac{\ee^{\theta x}}{(n+1)!}x^{n+1},\quad 0<\theta<1.\]
 
-(1)当\(n\)为偶数时, \(n+1\)为奇数. 由\(\ee^x>0\)知, \(f_n(x)>-R_n(x)\). 当\(x\geqslant 0\)时, \(P_n(x)\geqslant 1>0\), 当\(x<0\)时, 则\[f_n(x)>-R_n(x)=-\frac{\ee^{\theta x}}{(n+1)!}x^{n+1}=\frac{\ee^{\theta x}}{(n+1)!}(-x)^{n+1}>0,\]因此, \(n\)为偶数时, 对任何\(x\), \(f_n(x)>0\), 即\(f_n(x)\)有下界, 则必有下确界, 即为最小值.
+(1)当\(n\)为偶数时, \(n+1\)为奇数. 由\(\ee^x>0\)知, \(f_n(x)>-R_n(x)\). 当\(x\geqslant 0\)时, \(f_n(x)\geqslant 1>0\), 当\(x<0\)时, 有\[f_n(x)>-R_n(x)=-\frac{\ee^{\theta x}}{(n+1)!}x^{n+1}=\frac{\ee^{\theta x}}{(n+1)!}(-x)^{n+1}>0,\]因此, \(n\)为偶数时, 对任何\(x\), \(f_n(x)>0\), 即\(f_n(x)\)有下界, 则必有下确界, 即为最小值.
 
 (2)当\(n\)为奇数时, \(n-1\)为偶数, 由(1)知\(f_n'(x)=f_{n-1}(x)>0\). \(f_n(x)\)在\(\bbr\)上严格单调递增, 由于\(\lim_{x\rightarrow-\infty}f_n(x)=-\infty,f_n(0)=1>0\), 知\(f_n(x)\)由唯一的实零点.
 \end{proof}
