@@ -724,23 +724,24 @@ C_n&=a_1b_1+(a_1b_2+a_2b_1)+(a_1b_3+a_2b_2+a_3b_1)+\cdots+\left(a_1b_n+a_2b_{n-1
 \sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^\alpha}&=\sum_{n=1}^{\infty}\frac{1-(-1)^n}{2}\left(\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}\right)\\&=\frac{1}{2}\sum_{n=1}^{\infty}\left(\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}\right)-\frac{1}{2}\sum_{n=1}^{\infty}(-1)^n\left(\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}\right)\\&=\frac{1}{2}-\frac{1}{2}\sum_{n=1}^{\infty}(-1)^n\left(\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}\right).
 \end{split}\]
 
-下面证明级数\(\sum_{n=1}^{\infty}(-1)^n\left(\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}\right)\)在\(\left[0,+\infty\right)\)上一致收敛. 令\(b_n(\alpha)=-\Delta a_n(\alpha)(n\in\bbz^+)\), 则由\[b_n(\alpha)=\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}=\frac{1}{n^\alpha}\left(1-\frac{1}{\left(1+\displaystyle\frac{1}{n}\right)^\alpha}\right)\]可知, 对于任何\(\alpha\in\left[0,+\infty\right)\), \(\{b_n(\alpha)\}\)关于\(n\)单调减少, 并且当\(x\in[0,1]\)时, 有\[\left|b_n(\alpha)\right|\leqslant 1-\frac{1}{\displaystyle\left(1+\frac{1}{n}\right)^x}\leqslant 1-\frac{1}{\displaystyle 1+\frac{1}{n}}=\frac{1}{n+1},\]
+下面证明级数\(\sum_{n=1}^{\infty}(-1)^n\left(\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}\right)\)在\(\left[0,+\infty\right)\)上一致收敛. 令\(b_n(\alpha)=-\Delta a_n(\alpha)(n\in\bbz_+)\), 则由\[b_n(\alpha)=\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}=\frac{1}{n^\alpha}\left(1-\frac{1}{\left(1+\displaystyle\frac{1}{n}\right)^\alpha}\right)\]可知, 对于任何\(\alpha\in\left[0,+\infty\right)\), \(\{b_n(\alpha)\}\)关于\(n\)单调减少, 并且当\(x\in[0,1]\)时, 有\[\left|b_n(\alpha)\right|\leqslant 1-\frac{1}{\displaystyle\left(1+\frac{1}{n}\right)^x}\leqslant 1-\frac{1}{\displaystyle 1+\frac{1}{n}}=\frac{1}{n+1},\]
 当\(\alpha>1\)时, 有\[\left|b_n(\alpha)\right|\leqslant\frac{1}{n^\alpha}<\frac{1}{n},\]于是数列\(\{b_n(\alpha)\}\)在\(\left[0,+\infty\right)\)上一致收敛于零.故由Dirichlet判别法知该级数一致收敛, 于是\[\begin{split}
 \lim_{\alpha\rightarrow 0^+}\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^\alpha}&=\lim_{\alpha\rightarrow0^+}\left(\frac{1}{2}-\frac{1}{2}\sum_{n=1}^{\infty}(-1)^n\left(\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}\right)\right)\\&=\frac{1}{2}-\frac{1}{2}\sum_{n=1}^{\infty}(-1)^n\lim_{\alpha\rightarrow0^+}\left(\frac{1}{n^\alpha}-\frac{1}{(n+1)^\alpha}\right)=\frac{1}{2}.\qedhere
 \end{split}\]
 \end{proof}
 \woe 对于\(s>1\), \textbf{Riemann(黎曼) \(\zeta\)函数}定义为: \(\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}\). 设\(\{p_n\}_{n=1}^{\infty}\)为所有素数, 证明\textbf{Euler乘积公式}: \(\zeta(s)=\prod_{n=1}^{\infty}\frac{1}{1-1/p_n^s}\).
 \begin{proof}
-
+设\(M,N\in\bbz_+\)且\(M>N\), 由算术基本定理可知, 任何一个正整数可以唯一表成若干素数的乘积, 并且对于正整数\(n<N\), 每一个素数都会小于\(N\), 其次数也不会超过\(M\), 于是有\[\sum_{n=1}^{N}\frac{1}{n^s}\leqslant\prod_{p\leqslant N}\left(1+\frac{1}{p^s}+\frac{1}{p^{2s}}+\cdots+\frac{1}{p^{Ms}}\right)\leqslant\prod_{p\leqslant N}\frac{1}{1-p^{-s}}\leqslant\prod_{n=1}^{\infty}\frac{1}{1-1/p_n^s},\]
+令\(N\rightarrow+\infty\)即得\(\sum_{n=1}^{\infty}\frac{1}{n^s}\leqslant\prod_{n=1}^{\infty}\frac{1}{1-1/p_n^s}\). 另一方面, 由算术基本定理可知\[\prod_{p\leqslant N}\left(1+\frac{1}{p^s}+\frac{1}{p^{2s}}+\cdots+\frac{1}{p^{Ms}}\right)\leqslant \sum_{n=1}^{\infty}\frac{1}{n^s},\]令\(M\rightarrow+\infty\)有\(\prod_{p\leqslant N}\frac{1}{1-p^{-s}}\leqslant\sum_{n=1}^{\infty}\frac{1}{n^s}\), 也即\(\prod_{n=1}^{\infty}\frac{1}{1-1/p_n^s}\leqslant\sum_{n=1}^{\infty}\frac{1}{n^s}\), 这便完成了证明.
 \end{proof}
 \woe Euler最早根据\(\sin \pi x\)的零点为\(0,\pm 1,\pm 2,\cdots\)而猜测如下的\textbf{Euler公式}: \[\sin \pi x=\pi x\prod_{n=1}^{\infty}\left(1-\frac{x^2}{n^2}\right).\]试按如下步骤证明Euler公式:
 \begin{quizs}
-\item 对于\(n\geqslant 0\)以及\(t\in (-1,1)\), 证明:\[\sin\left((2n+1)\arcsin t\right)=(2n+1)t\prod_{k=1}^{n}\left(1-\frac{t^2}{\sin^2\frac{k\pi}{2n+1}}\right).\]
-\item 证明: \(|x|\leqslant n+\frac{1}{2}\)时,\[\sin \pi x=(2n+1)\sin\frac{\pi x}{2n+1}\prod_{k=1}^{n}\left(1-\frac{\sin^2\frac{\pi x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}\right).\]
+\item 对于\(n\geqslant 0\)以及\(t\in (-1,1)\), 证明:\[\sin\left((2n+1)\arcsin t\right)=(2n+1)t\prod_{k=1}^{n}\left(1-\frac{t^2}{\sin^2\left(k\pi/(2n+1)\right)}\right).\]
+\item 证明: \(|x|\leqslant n+\frac{1}{2}\)时,\[\sin \pi x=(2n+1)\sin\frac{\pi x}{2n+1}\prod_{k=1}^{n}\left(1-\frac{\sin^2\left(\pi x/(2n+1)\right)}{\sin^2\left(k\pi/(2n+1)\right)}\right).\]
 \item 固定\(x\in\mathbb{R}\), 对于\(m>K>|\pi x|\), 成立
 \[\begin{split}
-\prod_{k=K}^{m}\left(1-\frac{x^2}{k^2}\right)\cdot\prod_{k=m+1}^{\infty}\left(1-\frac{\pi^2x^2}{4k^2}\right)&\leqslant\varliminf_{n\rightarrow+\infty}\prod_{k=K}^{n}\left(1-\frac{\sin^2\frac{\pi x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}\right)\\&\leqslant\varlimsup_{n\rightarrow+\infty}\prod_{k=K}^{n}\left(1-\frac{\sin^2\frac{\pi x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}\right)\\&\leqslant\prod_{k=K}^{m}\left(1-\frac{x^2}{k^2}\right). \end{split}\]
-\item 证明对任何\(x\in\mathbb{R}\), 成立\[\lim_{n\rightarrow+\infty}\prod_{k=1}^{n}\left(1-\frac{\sin^2\frac{\pi x}{2n+1}}{\sin^2\frac{k\pi}{2n+1}}\right)=\prod_{k=1}^{\infty}\left(1-\frac{x^2}{k^2}\right).\]
+\prod_{k=K}^{m}\left(1-\frac{x^2}{k^2}\right)\cdot\prod_{k=m+1}^{\infty}\left(1-\frac{\pi^2x^2}{4k^2}\right)&\leqslant\varliminf_{n\rightarrow+\infty}\prod_{k=K}^{n}\left(1-\frac{\sin^2\left(\pi x/(2n+1)\right)}{\sin^2\left(k\pi/(2n+1)\right)}\right)\\&\leqslant\varlimsup_{n\rightarrow+\infty}\prod_{k=K}^{n}\left(1-\frac{\sin^2\left(\pi x/(2n+1)\right)}{\sin^2\left(k\pi/(2n+1)\right)}\right)\\&\leqslant\prod_{k=K}^{m}\left(1-\frac{x^2}{k^2}\right). \end{split}\]
+\item 证明对任何\(x\in\mathbb{R}\), 成立\[\lim_{n\rightarrow+\infty}\prod_{k=1}^{n}\left(1-\frac{\sin^2\left(\pi x/(2n+1)\right)}{\sin^2\left(k\pi/(2n+1)\right)}\right)=\prod_{k=1}^{\infty}\left(1-\frac{x^2}{k^2}\right).\]
 \end{quizs}
 \begin{proof}
 
