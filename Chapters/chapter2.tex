@@ -239,7 +239,7 @@ z_n:=t_{n1}(x_1-a)+t_{n2}(x_2-a)+\cdots+t_{nn}(x_n-a)=y_n-aT_n,\]由前面的结
     \begin{gather*}
       a_{n+1}-a_{n}=\frac{1}{n+1}-\ln\left(1+\frac{1}{n}\right)<0.\\
       b_{n+1}-b_{n}=\frac{1}{n+1}-\ln\left(1+\frac{1}{n+1}\right)>0.\\
-      a_n-b_n=\ln\left(1+\frac{1}{n}\right)>\frac{1}{n}>0, \lim_{n\rightarrow\infty}(a_n-b_n)=0.
+      a_n-b_n=\ln\left(1+\frac{1}{n}\right)>0, \lim_{n\rightarrow\infty}(a_n-b_n)=0.
     \end{gather*}
 可见\(\forall n\geqslant 1\), 有\([b_{n+1},a_{n+1}]\subseteq [b_n,a_n]\). 依Cauahy-Cantor闭区间套定理得证结论.
 \end{proof}
@@ -267,7 +267,7 @@ X_1=\frac{c}{2}+\frac{X_2^2}{2},\quad X_2=\frac{c}{2}+\frac{X_1^2}{2},
       \sum_{k=n+1}^{\infty}\frac{1}{k!}&=\frac{1}{(n+1)!}+\frac{1}{(n+2)!}+\cdots+\frac{1}{m!}+\cdots\\&<\frac{1}{(n+1)!}\left(1+\frac{1}{n+2}+\frac{1}{(n+2)^2}+\cdots+\frac{1}{(n+2)^k}+\cdots\right)\\&=\frac{1}{(n+1)!}\left(\frac{1}{1-\frac{1}{n+2}}\right)=\frac{n+2}{(n+1)\cdot(n+1)!}\\&=\frac{1}{n\cdot n!}\cdot\frac{n(n+2)}{(n+1)^2}<\frac{1}{n\cdot n!}.
     \end{split}\]这几乎就完成了第一部分的证明.
     
-下面说明\(\ee\)是无理数, 事实上, 若其为有理数, 则定能表示成既约分数的形式, 设其为\(p/q\), 有上述可知\[\ee=\frac{p}{q}=\sum_{k=0}^{q}\frac{1}{k!}+\sum_{k=q+1}^{\infty}\frac{1}{k!}=\sum_{k=0}^{q}\frac{1}{k!}+\frac{\theta_n}{q\cdot q!}.\]于是右侧\(\frac{\theta_n}{q\cdot q!}\)应是\(\frac{1}{q!}\)的倍数, 但这是不可能的.
+下面说明\(\ee\)是无理数, 事实上, 若其为有理数, 则定能表示成既约分数的形式, 设其为\(p/q\), 有上述可知\[\ee=\frac{p}{q}=\sum_{k=0}^{q}\frac{1}{k!}+\sum_{k=q+1}^{\infty}\frac{1}{k!}=\sum_{k=0}^{q}\frac{1}{k!}+\frac{\theta_n}{q\cdot q!}.\]于是有\[\frac{p}{q}-\sum_{k=0}^{q}\frac{1}{k!}=\frac{\theta_n}{q\cdot q!},\]两侧乘以\(q\cdot q!\), 则左侧为以整数，右侧为\(\theta_n\in(0,1)\), 这是不可能的.
 \end{proof}
 \woe 设\(E,\,F\)为\(\mathbb{R}\)中的非空集, 定义\(d(E,F)=\underset{x\in E,y\in F}{\inf}|\boldsymbol{x}-\boldsymbol{y}|.\)
 \begin{quizs}
@@ -484,7 +484,14 @@ f(x)&\leqslant\sqrt{(x+1)\sqrt{(x+2)\sqrt{(x+3)\sqrt{(x+4)\cdots}}}}\\
 \item 设\(\lim_{n\rightarrow+\infty}\frac{a_n}{n}=q\), 则\(nq-1\leqslant a_n\leqslant nq+1\).
 \end{quizs}
 \begin{proof}
+注意到, 对于任意\(k,t\in\bbn_+\),\[\begin{split}
+a_{kt}=a_{(t-1)k+k}&\leqslant a_{(t-1)k}+a_k+1\leqslant a_{(t-2)k}+2a_k+2\\&\leqslant\cdots\leqslant a_{\left(t-(t-1)\right)k}+(t-1)a_k+(t-1)\\&=ta_k+t-1.
+\end{split}\]
 
+对于任意\(n\), 我们给定\(k\), 则有\[n=kt+\ell,\quad0\leqslant \ell<k,\]于是有\[\begin{split}
+\frac{a_n}{n}&=\frac{a_{kt+\ell}}{n}\leqslant\frac{a_{kt}+a_{\ell}+1}{n}\leqslant\frac{ta_k+t+a_{\ell}}{n}=\frac{ta_k+t}{kt+\ell}+\frac{a_{\ell}}{n}\\&=\frac{a_k+1}{k+\ell/t}+\frac{a_{\ell}}{n},
+\end{split}\]
+令\(n\rightarrow+\infty\), 此时\(t\rightarrow+\infty\), 取上极限得到\(\varlimsup_{n\to+\infty}\frac{a_n}{n}\leqslant\frac{a_k+1}{k}\)对任意\(k\)成立, 同理利用左侧的不等式可以得到\(\varliminf_{n\rightarrow+\infty}\frac{a_n}{n}\geqslant\frac{a_k-1}{k}\), 也即\[\frac{a_k-1}{k}\leqslant\varliminf_{n\rightarrow+\infty}\frac{a_n}{n}\leqslant\varlimsup_{n\rightarrow+\infty}\frac{a_n}{n}\leqslant\frac{a_k+1}{k},\]令\(k\rightarrow+\infty\)便知\(\lim_{n\to+\infty}\frac{a_n}{n}\)存在. 另外, 若\(\lim_{n\to+\infty}\frac{a_n}{n}=q\), 依上式有\[\frac{a_k-1}{k}\leqslant q\leqslant\frac{a_k+1}{k},\]也即\(kq-1\leqslant a_k\leqslant kq+1\).
 \end{proof}
 \woe 设\(r\in (0,1)\,,x_0=0,\,x_{n+1}=r(1-x_n^2)(n=0,1,2,\cdots)\). 试探究\(\{x_n\}\)的敛散性.
 \begin{solution}
