@@ -561,11 +561,18 @@ P_n\left(\frac{1}{x}\right)\ee^{-1/x},\qquad &x>0,\\
 \begin{quizb}
 \woe 试利用Weierstrass第一逼近定理证明Weierstrass第二逼近定理.
 \begin{proof}
+若\(g(x)\)是以周期为\(2\pi\)的连续偶函数, 则由Weierstrass第一逼近定理, 存在定义在\([-1,1]\)上的多项式\(P(x)\)使得\[|g(\arccos x)-P(x)|\leqslant\varepsilon,\quad\forall x\in[-1,1],\]从而\[|g(x)-P(\cos x)|\leqslant\varepsilon,\quad\forall x\in[0,\pi].\]注意到\(g(x)\)为偶函数, 可得\[|g(x)-P(\cos x)|\leqslant\varepsilon,\quad\forall x\bbr.\]于是存在周期为\(2\pi\)的三角多项式\(Q_1(x),R_1(x)\)使得\begin{gather*}
+\left|\frac{f(x)+f(-x)}{2}-Q_1(x)\right|\leqslant\varepsilon,\quad\forall x\in\bbr,\\
+\left|\frac{f(x)-f(-x)}{2}\sin x-R_1(x)\right|\leqslant\varepsilon,\quad\forall x\in\bbr,
+\end{gather*}
+进而令\(P_1(x)=Q_1(x)\sin^2x+R_1(x)|\sin x|\), 得\[|f(x)\sin^2x-P_1(x)|\leqslant\varepsilon\sin^2x+\varepsilon|\sin x|\leqslant2\varepsilon,\quad\forall x\in\bbr.\]
 
+类似地, 存在周期为\(2\pi\)的三角多项式\(P_2(x)\)使得\[\left|f\left(x-\frac{\pi}{2}\right)\sin^2x-P_2(x)\right|\leqslant 2\varepsilon,\quad\forall x\in\bbr,\]从而\[\left|f(x)\cos^2x-P_2\left(x+\frac{\pi}{2}\right)\right|\leqslant 2\varepsilon,\quad\forall x\in\bbr,\]
+最后, 取\(P(x)=P_1(x)+P_2\left(x+\frac{\pi}{2}\right)\), 得到\[|f(x)-P(x)|\leqslant 4\varepsilon,\quad\forall x\in\bbr,\]从而得到Wererstrass第二逼近定理.
 \end{proof}
 \woe 试利用Weierstrass第二逼近定理证明Weierstrass第一逼近定理.
 \begin{proof}
-
+设\(f(x)\in C[0,1]\). 定义\[F(x)=f(|\cos x|),\quad x\in\bbr,\]则\(F\)是\(\bbr\)上以\(2\pi\)为周期的连续函数. 由Weierstrass第二逼近定理. \(\forall\varepsilon>0\), 存在三角多项式\(S_n(x)\)使得\(\sup_{x\in\bbr}|S_n(x)-F(x)|\leqslant\varepsilon.\) 令\(T_n(x)=\frac{S_n(x)+S_n(-x)}{2}\)并注意到\(F\)为偶函数, 得\(\sup_{x\in\left[0,\frac{\pi}{2}\right]}|T_n(x)-F(x)|\leqslant\varepsilon\). 由于三角多项式\(T_n\)可表示为\(T_n(x)=\sum_{k=0}^{n}a_{n,k}\cos^kx,x\in\bbr\), 从而\[\sup_{x\in[0,1]}\left|\sum_{k=0}^{n}a_{n,k}x^k-f(x)\right|\leqslant\varepsilon,\]即Weierstrass第一逼近定理成立.
 \end{proof}
 \woe 将习题\(8.7.\boldsymbol{\mathcal{A}}\)中的第2题推广到高维情形: 设\(D\subset\bbr^n\)为有界区域. 对于\(\delta>0\), 取区域\(\varOmega\)使得\(D\subset\subset \varOmega,\inf_{\boldsymbol{x}\in D,\boldsymbol{y}\in\partial\varOmega}|\boldsymbol{x}-\boldsymbol{y}|\geqslant\delta\). 证明: 存在\(\varphi\in C_c^{\infty}(\varOmega)\), 满足\(0\leqslant\varphi\leqslant 1,\varphi\big|_D\equiv 1\)以及\(|\nabla\varphi|\leqslant\frac{M}{\delta}\), 其中\(M\)是与\(\delta\)无关的一个常数.
 \woe 设\(\bbr\)上可测实函数\(f\)满足\(f(x+y)=f(x)+f(y)\). 证明: 存在常数\(c\)使得\(f(x)=cx(\forall x\in\bbr)\).
@@ -632,6 +639,9 @@ F(x_2)-F(x_1)&=\int_{0}^{x_2}f(t)\dd t-x_2f(x_2)-\int_{0}^{x_1}f(x_1)\dd t+x_1f(
 \item 对任何\(\varphi\in C_c^{\infty}(\bbr),\varphi-M_0(\varphi)\eta+\left(M_1(\varphi)-M_0(\varphi)M_1(\eta)\right)\eta'\)是某个\(\psi\in C_c^{\infty}(\bbr)\)的二阶导数.
 \end{quizs}
 \woe 设\(f\in L_{loc}^1(\bbr),g\in C(\bbr)\), 且对任何\(\varphi\in C_c^{\infty}(\bbr)\)成立\[\int_{\bbr}f(x)\varphi''(x)\dd x=\int_{\bbr}g(x)\varphi(x)\dd x.\]证明: \(f\)几乎处处等于某个二阶连续可微的函数\(G\), 其中\(G''=g\).
+\begin{proof}
+
+\end{proof}
 \end{quiza}
 \begin{quizb}
 \woe 设\(\lambda_1,\lambda_2,\cdots,\lambda_n\in\bbr\)两两不同, \(\alpha_1,\alpha_2,\cdots,\alpha_m\in\bbc\), 且\(\lim_{x\rightarrow+\infty}\sum_{k=1}^{m}\alpha_k\ee^{\ii x\lambda_k}=0.\) 试用多种方法证明: \(\alpha_1=\alpha_2=\cdots=\alpha_m=0.\)

@@ -302,7 +302,7 @@ f'(0),&x=0
 (1)我们分三步证明.
 \begin{asparaenum}[(i)]
 \item\textbf{收敛性.} 首先, \(\int_{0}^{2\pi}\frac{f(x)\sin x}{x}\dd x\)是一个定积分. 其次, 由题设, 可见\[\int_{2\pi}^{2k\pi}f(x)\sin x\dd x=0,\quad\forall k\geqslant 1.\]由此不难得到对任何\(A>2\pi\), 成立\[\left|\int_{2\pi}^{A}f(x)\sin x\dd x\right|\leqslant\int_{0}^{\pi}\left|f(x)\right|\dd x.\]于是由Dirichlet判别法, \(\int_{2\pi}^{+\infty}\frac{f(x)\sin x}{x}\dd x\)收敛, 即原积分收敛.
-\item\textbf{\(f\)为三角多项式情形.} 若\(f=\sum_{k=0}^{m}a_k\cos (2kx)\), 则\[\begin{split}
+\item\textbf{\(f\)为三角多项式情形.} 若\(f(x)=\sum_{k=0}^{m}a_k\cos (2kx)\), 则\[\begin{split}
 \int_{0}^{+\infty}\frac{f(x)\sin x}{x}\dd x=&\int_{0}^{+\infty}\sum_{k=0}^{m}\frac{a_k\cos(2kx)\sin x}{x}\dd x\\=&\frac{1}{2}\int_{0}^{+\infty}\sum_{k=0}^{m}a_k\frac{\sin\left((2k+1)x\right)-\sin\left((2k-1)x\right)}{x}\dd x\\=&\frac{\pi}{4}\sum_{k=0}^{m}a_k\left(\mathrm{sgn}(2k+1)-\mathrm{sgn}(2k-1)\right)=\frac{\pi a_0}{2}=\int_{0}^{\pi/2}f(x)\dd x.
 \end{split}\]
 \item\textbf{一般情形.} 一般地, 由于\(f\)是以\(2\pi\)为周期的连续函数, 根据Weierstrass逼近定理, 存在一列三角多项式\(T_n\)使得\[\int_{0}^{2\pi}\left|f(x)-T_n\right|\dd x\rightarrow 0,\quad n\rightarrow+\infty.\]令\[g_n(x)=\frac{T(x)+T(-x)}{2}+\frac{1}{2\pi}\int_{0}^{2\pi}\left(f(t)-T_n(t)\right)\dd t.\]则\(g_n\)具有形式\(g_n(x)=\sum_{k=0}^{m_n}a_{n,k}\cos(2kx)\), 满足\[\int_{0}^{2\pi}\left(g_n(x)-f(x)\right)\dd x=0,\]且\[\varepsilon_n\equiv\int_{0}^{\pi}\left|f(x)-g_n(x)\right|\dd x\rightarrow 0,\quad n\rightarrow+\infty.\]记\[G_n(x)=\int_{0}^{x}\left(f(t)-g_n(t)\right)\sin t\dd t,\quad x\geqslant 0.\]则\[G_n(2k\pi)=0,\quad\left|G_n(x)\right|\leqslant\int_{0}^{\pi}\left|f(t)-g_n(t)\right|\dd t=\varepsilon_n.\]我们有\[\begin{split}

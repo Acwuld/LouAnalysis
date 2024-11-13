@@ -287,4 +287,25 @@ I&=\frac{\pi}{8}\int_{0}^{\pi/2}\left\lbrace\left[\ln(\sin x)+\ln(\cos x)\right]
 \begin{solution}
 
 \end{solution}
+\woe 利用Rabbe判别法讨论\(\sum_{n=1}^{\infty}\frac{n!n^{-p}}{q(q+1)\cdots(q+n)}(p,q>0)\)的敛散性.
+\begin{solution}
+即计算\(\lim_{n\to+\infty}n\left(\frac{a_n}{a_{n+1}}-1\right)\), 有\[\begin{split}
+&\lim_{n\to+\infty}n\left(\frac{n!n^{-p}}{q(q+1)\cdots(q+n)}\cdot\frac{q(q+1)\cdots(q+n)(q+n+1)}{(n+1)!(n+1)^{-p}}-1\right)\\
+=&\lim_{n\to+\infty}n\left(\frac{q+n+1}{n+1}\left(\frac{n+1}{n}\right)^p-1\right)\\
+=&\lim_{n\to+\infty}\left(\frac{q(n+1)^{p-1}}{n^{p-1}}+\frac{(n+1)^p-n^p}{n^{p-1}}\right)=q+p,
+\end{split}\]
+则\(p+q>1\)时, 原级数收敛; \(p+q<1\)时, 原级数发散. \textbf{而\(p+q=1\)时, Rabbe判别法失效.}
+\end{solution}
+\tcblower
+事实上由上式可知\[\begin{split}
+\frac{a_n}{a_{n+1}}&=\left(1+\frac{q}{n+1}\right)\left(1+\frac{1}{n}\right)^p=\exp\left(\ln\left(1+\frac{q}{n+1}\right)+p\ln\left(1+\frac{1}{n}\right)\right)\\
+&=\exp\left(\frac{p+q}{n}+O\left(\frac{1}{n^2}\right)\right)=1+\frac{p+q}{n}+o\left(\frac{1}{n\ln n}\right),
+\end{split}\]
+由Gauss判别法(定理14.3.8)可知\(p+q=1\), 级数发散.
+
+
+
+
+
+
 \end{quizb}
