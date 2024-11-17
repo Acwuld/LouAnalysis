@@ -106,7 +106,7 @@ J_2&=\int_{a\varDelta}^{b\varDelta}\frac{f(t)}{t}\mathrm{d}t=f(\xi_2)\int_{a\var
 \begin{proof}
 由于\[\int_{0}^{\pi/2}\sin x^n\dd x=\int_{0}^{1}\sin x^n\dd x+\int_{1}^{\pi/2}\sin x^n\dd x,\]而\begin{gather*}
 0\leqslant\int_{0}^{1}\sin x^n\dd x\leqslant\int_{0}^{1}x^n\dd x=\frac{1}{n+1},\\
--\frac{2}{n}\leqslant\int_{1}^{\pi/2}\frac{1}{nx^{n-1}}\cdot nx^{n-1}\sin x^n\dd x\xlongequal{\text{积分第二中值定理}}\frac{1}{n}\int_{0}^{\xi}\dd\left(-\cos x^n\right)\leqslant\frac{2}{n}
+-\frac{2}{n}\leqslant\int_{1}^{\pi/2}\frac{1}{nx^{n-1}}\cdot nx^{n-1}\sin x^n\dd x\xlongequal{\text{积分第二中值定理}}\frac{1}{n}\int_{1}^{\xi}\dd\left(-\cos x^n\right)\leqslant\frac{2}{n}
 \end{gather*}
 依夹逼准则有\(\lim_{n\rightarrow+\infty}\int_{0}^{\pi/2}\sin x^n\dd x=0\).
 \end{proof}
@@ -114,7 +114,7 @@ J_2&=\int_{a\varDelta}^{b\varDelta}\frac{f(t)}{t}\mathrm{d}t=f(\xi_2)\int_{a\var
 \begin{proof}
 仿上法, 我们有\begin{gather*}
 1\geqslant\int_{0}^{1}\cos x^n\dd x\geqslant\int_{0}^{1}\left(1-\frac{1}{2}x^{2n}\right)=1-\frac{1}{2(2n+1)}.\\
--\frac{2}{n}\leqslant\int_{1}^{\pi/2}\frac{1}{nx^{n-1}}\cdot nx^{n-1}\cos x^n\dd x=\frac{1}{n}\int_{0}^{\xi}\dd\left(\sin x^n\right)\leqslant\frac{2}{n}
+-\frac{2}{n}\leqslant\int_{1}^{\pi/2}\frac{1}{nx^{n-1}}\cdot nx^{n-1}\cos x^n\dd x=\frac{1}{n}\int_{1}^{\xi}\dd\left(\sin x^n\right)\leqslant\frac{2}{n}
 \end{gather*}
 依夹逼准则便得结论.
 \end{proof}
