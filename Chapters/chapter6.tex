@@ -4,11 +4,11 @@
 \begin{quiza}
 \woe 设一元实函数\(f\)在\([a,b]\)上连续, 在\((a,b)\)内可导, \(f(a)=f(b)=0\). 证明:
 \begin{quizs}
-\item 存在\(\xi\in(a,b)\)使得\(\xi^2f(\xi)++f'(\xi)=0\).
+\item 存在\(\xi\in(a,b)\)使得\(\xi^2f(\xi)+f'(\xi)=0\).
 \begin{proof}
 令\(F(x)=f(x)\cdot\exp\left(\frac{1}{3}x^3\right)\), 则\(F(0)=F(1)\), 由Rolle定理知\(\exists \xi\in(a,b)\)使得\(F'(\xi)=\exp\left(\frac{1}{3}\xi^3\right)\left(\xi^2f(\xi)+f'(\xi)\right)=0\), 结论得证.
 \end{proof}
-\item 存在\(\xi\in(a,b)\)使得\(f^2(\xi)\sin\xi++f'(\xi)=0\).
+\item 存在\(\xi\in(a,b)\)使得\(f^2(\xi)\sin\xi+f'(\xi)=0\).
 \begin{proof}
 令\(F(x)=f(x)\cdot\exp\left(\int_a^x f(t)\sin t\dd t\right).\)仿(1)即可.
 \end{proof}
